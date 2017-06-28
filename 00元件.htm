@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>元件 | 生活倉庫</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1; minimum-scale=1, maximum-scale=1" />
+    <!-- CSS & JS -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            background: #fff;
+            padding: 0px 5px;
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        h4 {
+            background: #54adeb;
+            color: #fff;
+            padding: 0px 5px;
+            margin: 10px 0px;
+        }
+
+        h6 {
+            color: #666;
+            padding: 0px 5px;
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 元件 -->
+    <h4>按鈕區</h4>
+    <h5>萬用按鈕</h5>
+    <a class="btn" href="#">萬用按鈕</a>
+    <h5>樣式一</h5>
+    <a class="btn style_1" href="#">樣式一</a>
+    <h5>樣式二</h5>
+    <a class="btn style_2" href="#">樣式二</a>
+    <h5>fb登入</h5>
+    <a class="btn fb" href="#">facebook登入</a>
+
+    <h5>單顆按鈕(置中)</h5>
+    <div class="btn_box_single">
+        <a class="btn" href="#">按鈕置中啦啦啦</a>
+    </div>
+
+    <h5>單顆按鈕(撐滿)</h5>
+    <a class="btn full" href="#">萬用按鈕</a>
+
+    <h5>雙顆按鈕</h5>
+    <div class="btn_box_two clearfix">
+        <a class="btn" href="#">看上一篇</a>
+        <a class="btn" href="#">看下一篇</a>
+    </div>
+
+    <h4>標題</h4>
+    <h3 class="title_1">我是標題一 預設標題</h3>
+    <h3 class="title_1 left">我是標題一 靠左</h3>
+    <h3 class="title_1">我是標題一加按鈕 <a href="#" class="btn_more">更多新品</a></h3>
+    <h3 class="title_2">我是標題二</h3>
+    <h3 class="title_3">我是標題三</h3>
+
+
+    <h4>更多</h4>
+    <div class="more_box">
+        <a href="#" class="btn_more">更多新品</a>
+    </div>
+
+    <h4>商品狀態標籤</h4>
+    <span class="part_tag color_1">新品</span>
+    <span class="part_tag color_2">促銷</span>
+    <span class="part_tag color_3">免運</span>
+    <span class="part_tag border">現貨</span>
+    <span class="part_tag border">台灣製</span>
+    <span class="part_tag border">母親節推薦</span>
+
+
+    <h4>分隔線</h4>
+    <h6>普通hr</h6>
+    <hr>
+    <h6>樣式一</h6>
+    <div class="line_1"><b></b><span>或</span><b></b></div>
+
+
+    <h4>分頁</h4>
+    <div class="part_pager">
+        <a class="prev" href="#">PREV</a>
+        <ul>
+            <li><span class="current">1</span></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+        </ul>
+        <a class="next" href="#">NEXT</a>
+    </div>
+
+
+
+    <h4>tab</h4>
+    <h6>tab_1</h6>
+    <!-- tab_1 開始-->
+    <div class="tab_1">
+        <div class="tab_menu">
+            <a class="active" href="#">圖文說明</a>
+            <a href="#">商品說明</a>
+            <a href="#">尺寸規格</a>
+        </div>
+    </div>
+    <!-- tab_1 結束-->
+    <h6>tab_02</h6>
+    <!-- tab_2 開始-->
+    <div class="tab_2">
+        <div class="tab_menu">
+            <a href="#" class="btn active">一般購物車(6)</a>
+            <a href="#" class="btn">冷藏購物車(0)</a>
+            <a href="#" class="btn">冷凍購物車(0)</a>
+        </div>
+        <div class="tab_content">
+        </div>
+    </div>
+    <!-- tab_2 結束-->
+
+    <h6>tab_03</h6>
+    <!-- tab_3 開始-->
+    <div class="tab_3">
+        <div class="tab_menu clearfix">
+            <a href="#" class="btn active">會員登入</a>
+            <a href="#" class="btn">加入會員</a>
+        </div>
+    </div>
+    <!-- tab_3 結束-->
+
+
+    <h4>表單</h4>
+    <h6>form_1</h6>
+    <!-- form_1 開始-->
+    <div class="form form_1">
+        <form>
+            <ol>
+                <li class="item name">
+                    <label for="form_name">姓名</label>
+                    <input type="text" id="form_name" name="name" maxlength="80">
+                </li>
+                <li class="item sex">
+                    <label for="form_sex">性別</label>
+                    <select name="form_sex">
+                        <option value="woman" selected>女</option>
+                        <option value="man">男</option> 
+                    </select>
+                </li>
+                <li class="item email">
+                    <label for="form_mail">電子信箱</label>
+                    <input type="email" id="form_mail" name="mail" maxlength="150">
+                </li>
+                <li class="item phone">
+                    <label for="form_phone">手機</label>
+                    <input type="tel" id="form_phone" name="phone" maxlength="12" pattern="09[1-8][0-9]([\-|\s]?)[0-9]{3}\1[0-9]{3}">
+                </li>
+                <li class="item address">
+                    <label for="form_address">地址</label>
+                    <select name="form_address">
+                        <option value="台北市" selected>台北市</option> 
+                        <option value="新北市">新北市</option>
+                    </select>
+                    <select name="form_address">
+                        <option value="南港區" selected>南港區</option> 
+                        <option value="內湖區">內湖區</option>
+                    </select>
+                    <input type="text" id="form_address" name="address">
+                </li>
+                <li class="item password">
+                    <label for="form_password">密碼</label>
+                    <input type="password" id="form_password" name="password" required="required">
+                </li>
+                <li class="item birth">
+                    <label for="form_birth">生日</label>
+                    <input type="date" id="form_birth" name="birth" placeholder="出生年月日（請填寫正確生日）">
+                </li>
+                <li>
+                    <input type="submit" value="確定修改" class="btn">
+                </li>
+            </ol>
+        </form>
+    </div>
+    <!-- form_1 結束-->
+
+    <h6>form_2</h6>
+    <div class="form form_2">
+        <form action="" method="">
+            <ol>
+                <li class="item">
+                    <label for="color_pick">顏色</label>
+                    <select name="color_pic" id="color_pick">
+                        　<option value="Taipei">藍色</option>
+                        　<option value="Taoyuan">紅色</option>
+                        　<option value="Hsinchu">綠色</option>
+                        　<option value="Miaoli">黃色</option>
+                    </select>
+                </li>
+            </ol>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

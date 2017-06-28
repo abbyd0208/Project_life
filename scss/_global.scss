@@ -1,0 +1,71 @@
+/* global.css */
+
+/*所有通用設定-----------------------------------------------------------------------*/
+*, *:before, *:after { font-family:$font-family;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;}
+html{ height:100%;
+-webkit-overflow-scrolling:touch;/*修正ios滾動順暢*/
+-webkit-text-size-adjust:none;/*修正旋轉後文字會變大*/
+-webkit-tap-highlight-color:transparent; outline: 0;/*去除連結的藍底*/}
+body{ height:100%; font-size:16px; line-height:1.7; letter-spacing:0.5px; word-wrap:break-word;/*自動折行*/}
+
+
+/*預設連結狀態*/
+a:link, a:visited{ text-decoration:none;}
+
+/*圖片無框*/
+a img { border:none;}
+
+/*去除圖片底下空白*/
+img{ vertical-align: bottom;}
+
+/*樣式歸零*/
+ol, ul{ list-style:none;}
+
+
+/*h標題設定*/
+@each $h-item, $h-size in $headings {
+  #{$h-item} {
+    font-size: $h-size;
+	font-weight:normal;
+	line-height:$line-height;
+  }
+}
+
+/* .gototop 滾回網頁最上面 ============*/
+.gototop{ 
+	@extend %text-hide;
+	width:45px; 
+	height:45px; 
+	background:$gray url(../images/gototop.png) no-repeat center center; 
+	background-size:100% auto;
+	position:fixed; 
+	right:5px; 
+	bottom:30px; 
+	z-index:100; 
+	cursor:pointer;
+	opacity:0;
+	transition:0.3s ease-in-out;
+	border-radius:74% 86% 84% 68%;
+	&.active { 
+		opacity:0.9; 
+		bottom:70px;
+		&:hover {
+			bottom:80px;
+			border-bottom:4px solid darken($gray, 20);
+		}
+	}
+}
+
+/*大於1100 定位內容旁*/
+@media only screen and (min-width:1100px){
+.gototop { 
+	right:7%;
+	&.active {
+		opacity:1;  
+		right:7%; 
+		bottom:70px;
+	}
+}
+}

@@ -1,0 +1,32 @@
+/*************************variable.scss*********************************/
+//width
+$width-desktop: 1100px;
+
+//breakpoint
+$pc: 1024;
+$pad: 768;
+$padM: 640;
+$mobile: 480;
+$mobileM: 414;
+$mobileS: 360;
+
+// 顏色定義
+$black: #000;
+$gray_dark: #333;
+$gray: #666;
+$gray_light: #999;
+$white: #fff;
+
+// 各區塊顏色
+$btn_color: $gray_dark;
+
+//font
+$font-size: 16px;
+$font-family: "微軟正黑體",Arial, Helvetica, sans-serif;
+$headings:
+	(h1, 1.8rem),
+	(h2, 1.8rem),
+	(h3, 1.2rem),
+	(h4, 1rem),
+	(h5, 0.9rem);
+$line-height: 1.8;
