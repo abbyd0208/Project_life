@@ -27,7 +27,7 @@ letter-spacing:2px;}
 h3.title_1{ text-align: center; border-bottom: 1px solid $gray; padding-bottom: 26px; margin-bottom: 20px;/**/ }
 h3.title_1.left{ text-align: left;}
 h3.title_1 a.btn_more{ display: inline-block; background: #656565;  font-size: 14px; color: $white; letter-spacing: 5px; padding: 10px; border-radius: 50px; float: right;}
-h3.title_1 a.btn_more:hover{ background:#b2b2b2; }
+h3.title_1 a.btn_more:hover{ background:$gray_light; }
 /*標題二*/
 h3.title_2{ font-size:18px; text-align: left; border-top: 1px solid $gray; padding-top: 15px;  margin-bottom: 20px;/**/ }
 /*標題三*/
