@@ -1,0 +1,22 @@
+@charset "utf-8";
+/*------------ 【 關於我們 】 section_about_us ------------*/
+.section_about_us { }
+
+/*pad (768)*/
+@include breakpoint($pad){
+}
+
+
+/*------------ 關於生活倉庫頁 ------------*/
+.section_about_us .story { max-width:800px; margin:0 auto; text-align:center;}
+.section_about_us .story.left { max-width:100%; text-align:left;}
+.section_about_us .story img { max-width:100%; margin-bottom:20px;}
+.section_about_us .story p { margin-bottom:20px;}
+
+
+.section_about_us .story .short { width:400px;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+.section_about_us .story .short { width:auto;}
+}

@@ -1,0 +1,42 @@
+@charset "utf-8";
+/*------------ 【 會員登入 】 section_member_login ------------*/
+.section_member_login { max-width:500px; margin:0 auto; padding-top:40px;}
+.section_member_login p.note { color:$gray;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+.section_member_login { padding:10px;}
+}
+
+
+
+/*------------ 會員登入頁 ------------*/
+.section_member_login .form { margin-bottom:40px;}
+.section_member_login .form .item.check input { width:30px;}
+.section_member_login .form .item input { width:100%;}
+.section_member_login .line_1 { width:300px;}
+
+/*mobileM (414)*/
+@include breakpoint($mobileM){
+.section_member_login .btn { width:100%; }
+.section_member_login .line_1 { width:100%;}
+}
+
+
+
+/*------------ 加入會員頁------------*/
+.section_member_login .box_1 { margin:40px auto;}
+.section_member_login .box_1 input[type="submit"] { margin-bottom: 50px;}
+.section_member_login .box_1 .line_1 { margin-bottom:20px;}
+
+/*mobile (480)*/
+@include breakpoint($mobile){
+.section_member_login .box_1 input[type="submit"] { margin-bottom: 20px;}
+}
+
+/*------------ 忘記密碼頁 ------------*/
+.section_member_login h3 { text-align:center; margin-bottom:30px;}
+
+
+
+

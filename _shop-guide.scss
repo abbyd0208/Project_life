@@ -1,0 +1,13 @@
+@charset "utf-8";
+/*------------ 【 購物指南 】 section_shop_guide ------------*/
+
+// c2
+.section_shop_guide .c2 .title_1 { padding-bottom:5px;}
+
+
+/*------------ list 清單說明 ------------*/
+.list { }
+.list li { padding-left:20px; margin-bottom:40px;}
+.list li h4 { position:relative; cursor:pointer;}
+.list li h4:before { content:""; display:inline-block; width:12px; height:15px; background:$gray_dark; position:absolute; left:-20px; top:7px;}
+.list li p { color:$gray_dark; margin-bottom:20px;}

@@ -1,0 +1,148 @@
+@charset "utf-8";
+/*------------ 【 購物車 】 section_cart ------------*/
+.section_cart { padding:10px; @extend %clearfix;}
+
+/*------------ step 步驟 ------------*/
+.section_cart .step { text-align: center; margin-bottom:30px;}
+.section_cart .step li { display: inline-block; text-align: center; padding:5px 20px;}
+.section_cart .step li strong { display: block; font-size:22px; font-weight:normal;}
+.section_cart .step li span { font-size:17px;}
+.section_cart .step em { display: inline-block; margin:0 10px; position:relative; top:-15px;}
+.section_cart .step + hr { margin-bottom:40px;}
+// active
+.section_cart .step li.active strong { color:$red;}
+.section_cart .step li.active span { color:$red;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+.section_cart .step li { padding:0px 5px;}
+.section_cart .step li strong { font-size:16px;}
+.section_cart .step li span { font-size:13px;}
+.section_cart .step em { margin:0; top:-15px;}
+}
+
+
+
+/*------------ discount 購物金 ------------*/
+.discount { margin-bottom:40px; padding:0;}
+.discount .box_1 { background:$gray; color:#fff; padding:30px;}
+.discount .box_2 { padding:30px;}
+
+.discount .box_1 .form { margin-bottom:0;}
+.discount .box_1 .item { @extend %clearfix; max-width:490px; margin-bottom:10px;}
+.discount .box_1 .item .right { float:right; text-align: right; position: relative; top:-5px;}
+.discount .box_1 .item .right input[type="text"] { height:30px; background:none; color:$white; border:none; border-bottom:1px solid $white;}
+.discount .box_1 .item .right input.code { width:250px;}
+.discount .box_1 .item .right select { height:35px; background-color:$white; padding-right:200px;}
+.discount .box_1 .item .right .btn { padding:5px 20px; margin:0;}
+
+
+
+/*padM (640)*/
+@include breakpoint($padM){
+    .discount .box_1 .item .right { display:block; float:none; text-align: left;}
+    .discount .box_1 .item .right select { padding-right:0; width:100%;}
+    .discount .box_1 .item .right input.code { width:190px;}
+}
+
+
+/*------------ amount 訂單金額 ------------*/
+.center .amount { float:none; margin:0 auto;}
+.amount { width:500px; float:right;}
+.amount .block_1 { padding:15px; margin-bottom:30px;}
+.amount .title_1 { padding-bottom:10px; }
+.amount p { display:block; height:auto; text-align:right; margin-bottom:10px;}
+.amount p.all { border-top: 1px dashed $gray; padding-top:20px; margin-top:20px; margin-bottom:0;}
+.amount p span { float:left;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+.amount { width:auto; max-width:400px; float:none; margin:0 auto;}
+}
+/*mobile (480)*/
+@include breakpoint($mobile){
+.amount .block_1 { border:none;}
+}
+
+
+
+/*------------ order_block 填寫訂單資料 ------------*/
+.order_block { @extend %clearfix;}
+.order_block .box_1 { width:40%; float:left;}
+.order_block .box_1 select { width:calc(100% - 100px);}
+.order_block .box_2 { width:55%; float:right;}
+.order_block .box_3 { width:60%;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+.order_block .box_1 { width:100%;}
+.order_block .box_1 select { width:calc(100% - 100px);}
+.order_block .box_2 { width:100%;}
+.order_block .box_3 { width:100%;}
+}
+
+
+
+/*------------ table_1 購物車內容 ------------*/
+.section_cart .tab_2 .title_1 { display:none;} 
+.section_cart .title_3 { height:30px; font-size:16px; padding:0 0 0 10px; margin-top:20px;} 
+.section_cart .tab_content .note { display:block; padding:30px; border-top: 1px dashed #bbb;}
+
+// table
+.table_1 { width:100%;}
+.table_1 td em { color: $red;}
+.table_1 select { height:30px; width:55px; background-position-y:3px;}
+.table_1 .align_left { text-align: left;}
+// thead
+.table_1 thead th { color: #777; padding: 12px; border-bottom:1px solid $gray;}
+// tr
+.table_1 tbody tr { @extend %clearfix;}
+.table_1 tbody tr + tr { @extend %clearfix; border-top: 1px dashed #bbb;}
+
+// td
+.table_1 td { padding: 12px 6px; font-size:15px; line-height: 1.4; text-align: center; min-width: 76px;}
+.table_1 td.img { width:100px;}
+.table_1 td.large select { width:130px;}
+// 產品名稱
+.table_1 td.info em { font-style: normal; margin-left:5px;}
+.table_1 td.info span { font-style: normal;}
+// 按鈕
+.table_1 a { display: inline-block; vertical-align: middle;}
+.table_1 .btn-holder { min-width: 30px;}
+.table_1 .btn-holder a { display:inline-block; width:40px; height:30px; background-size:100% auto;}
+.table_1 .btn-holder a:hover { background-position: center bottom;}
+.table_1 .favorite a { background-image:url(../images/icon_favorite.svg);}
+.table_1 .delete a { background-image:url(../images/icon_delete.svg);}
+.table_1 .cart a { background-image:url(../images/icon_cart.svg);}
+
+
+/*pad (768)*/
+@include breakpoint($pad){
+	
+    .section_cart .tab_content h4 { display:block; width:100%;}
+    .section_cart .tab_2 .title_1 { display:block; padding-bottom:10px; margin-bottom:10px;} 
+    .table_1 thead { display: none;}
+
+    .table_1 td { padding:5px 0;}
+    .table_1 td[data-title]:before { content: attr(data-title); display: inline-block; color: #aaa; font-size: 13px;}
+    .table_1 td.img { width:100px; vertical-align:top;}
+    .table_1 td.info { width:40%; vertical-align:top;}
+    .table_1 td.right { width:100%; display: block; float:right; text-align:right;}
+    
+    .table_1 .btn-holder { display: block; float:right;}
+}
+
+/*mobile (480)*/
+@include breakpoint($mobile){
+    .table_1 tr,
+    .table_1 td + td { border-left: 0;}
+    .table_1 tr { padding: 10px 0; position: relative; display:block;}
+    .table_1 td { padding: 0; line-height: 2;}
+    .table_1 td.img { float:left; display: block; margin-top:10px; margin-bottom:10px;}
+    .table_1 td.info { display: block; width:100%; padding-top:10px;}
+    .table_1 td.right { clear:both; float:none; text-align:left;}
+
+    .table_1 .btn-holder { position:absolute; right:60px; bottom:15px;}
+    .table_1 .btn-holder.delete { right:0;}
+    .table_1 .btn-holder.favorite { right:40px;}
+}

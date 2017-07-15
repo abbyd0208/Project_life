@@ -1,2 +1,261 @@
 /* layout.css */
 /*********************************** 基本版型 ************************************/
+.wrapper{ width: 100%; position: relative;}
+.wrapper.side_open::before{content: ""; display: block; width: 100%; height: 100%; background:rgba(000,000,000,0.5); position: fixed; left: 0px; top:0px; z-index: 300;}
+/*pad (768)*/
+@include breakpoint($pad){
+    .wrapper{ top:50px;/*空出hearder fix住的高度*/ padding-bottom:50px;/*空出topbar fix住的高度*/}
+}
+
+
+/*top_bar============================================*/
+.top_bar_box{ background: $gray; }
+.top_bar{width: 100%; max-width:$width-desktop; margin: 0 auto; height:65px; @extend %clearfix; position: relative;}
+/*menu_1*/
+.top_bar .menu_1{ float: left; position: absolute; top: 15px;}
+.top_bar .menu_1 a{font-size: 14px; @include link($white,$gray_light)}
+.top_bar .menu_1 a:not(:nth-last-child(1))::after{ content: "|"; display: inline-block; color: $white; margin: 0 5px;}
+/*menu_2 search*/
+.top_bar>.menu_2{ float: right; width:335px; height: 30px;  position: relative; top: 15px; }
+.top_bar .menu_2 .search_box{width: 200px; left: 0px; top: 0px; }
+
+/*menu_2*/
+.top_bar .menu_2 ul{@extend %clearfix; position: absolute; right: 0px; top: 0px;}
+.top_bar .menu_2 li{position:relative; float: left;}
+.top_bar .menu_2 li>a{ display: block; width: 30px; height: 27px; @extend %text-hide;}
+.top_bar .menu_2 li a.blog{display: none;}
+.top_bar .menu_2 li a.member{background: url(../images/icon_member.png) center center no-repeat;background-size: auto 25px;  }
+.top_bar .menu_2 li a.cart{ text-align: center; color: $gray; background: url(../images/icon_cart.png) center center no-repeat;background-size: auto 25px;  }
+.top_bar .menu_2 li a.cart strong{ font-size: 12px;}
+.top_bar .menu_2 li a.fb{background: url(../images/icon_fb.png) center center no-repeat; background-size: auto 25px; }
+/*hover效果*/
+.top_bar .menu_2 li.menu_hover:hover a.member + .sub_menu{display: block;} 
+.top_bar .menu_2 li a.member + .sub_menu{ min-width: 100px; border: 1px solid $gray; background: $white ;position: absolute; left: 0px; top: 27px;  z-index: 50; display: none;}
+.top_bar .menu_2 li a.member+.sub_menu a{display: block; padding: 5px; @include link($gray,$red)}
+
+
+/*pad (768)*/
+@include breakpoint($pad){
+    .top_bar{ position:fixed; bottom: 0px; background: $gray;}
+    .top_bar .menu_1{display: none;}
+    .top_bar>.menu_2{ float: none; height: 50px; width: 430px; margin: 0 auto; text-align: center; top: 5px;  /*border: 1px solid red;*/}
+    .top_bar .menu_2 .search_box{ display: none;}
+    .top_bar .menu_2 ul{position: static;}
+    .top_bar .menu_2 li{}
+    .top_bar .menu_2 li:not(:nth-last-of-type(1)){margin-right: 60px;}
+    .top_bar .menu_2 li>a{ width: 60px; height:50px; padding-top: 32px; overflow:visible;text-indent:0; font-size: 14px; color: $white; border: 1px solid pink;}
+ 
+    .top_bar .menu_2 li a.blog{ display:block; background: url(../images/icon_blog.png) top center no-repeat; background-size: auto 30px; }
+    .top_bar .menu_2 li a.member{background-size: auto 30px; background-position: top center;}
+    .top_bar .menu_2 li a.cart{background-size: auto 30px;background-position: top center;color: $white; position: relative;}
+    .top_bar .menu_2 li a.cart strong{ position: absolute; top: 10px; left: 50%; margin-left: -4px; color: $gray;}
+    .top_bar .menu_2 li a.fb{background-size: auto 30px;background-position: top center;}
+}
+
+/*mobile (480)*/
+@include breakpoint($mobile){
+    .top_bar{ height:50px;}
+    .top_bar>.menu_2{ width: 360px;}
+    .top_bar .menu_2 li:not(:nth-last-of-type(1)){margin-right: 40px;}
+    .top_bar .menu_2 li>a{width: 60px; height: 40px; background-size: auto 22px; border: 1px solid green;padding-top: 20px;}
+    .top_bar .menu_2 li a.blog{background-size: auto 20px;}
+    .top_bar .menu_2 li a.member{background-size: auto 20px;}
+    .top_bar .menu_2 li a.cart{background-size: auto 20px;}
+    .top_bar .menu_2 li a.cart strong{ top: 2px;}
+    .top_bar .menu_2 li a.fb{background-size: auto 20px;}
+}
+/*$mobileS (360)*/
+@include breakpoint($mobileS){
+    .top_bar{ height:45px;}
+    .top_bar>.menu_2{ width: 276px;}
+    .top_bar .menu_2 li:not(:nth-last-of-type(1)){margin-right: 12px;}
+    .top_bar .menu_2 li>a{width: 60px; height: 40px; background-size: auto 22px; border: 1px solid green;padding-top: 15px;}
+    .top_bar .menu_2 li a.blog{background-size: auto 18px;}
+    .top_bar .menu_2 li a.member{background-size: auto 18px;}
+    .top_bar .menu_2 li a.cart{background-size: auto 18px;}
+    .top_bar .menu_2 li a.cart strong{ font-size: 12px;}
+    .top_bar .menu_2 li a.fb{background-size: auto 18px;}
+}
+
+/*header================================*/
+.header_box{}
+.header{ width: 100%; max-width:$width-desktop; margin: 0 auto;  height: 100px; position: relative;}
+.header h1.logo_life{ width: 194px; height: 56px; position: absolute; left: 0px; top: 20px;}
+.header h1.logo_life a{ display:block; width: 194px; height: 56px; background:url(../images/logo_life.svg) center center no-repeat; background-size: 194px 56px; 
+@extend %text-hide;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+    .header{ height: 50px; background:$white; position: fixed; top: 0px; z-index: 100;}
+    .header h1.logo_life{width: 130px; margin: 0 auto; position: static;}
+    .header h1.logo_life a{ width: 130px; height: auto;background-size: 130px auto;}
+}
+
+/*mobileS (360)*/
+@include breakpoint($mobileS){
+    .header h1.logo_life{width: 120px;}
+    .header h1.logo_life a{ width: 120px; height: auto; background-size: 120px auto;}
+}
+
+/*開關*/
+.switch{ width: 35px; height: 35px; }
+.header .btn_side_open{display: none;background: url(../images/icon_switch.png) left center no-repeat; background-size: auto 35px;  position: absolute; left:20px; top: 8px; }
+#main_nav .btn_side_close{display: none; background: url(../images/icon_switch.png) right center no-repeat; background-size: auto 35px; }
+
+
+/*pad (768)*/
+@include breakpoint($pad){
+    /*開關*/
+    .header .btn_side_open{display:block;}
+    #main_nav .btn_side_close{display: block; position: fixed; left:310px; top:5px;z-index: 9999; }
+}
+
+/*mobile (480)*/
+@include breakpoint($mobile){
+
+    .header .btn_side_open{ background-size: auto 25px;  position: absolute; left:20px; top: 8px; }
+    #main_nav .btn_side_close{ background-size: auto 30px; }
+
+}
+
+/*nav===================================*/
+#main_nav{ display: block; width:$width-desktop;  min-width:$width-desktop; margin: 0 auto;  border-bottom:1px solid $gray; padding-bottom: 10px;}
+#main_nav .inner{} 
+/*第一層*/
+#main_nav .inner > ul{position: relative; @extend %clearfix;}
+#main_nav .inner > ul > li{ float: left;}
+#main_nav .inner > ul > li > a{ display: block; width: 66px; text-align: center; font-size: 16px; color: $gray_dark; margin: 0px 21px;}
+#main_nav .inner > ul > li > a > span{ display: block; width: 40px; height: 40px; margin: 0 auto;}
+#main_nav .inner > ul > li > a > span > img{ display: block; width:auto; height: 100%; }
+
+/*第二層選單效果寫在.menu_hover上 顯示第二層選單 手機版移除效果 */
+#main_nav .inner > ul > li.menu_hover:hover > a{color: $red;}
+#main_nav .inner > ul > li.menu_hover:hover ul.second { display: block;/*到手機版的時候要remove menu_hover*/}
+
+/*第二層*/
+#main_nav .inner ul.second { width: 100%; max-width: 1220px; background:$white; position: absolute; left: 0px; top:66px; z-index: 50;  display: none;  @extend %clearfix; border: 1px solid red;}
+
+#main_nav .inner ul.second > li{ float:left; padding:20px; margin-left:20px;}
+#main_nav .inner ul.second > li> a{ display: block; margin-bottom: 20px; color:$gray; font-weight:bold;}
+/*第三層*/
+#main_nav .inner ul.second .third{ border: 1px solid #fff;}
+#main_nav .inner ul.second .third > a{ display: block; color:$gray;}
+
+/*手機選單內搜尋*/
+#main_nav .search_box{ display: none;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+    /*第一層===============*/
+    #main_nav{ min-width: auto; width: 300px; height: 100%;/*要用程式取*/ background: $gray_menu;  border-bottom:0px ; padding-bottom:0px; position: fixed; left:0px; top: 0px; z-index:500; display:none;/*測試時打開*/ }
+    #main_nav .inner{height: 100%; overflow-y: auto;  border: 2px solid red;}
+    #main_nav .inner > ul > li{ float: none; height: auto; line-height: 3;}
+    #main_nav .inner > ul > li > a{ padding: 0px;}
+    #main_nav .inner > ul > li > a > span{display: none;}
+    /*M顯示第二層選單*/
+    #main_nav .inner > ul > li > a.show_second + ul.second{ display: block;}
+    /*第二層=================*/
+    #main_nav .inner ul.second{ position:static; display: none;/*測試第一層選單，先藏起來*/background:$white; }
+    #main_nav .inner ul.second > li{ float: none; padding:0px; margin-left:auto; padding:0 20px;}
+    #main_nav .inner ul.second > li> a{ margin-bottom: 0px; padding:5px; font-weight:normal;}
+    #main_nav .inner ul.second > li> a::before{content: ""; display: inline-block; width: 9px; height: 9px; background: url(../images/icon_dot.png) center center no-repeat; background-size: 9px; margin: 0 3px;}
+    /*M顯示第三層*/
+    #main_nav .inner ul.second > li> a.show_third + .third{ display:block;}   
+    /*第三層====================*/
+    #main_nav .inner ul.second .third{ border-top: 2px dotted $red; padding: 5px; display: none;/*測試第二層選單，先藏起來*/}
+    #main_nav .inner ul.second .third > a{ display: block; color: $red;  padding-left: 20px;}
+    /*搜尋*/
+    #main_nav .search_box{ width: 250px;  display: block; margin: 20px 0px 10px 25px; padding-bottom: 10px; border-bottom: 1px solid $gray;}
+    #main_nav .search_box input.keyword{ width: 250px;}
+    #main_nav .search_box label{ font-size: 14px;}
+}
+
+
+/*------------ side_nav 側選單 【PC only】------------*/
+.side_nav { }
+.side_nav ul { }
+.side_nav ul li { }
+.side_nav ul li a { display:block; color:$gray; padding:10px; position: relative;}
+.side_nav ul li a:before { content:""; display:block; width:30px; height:30px;
+background:url("../images/icon_arrow.svg") no-repeat center top; background-size:100% auto;
+position: absolute; right:0; top:8px; transform: rotate(-90deg);}
+.side_nav ul li a:hover ,
+.side_nav ul li a.active { background:$gray_dark; color:$white;}
+.side_nav ul li a:hover:before,
+.side_nav ul li a.active:before{ background-position: center -20px;}
+/*pad (768)*/
+@include breakpoint($pad){
+	.side_nav { display:none;}
+}
+
+/*------------ side_nav_mobile 選單 【moible only】 ------------*/
+.side_nav_mobile { margin:0 auto 30px auto; display:none;}
+.side_nav_mobile .form select { width:100%; background-size: 30px auto; background-position-y: 13px;}
+/*pad (768)*/
+@include breakpoint($pad){
+	.side_nav_mobile { display:block;}
+}
+/*padM (640)*/
+@include breakpoint($padM){
+	.side_nav_mobile .form select { background-position-y: 5px;}
+}
+
+
+.container_box{}
+.container{ width: $width-desktop ;margin: 0 auto;}
+
+ /*pc (1024)*/
+@include breakpoint($pc){
+    .container{ width: $pc+px;}
+}
+
+ /*pad (768)*/
+@include breakpoint($pad){
+    .container{ width: $pad+px; padding: 20px;}
+}
+
+ /*mobile (480)*/
+@include breakpoint($mobile){
+    .container{ width: 100%; padding: 15px;}
+}
+
+/*------------ 版型 2欄式 ------------*/
+.layout_col_2 { @extend %clearfix; padding:10px;}
+.layout_col_2 .c1 { float:left; width:200px;}
+.layout_col_2 .c2 { float:right; width:calc(100% - 280px); padding-top:20px;}
+
+@include breakpoint($pad){
+	.layout_col_2 .c1 { width:100%;}
+    .layout_col_2 .c2 { width:100%;}
+}
+
+
+.footer_box{height: 210px; background:$gray;}
+.footer{  width: 100%; max-width:$width-desktop; margin: 0 auto; text-align: center; font-size: 14px; padding-top: 48px;}
+.footer .menu_1{}
+.footer .menu_1 a{ display: inline-block; height: 50px; width: 50px; }
+.footer .menu_1 a.icon_ig{ background: url(../images/icon_ig.png) center center no-repeat; background-size: 50px 50px; margin-right: 10px;}
+.footer .menu_1 a.icon_line{ background: url(../images/icon_line.png) center center no-repeat; background-size: 50px 50px;}
+.footer .menu_2 a{color: $white;}
+.footer .menu_2 a:nth-last-child(1)::before{ display: inline-block; content: "|"; margin: 0 5px;}
+.footer p{ color: $white;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+    .footer_box{height: 145px; background: $gray_lighter;}
+    .footer{ padding-top: 22px;}
+    .footer .menu_1 a{ height: 40px; width: 40px; }
+    .footer .menu_1 a.icon_ig{ background: url(../images/icon_ig.png) center center no-repeat; background-size: 40px 40px; }
+    .footer .menu_1 a.icon_line{ background: url(../images/icon_line.png) center center no-repeat; background-size: 40px 40px;}
+    .footer .menu_2 a{ color: $gray;}
+    .footer p{ color: $gray;}
+}
+
+/*pad (768)*/
+@include breakpoint($mobile){
+    .footer_box{height: 118px; background: $gray_lighter;}
+    .footer{ padding-top: 22px;}
+    .footer .menu_1 a{ height: 33px; width: 33px; }
+    .footer .menu_1 a.icon_ig{ background: url(../images/icon_ig.png) center center no-repeat; background-size: 33px 33px;}
+    .footer .menu_1 a.icon_line{ background: url(../images/icon_line.png) center center no-repeat; background-size:33px 33px;}
+}

@@ -1,0 +1,48 @@
+/*******global.css**************************************************************/
+
+* { 
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+html{
+font-size: 100%; /* 1 */
+-webkit-text-size-adjust: 100%; /* 2 */
+-ms-text-size-adjust: 100%; /* 2 */
+}
+
+body { font-family: Meiryo,'微軟正黑體'; font-size:16px; line-height:1.5;   }
+
+ul{ list-style:none;}
+
+a{outline: none; /* for Firefox */}
+
+/*預設連結狀態*/
+
+a:link, a:visited {  text-decoration:none; color: #333333; transition: all .2s linear; }
+a:hover, a:active {  text-decoration:none; }
+
+/*圖片無框*/
+a img { border:none; }
+
+
+ /*h標題設定*/
+h1 { font-size:20px; font-weight:normal; }
+h2 { font-size:20px; font-weight:normal;  }
+h3 { font-size:18px; font-weight:normal;  letter-spacing: 2px; color:#656565;}
+h4 { font-size:20px; font-weight:normal; }
+
+/*清除 clearfix*/
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix {*zoom: 1; _zoom: 1; }
+
+/*更多*/
+a.more{ display: inline-block; min-width:100px; height:30px; line-height:30px;  text-align:center; background:yellowgreen; border-radius:5px;}
+.more_box{ clear:both;  height:30px;}
+.more_box a.more{ float:right;}
+
+/*回上層*/
+.gototop{ width:50px; height:50px; line-height:60px; text-align:center; background:rgba(0,0,0,0.5); border-radius:5px; position:fixed; right:50px; bottom:50px; cursor:pointer;}
+.gototop i{ color:#fff; font-size:30px;}
+

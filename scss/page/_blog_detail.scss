@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+
+.section_blog_detail{ }
+// title
+.section_blog_detail .title{ border-bottom: 1px solid $gray; margin-bottom: 20px;}
+.section_blog_detail .title h1{ font-weight: bold; font-size: 21px; letter-spacing: 2px;}
+.section_blog_detail .title .date{ font-size: 15px; color: $gray_light; margin-bottom: 10px;}
+
+.section_blog_detail .story{}
+
+/*part_thumb_1  三欄*/
+.section_blog_detail .part_thumb_1{ max-width: 900px; margin: 0 auto;}
+.section_blog_detail .part_thumb_1 .piece{ }
+.section_blog_detail .part_thumb_1 .piece:not(:nth-child(4n-4)){margin-right:0px;}
+.section_blog_detail .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:34px;}
+
+@include breakpoint($pad){  
+    .section_blog_detail .part_thumb_1 .piece{ width: 230px; min-height:368px;}
+    .section_blog_detail .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:13px;}
+}
+
+@include breakpoint($mobile){
+    .section_blog_detail .part_thumb_1 .piece{ width: 48%; min-height:290px; margin-bottom:30px; }
+    .section_blog_detail .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:0px;}
+    .section_blog_detail .part_thumb_1 .piece:not(:nth-child(2n-2)){margin-right:2%;}
+}
+
+// 推薦閱讀============================
+.gallery_5{ clear: both;}
+
+/*外掛歸零*/
+.gallery_5 .bx-wrapper{}
+.gallery_5 .bx-wrapper .bx-viewport{  box-shadow:none; border:none; left:0px;}
+@media only screen and (max-width:768px) {
+   .gallery_5 .bx-wrapper{} 
+}
+/*滾動組*/
+.gallery_5 .run{ @extend %clearfix; }
+.gallery_5 .run .inner{}
+
+// 方向鍵
+.gallery_5 .bx-wrapper .bx-controls-direction a{ width: 24px; height: 34px;}
+.gallery_5 .bx-wrapper .bx-prev{left: -50px; background: url(../images/icon_arrow_3.png) left top no-repeat; background-size: auto 70px; }
+.gallery_5 .bx-wrapper .bx-next{right: -50px;background: url(../images/icon_arrow_3.png) right top no-repeat; background-size: auto 70px;}
+/*hover*/
+.gallery_5 .bx-wrapper .bx-prev:hover{ background-position: left bottom;}
+.gallery_5 .bx-wrapper .bx-next:hover{ background-position: right bottom;}
+/*組*/
+.gallery_5 .run .inner .piece{margin-right: 15px;}
+/*圖片*/
+.gallery_5 .run .inner .piece a.pic{ display:block; width: 360px; height: 203px; overflow: hidden;}
+.gallery_5 .run .inner .piece a.pic img{ width: 100%; height: auto; display: none;}
+
+@include breakpoint($pc) {
+   .gallery_5 .run .inner .piece a.pic{ width: 280px; height: 180px;}
+}

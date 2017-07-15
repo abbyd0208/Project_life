@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>part</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+
+		.box>p {
+			font-size: 24px;
+			margin-bottom: 30px;
+			color: orange;
+		}
+
+		.box {
+			margin: 20px auto 50px auto;
+		}
+
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="box">
+			<p>標題</p>
+			<h3 class="title_1">我是標題一 預設標題</h3>
+			<h3 class="title_1 left">我是標題一 靠左</h3>
+			<h3 class="title_1">我是標題一加按鈕 <a href="#" class="btn_more">更多新品</a></h3>
+			<h3 class="title_2">我是標題二</h3>
+			<h3 class="title_3">我是標題三</h3>
+		</div>
+
+		<div class="box">
+			<p>商品狀態標籤</p>
+			<div class="product_tag">
+				<div class="tag_1">
+					<span class="part_tag color_1">新品</span>
+					<span class="part_tag color_2">促銷</span>
+					<span class="part_tag color_3">免運</span>
+					<span class="part_tag border">現貨</span>
+				</div>
+				<div class="tag_2">
+					<span class="part_tag border">台灣製</span>
+					<span class="part_tag border">母親節推薦</span>
+				</div>
+			</div>
+			
+			
+		</div>
+
+		<div class="box">
+			<p>麵包屑</p>
+			<div class="part_breadcrumb_1">
+				<a href="#">居家雜貨</a> <span class="current">寢具被套</span>
+			</div>
+		</div>
+
+
+		<div class="box">
+			<p>tab按鈕</p>
+			<div class="tab_1" id="tab_switch">
+				<div class="tab_menu  clearfix">
+					<a class="current" href="#">圖文說明</a>
+					<a href="#">商品說明</a>
+					<a href="#">尺寸規格</a>
+				</div>
+				<div class="tab_content">
+					<div class="piece">
+						<p>內容1</p>
+					</div>
+					<div class="piece">
+						<p>內容2</p>
+					</div>
+					<div class="piece">
+						<p>內容3</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="box">
+			<p>更多</p>
+			<div class="more_box">
+				<a href="#" class="btn_more">更多新品</a>
+			</div>
+		</div>
+
+
+
+		<div class="box">
+			<p>表單</p>
+			<div class="form form_2">
+				<form action="" method="">
+					<ul>
+						<li class="item">
+							<label for="color_pick">顏色</label>
+							<select name="color_pic" id="color_pick">
+                                　<option value="Taipei">藍色</option>
+                                　<option value="Taoyuan">紅色</option>
+                                　<option value="Hsinchu">綠色</option>
+                                　<option value="Miaoli">黃色</option>
+                            </select>
+						</li>
+						<li class="item">
+							<label for="color_pick">數量</label>
+							<select name="color_pic" id="color_pick">
+                                　<option value="Taipei">藍色</option>
+                                　<option value="Taoyuan">紅色</option>
+                                　<option value="Hsinchu">綠色</option>
+                                　<option value="Miaoli">黃色</option>
+                            </select>
+						</li>
+					</ul>
+				</form>
+			</div>
+
+		</div>
+
+		<!--add-->
+		<div class="form form_3">
+			<form>
+				<ol>
+					<li class="item">
+						<select name="color_pic" id="color_pick">
+							　<option value="Taipei">分類1</option>
+							　<option value="Taoyuan">分類2</option>
+							　<option value="Hsinchu">分類3</option>
+							　<option value="Miaoli">分類4</option>
+						</select>
+					</li>
+					<li class="item">
+						<select name="color_pic" id="color_pick">
+							　<option value="Taipei">排序方式1</option>
+							　<option value="Taoyuan">價格由低到高</option>
+							　<option value="Hsinchu">價格由高到低</option>
+							　<option value="Miaoli">商品新到舊</option>
+							　<option value="Miaoli">商品舊到新</option>
+						</select>
+					</li>
+				</ol>
+			</form>
+		</div>
+
+
+
+
+		<div class="box">
+			<p>分頁</p>
+			<div class="part_pager">
+				<a class="prev" href="#">PREV</a>
+				<ul>
+					<li><span class="current">1</span></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+				</ul>
+				<a class="next" href="#">NEXT</a>
+			</div>
+		</div>
+
+
+		<div class="box">
+			<p>商品列表 part_thumb_1</p>
+			<div class="part_thumb_1">
+				<div class="piece">
+					<a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
+					<h2>英式格紋床包組</h2>
+					<p>
+						<span class="item_old_price">NT.390</span>
+						<span>NT.343</span>
+					</p>
+				</div>
+				<div class="piece">
+					<a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
+					<h2>英式格紋床包組</h2>
+					<p>
+						<span class="item_old_price">NT.390</span>
+						<span>NT.343</span>
+					</p>
+					<div class="product_tag">
+						<div class="tag_1">
+							<span class="part_tag color_1">新品</span>
+							<span class="part_tag color_2">促銷</span>
+							<span class="part_tag color_3">免運</span>
+							<span class="part_tag border">現貨</span>
+						</div>
+						<div class="tag_2">
+							<span class="part_tag border">台灣製</span>
+							<span class="part_tag border">母親節推薦</span>
+						</div>
+					</div>
+				</div>
+				<div class="piece">
+					<a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
+					<h2>英式格紋床包組</h2>
+					<p>
+						<span class="item_old_price">NT.390</span>
+						<span>NT.343</span>
+					</p>
+				</div>
+				<div class="piece">
+					<a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
+					<h2>英式格紋床包組</h2>
+					<p>
+						<span class="item_old_price">NT.390</span>
+						<span>NT.343</span>
+					</p>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="box">
+			<p>文章列表</p>
+			<div class="part_pictxt_1">
+				<div class="piece">
+					<a class="pic" href="#"><img src="images/270@2x.jpg" alt=""/></a>
+					<h3><a href="#">我是標題</a></h3>
+					<p class="date">2017/05/15</p>
+					<p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
+				</div>
+				<div class="piece">
+					<a class="pic" href="#"><img src="images/270@2x.jpg" alt=""/></a>
+					<h3><a href="#">我是標題</a></h3>
+					<p class="date">2017/05/15</p>
+					<p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
+				</div>
+				<div class="piece">
+					<a class="pic" href="#"><img src="images/270@2x.jpg" alt=""/></a>
+					<h3><a href="#">我是標題</a></h3>
+					<p class="date">2017/05/15</p>
+					<p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
+				</div>
+				<div class="piece">
+					<a class="pic" href="#"><img src="images/270@2x.jpg" alt=""/></a>
+					<h3><a href="#">我是標題</a></h3>
+					<p class="date">2017/05/15</p>
+					<p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
+				</div>
+
+			</div>
+		</div>
+
+		
+	</div>
+</body>
+
+</html>
