@@ -1,14 +1,15 @@
 @charset "utf-8";
 /*------------ 【 空白頁 】 section_blank ------------*/
 .section_blank { max-width:300px; text-align: center; margin:0 auto; padding:20px;}
-.section_blank .pic { margin-bottom:20px;}
+.section_blank .pic { margin-bottom:20px; margin:0 auto 20px auto;}
 .section_blank .pic img { max-width:100%; height:auto;}
 .section_blank p { color:$gray; line-height:2;}
 /*pad (768)*/
 @include breakpoint($pad){
+    .section_blank .pic { max-width:120px;}
 }
 
 
-
 /*------------ 流量過大頁 ------------*/
+/*------------ 錯誤頁 ------------*/
 

@@ -4,6 +4,8 @@
 
 /*pad (768)*/
 @include breakpoint($pad){
+    .section_about_us .c1 { border-bottom:1px solid $gray; margin-bottom:20px;}
+    .section_about_us .title_1 { display: none;}
 }
 
 
@@ -20,3 +22,7 @@
 @include breakpoint($pad){
 .section_about_us .story .short { width:auto;}
 }
+
+/*------------ 聯絡我們頁 ------------*/
+.section_about_us .form_1 .item label { font-size:16px;} 
+.section_about_us .form_1 .item.address select { margin-right:0;}

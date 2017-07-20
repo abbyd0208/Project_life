@@ -1,9 +1,11 @@
 @charset "utf-8";
 /*------------ 【 購物指南 】 section_shop_guide ------------*/
 
-// c2
-.section_shop_guide .c2 .title_1 { padding-bottom:5px;}
-
+/*pad (768)*/
+@include breakpoint($pad){
+    .section_shop_guide .c1 { border-bottom:1px solid $gray; margin-bottom:20px;}
+    .section_shop_guide .title_1 { display: none;}
+}
 
 /*------------ list 清單說明 ------------*/
 .list { }
