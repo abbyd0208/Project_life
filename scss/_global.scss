@@ -12,7 +12,8 @@ body{ height:100%; font-size:16px; line-height:1.7; letter-spacing:0.5px; word-w
 
 
 /*預設連結狀態*/
-a:link, a:visited{ text-decoration:none;}
+a:link, a:visited{ color:$gray_dark; text-decoration:none;}
+a:hover, a:active{ color:$gray;}
 
 /*圖片無框*/
 a img { border:none;}
@@ -38,8 +39,8 @@ ol, ul{ list-style:none;}
 	@extend %text-hide;
 	width:45px; 
 	height:45px; 
-	background:$gray url(../images/gototop.png) no-repeat center center; 
-	background-size:100% auto;
+	background:$gray url(../images/gototop.svg) no-repeat center center; 
+	background-size:65% auto;
 	position:fixed; 
 	right:5px; 
 	bottom:30px; 

@@ -17,11 +17,11 @@
     
     .album .row{min-width:auto;}
     .album .row .col:not(:nth-last-of-type(1)){ margin-right: 2%;}
-    .album .row .col_1{ width:49%; height:0; padding-bottom: 32.5%; border: 1px solid green;}
+    .album .row .col_1{ width:49%; height:0; padding-bottom: 32.5%;}
     .album .row .col_2{ width:58%; height:0; padding-bottom: 38.5%;}
     .album .row .col_3{ width:40%;height:0; padding-bottom: 38.5%;}
-    .album .row .col_4{ width:36%; height:0; padding-bottom: 23.5%; border: 1px solid blue;}
-    .album .row .col_5{ width:24%; height:0; padding-bottom: 23.5%;border: 1px solid blue;}
+    .album .row .col_4{ width:36%; height:0; padding-bottom: 23.5%;}
+    .album .row .col_5{ width:24%; height:0; padding-bottom: 23.5%;}
 }
 
 @include breakpoint($padM){

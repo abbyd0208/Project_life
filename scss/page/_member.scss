@@ -144,6 +144,10 @@
 	.table_2 thead th { padding:5px 0px; font-size:14px;}
 	.table_2 td { padding:30px 4px;}
 }
+/*mobileS (360)*/
+@include breakpoint($mobileS){
+	.table_2 td { padding:30px 0px; font-size:13px;}
+}
 
 
 

@@ -1,0 +1,196 @@
+/*========================global=======================*/
+/* variable */
+@import "variable";
+/* mixin */
+@import "mixin/default";
+@import "mixin/breakpoint";
+/*=============================layout===============================*/
+.wrapper.side_open::before{background:rgba(000,000,000,0.5);}
+.top_bar_box{ background: $gray;}
+.top_bar .menu_1 a{ @include link($white,$gray_light)}
+.top_bar .menu_1 a:not(:nth-last-child(1))::after{ color: $white;}
+.top_bar .menu_2 li a.cart{color: $gray;}
+.top_bar .menu_2 li a.member + .sub_menu{border: 1px solid $gray; background: $white;}
+.top_bar .menu_2 li a.member + .sub_menu a{@include link($gray,$red)}
+
+/*pad (768)*/
+@include breakpoint($pad){
+    .top_bar{background: $gray;}
+    .top_bar .menu_2 li>a{color: $white;}
+    .top_bar .menu_2 li a.cart{color: $white;}
+    .top_bar .menu_2 li a.cart strong{color: $gray;}
+}
+
+/*pad (768)*/
+@include breakpoint($pad){
+  .header{background:$white;}  
+}
+
+#main_nav{border-bottom:1px solid $gray}
+#main_nav .inner > ul > li > a{color: $gray_dark;}
+#main_nav .inner > ul > li.menu_hover:hover > a{color: $red;}
+#main_nav .inner ul.second{background:$white; border: 1px solid $gray_lighter;}
+#main_nav .inner ul.second > li> a{color:$gray;}
+#main_nav .inner ul.second .third{border: 1px solid #fff;}
+#main_nav .inner ul.second .third > a{  color:$gray;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+    #main_nav{background: $gray_menu;}
+    #main_nav .inner > ul > li.mobile_only{ background: $gray; }
+    #main_nav .inner > ul > li.mobile_only a{color: $white;}
+    #main_nav .inner ul.second{background:$white;}
+    #main_nav .inner ul.second .third{border-top: 2px dotted $red; }
+    #main_nav .inner ul.second .third > a{color: $red;}
+    #main_nav .search_box{border-bottom: 1px solid $gray;}
+}
+
+/*------------ side_nav 側選單 【PC only】------------*/
+.side_nav ul li a {color:$gray; }
+.side_nav ul li a.active{ background:$gray_dark; color:$white;}
+
+/*footer=========================*/
+.footer_box{background:$gray;}
+.footer .menu_2 a{color: $white;}
+.footer p{ color: $white;}
+/*pad (768)*/
+@include breakpoint($pad){
+   .footer_box{ background: $gray_lighter;} 
+   .footer .menu_2 a{ color: $gray;}
+   .footer p{ color: $gray;}
+}
+
+
+/*===============================block===================================*/
+.btn, a.btn {background:$gray_dark; color:$white;}
+a.btn.style_1 { background:$white; color:$black; border:1px solid $gray_light;}
+a.btn.style_2 { background:$gray_light; color:$white;}
+a.btn.fb{ color: $white; background:$fb;}
+
+h3.title_1{border-bottom: 1px solid $gray;}
+h3.title_1 a.btn_more{ background: $gray; color: $white;}
+h3.title_1 a.btn_more:hover{ background:$gray_light;}
+h3.title_2{ border-top: 1px solid $gray;}
+h3.title_3{ color: $white; background: $gray;}
+
+.product_tag .part_tag.color_1{ background:$gray; color: $white;}
+.product_tag .part_tag.color_2{ background: $red; color: $white;}
+.product_tag .part_tag.color_3{ background: $gray_dark;color: $white;}
+.product_tag .part_tag.border{ border: 1px solid $gray_dark;}
+
+.part_breadcrumb_1>a,.part_breadcrumb_1 span.current{color: $gray_dark;}
+.part_breadcrumb_1>a:hover{ color: $gray;}
+
+.line_1 span{color:$gray_light;}
+.line_1 b{background: $gray_light;}
+
+.more_box .btn_more{@include bg-color($gray,$gray_light)}
+
+.part_pager a{@include link($gray, $gray_light);}
+.part_pager li> span.current{ color: $white; background: $gray; }
+.part_pager li > a:hover{  color: $white; background:$gray_light;}
+
+/*tab_1====================AB*/
+.tab_1 .tab_menu{border: 1px solid $gray;}
+.tab_1 .tab_menu a{ border-right: 1px solid $gray_light ; color: $gray_light;}
+.tab_1 .tab_menu a:hover{background: $gray_light; color: $white;}
+.tab_1 .tab_menu a.current{ background: $gray; color: $white;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+    .tab_1 .tab_menu{  border-top: 1px solid $gray}
+    .tab_1 .tab_menu a:hover{ color: $gray_dark;}
+    .tab_1 .tab_menu a.current{ background:$white; color: $gray_dark; }
+    .tab_1 .tab_menu a.current:after,.tab_1 .tab_menu a:hover:after{ background: $gray_dark;}
+}
+
+/*tab_2========================*/
+.tab_2 .tab_menu a.btn{}
+.tab_2 .tab_menu a.btn.active{}
+.tab_2 .tab_content{}
+
+/*mobile (480)*/
+@include breakpoint($mobile){
+.tab_2 .tab_menu a.btn.active { border-bottom:1px solid #999;}
+}
+
+/*tab_3========================*/
+.tab_3 .tab_menu a{background:$gray; color:$white;}
+.tab_3 .tab_menu a.active { background:$white; color:$gray;; border:1px solid $gray;}
+
+/*form========================*/
+
+.form textarea{ border:1px solid $gray_light;}
+.form input:focus, .form select:focus{ border:1px solid $gray_dark;}
+.form option { background-color:$white;} 
+.form .item.check span { color:$gray_dark;}
+
+
+// block_1==================
+.block_1 { border:1px solid $gray_light;}
+.block_1 .title_1,
+.block_2 .title_1 { color:$gray_dark;}
+
+/*AB search==================================*/
+.search_box input.keyword{border: 1px solid $gray;}
+
+.note{color:$gray; }
+
+.part_thumb_1 .piece > p span{color: $red; }
+.part_thumb_1 .piece > p span.item_old_price{ color: $gray_light;}
+
+
+.part_pictxt_1 .piece h3{ border-bottom: 1px solid $gray;}
+.part_pictxt_1 .piece h3 a{ @include link($gray_dark,$gray);}
+.part_pictxt_1 .piece p.date{color: $gray;}
+.part_pictxt_1 .piece p.summary{color: $gray;}
+
+
+.gallery_1 .bx-wrapper .bx-pager.bx-default-pager a{ @include bg-color($white,$gray_light); }
+.gallery_1 .bx-wrapper .bx-pager.bx-default-pager a.active{background: $gray_light;}
+
+/*story 基本樣式 ================*/
+.story {}
+/*標題*/
+.story h1,
+.story h2,
+.story h3,
+.story h4,
+.story h5,
+.story h6 { color:$gray;}
+/*列表*/
+.story ol { color:$gray;}
+.story ul { color:$gray; }
+.story ul li:before{ background:$gray;}
+/*引言*/
+.story a { @include link ($red,$red);}
+.story blockquote{background:$gray_light; border-bottom:2px solid $gray_light;}
+.story tr th { background:$gray; color:#fff; }
+.story tr td { border:1px solid $gray_light; color:$gray;}
+.story table tr:hover td { background:$gray_light; }
+
+/*product_list=========*/ 
+.section_product_list .select_box a{color: $gray;}
+.select_box .item_2 a+.sub{ border: 1px solid $gray; background: $white;}
+// 次選單
+.section_product_list .select_box .item_2 a+.sub{ border: 1px solid $gray;  background: $white;}
+// inputrange
+.section_product_list .select_box .item_2 .sub .select_range .irs-bar{ background: $gray; border-color: $gray;}
+.select_box .irs-to, .select_box .irs-single{ background: $gray;}
+.section_product_list .select_box .item_2 .sub .select_range .irs-slider{box-shadow:none; background: $gray_light;}
+
+// section_product_detail==========
+.section_product_detail .price span.item_old_price{color: $gray_light;}
+.section_product_detail .info{ border: 1px solid $gray;}
+.section_product_detail .area_2 .form_2 li a.btn.sale{background:$red;}
+
+// section_blog_detail=============
+.section_blog_detail .title{ border-bottom: 1px solid $gray;}
+.section_blog_detail .title .date{ color: $gray_light;}
+.gallery_5 .run .inner .piece h3 a{ color: $gray;}
+// .section_onsale===================
+.section_onsale .info{border: 1px solid $gray;}
+
+//section_onsale_plus==================== 
+.section_onsale_plus .info{border: 1px solid $gray;}
+.section_onsale_plus .part_thumb_1{ border:1px solid $gray;}

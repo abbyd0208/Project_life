@@ -3,7 +3,8 @@
 /**********************************************************內容模組****************************************************************************/
 /*btn 單顆按鈕=======================*/
 .btn, a.btn { display:inline-block; margin:10px 10px 10px 0px; padding:5px 60px; font-size:15px; background:$gray_dark; color:$white;
-letter-spacing:2px;}
+letter-spacing:2px; -webkit-appearance:none; border-radius:0;}
+.btn:hover, a.btn:hover { background:$gray;}
 /*撐滿*/
 a.btn.full { display:block; text-align:center; margin-right:0px;}
 /*顏色*/
@@ -24,41 +25,47 @@ a.btn.fb { display:inline-block; color: $white; background:$fb url(../images/Ei-
 
 /*標題=====================AB*/
 /*標題一*/
-h3.title_1{ text-align: center; border-bottom: 1px solid $gray; padding-bottom: 12px; margin-bottom: 20px;/**/ }
+h3.title_1{ text-align: center; border-bottom: 1px solid $gray; padding-bottom: 12px; margin-bottom: 20px;}
 h3.title_1.left{ text-align: left;}
 h3.title_1 a.btn_more{ display: inline-block; background: $gray;  font-size: 14px; color: $white; letter-spacing: 5px; padding: 3px 8px; border-radius: 50px; float: right;}
 h3.title_1 a.btn_more:hover{ background:$gray_light; }
 /*標題二*/
-h3.title_2{ font-size:18px; text-align: left; border-top: 1px solid $gray; padding-top: 15px;  margin-bottom: 20px;/**/ }
+h3.title_2{ font-size:18px; text-align: left; border-top: 1px solid $gray; padding-top: 15px;  margin-bottom: 20px;}
 /*標題三*/
-h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; background: $gray;  margin-bottom: 20px;/**/  }
+h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; background: $gray;  margin-bottom: 20px;}
+
 
 @include breakpoint($pad){
-    h3.title_1.pc_only{ display: none;}
-    h3.title_2{text-align: center;}
+    h3.title_1.pc_only { display: none;}
+    h3.title_2 { text-align: center;}
+    h3.title_3{ font-size:16px; padding:5px; margin-bottom: 20px;}
 }
 
 
 /*商品狀態標籤================AB*/
 .product_tag{}
 .product_tag .tag_1{ margin-bottom: 10px;}
-.part_tag{ font-size:12px; letter-spacing: 2px; padding:5px; border-radius: 3px; }
-.part_tag.color_1{ background:$gray; color: $white; }
-.part_tag.color_2{ background: $red; color: $white; }
-.part_tag.color_3{ background: $gray_dark;color: $white; }
-.part_tag.border{ border: 1px solid $gray_dark;  }
+.product_tag .tag_2 .part_tag{ margin-bottom: 5px;}
+.product_tag .part_tag{ display: inline-block; font-size:12px; letter-spacing: 2px; padding:5px; border-radius: 3px; }
+.product_tag .part_tag.color_1{ background:$gray; color: $white; }
+.product_tag .part_tag.color_2{ background: $red; color: $white; }
+.product_tag .part_tag.color_3{ background: $gray_dark;color: $white; }
+.product_tag .part_tag.border{ border: 1px solid $gray_dark;  }
 
 /*mobileM (414)*/
 @include breakpoint($mobileM){
-    .part_tag{ letter-spacing: 0px; padding:3px;}
+    .product_tag .part_tag{ letter-spacing: 0px; padding:3px;}
 }
 
+
+
 /*麵包屑===========================AB*/
-.part_breadcrumb_1{ padding: 50px 0; }
+.part_breadcrumb_1{ padding:15px 0 30px 0 }
 .part_breadcrumb_1>a,.part_breadcrumb_1 span.current{ font-size: 16px; color: $gray_dark;}
 .part_breadcrumb_1>a:hover{ color: $gray;}
 .part_breadcrumb_1 span.current::before{content: "/"; display: inline-block; margin: 0px 10px;}
 .part_breadcrumb_1 span.current{}
+
 
 /*pad (768)*/
 @include breakpoint($pad){
@@ -69,8 +76,35 @@ h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; b
 @include breakpoint($mobile){
     .part_breadcrumb_1{ padding: 10px 0;}
     .part_breadcrumb_1>a,.part_breadcrumb_1 span.current{ font-size: 14px;}
-    
 }
+
+/*麵包屑 + 右側下拉選單================AB*/
+.breadcrumb_box{ height: 50px; position: relative; margin-bottom: 50px; }
+.breadcrumb_box .part_breadcrumb_1{  padding: 0px; position: absolute; left: 0px; top: 10px;}
+.breadcrumb_box .form{ margin-bottom: 0px; }
+.breadcrumb_box .form_3{ position: absolute; right: 0px; top: 0px; }
+
+
+/* pad 768 */
+@include breakpoint($pad){
+    .breadcrumb_box{ height: 90px;  position: static; margin-bottom: 30px;}
+    .breadcrumb_box .part_breadcrumb_1{position: static; margin-bottom: 20px;}
+    .breadcrumb_box .form{}
+    .breadcrumb_box .form_3{ position: static;}
+    .breadcrumb_box .form_3 .item{ width: 47.5%;}
+    .breadcrumb_box .form_3 .item:nth-of-type(1){ margin-right: 2%;}
+    .breadcrumb_box .form_3.form select{ width: 100%;}
+}
+/*mobileS 360 */
+@include breakpoint($mobileS){
+   
+}
+
+/*banner================AB*/
+.banner_1{ margin-bottom: 30px;}
+.banner_1 a{display: block; width:100%; height: 0; padding-bottom:32.5%; overflow: hidden;  }
+.banner_1 a img{width: 100%; height: auto;}
+
 
 /*分隔線========================*/
 .line_1 { width:100%; margin:0 auto 20px auto; }
@@ -84,30 +118,34 @@ h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; b
 .more_box .btn_more{ display: inline-block; padding: 5px 10px; font-size: 14px; text-align: center; letter-spacing: 10px; color: $white; border-radius: 50px;
 @include bg-color($gray,$gray_light)
 }
+.more_box.mobile_only{ display: none;}
 
+/*mobile (414)*/
+@include breakpoint($mobile){
+    .more_box.mobile_only{ display: block;}  
+}
 
 /*pager================AB*/
-.part_pager{ text-align: center; padding: 50px 0;}
+.part_pager{ text-align: center; padding-top: 50px;}
 .part_pager a{ @include link($gray, $gray_light);}
 .part_pager a,.part_pager span,.part_pager ul,.part_pager ul li{ display: inline-block;} 
 .part_pager a.next{letter-spacing: 3px;}
 .part_pager a.prev{ letter-spacing: 3px;}
 .part_pager > a:hover{ text-decoration: underline;}
 .part_pager li> span,.part_pager li > a{ width: 30px; height: 30px; line-height: 30px; margin:0 5px;}
-.part_pager li> span.current{  color: $white; background: $gray; border-radius: 50%;}
+.part_pager li> span.current{ color: $white; background: $gray; border-radius: 50%;}
 .part_pager li > a{  border-radius: 50%; }
 .part_pager li > a:hover{  color: $white; background:$gray_light;}
-
 
 
 /*tab_1====================AB*/
 .tab_1{ clear: both; border: 1px solid color;}
 .tab_1 .tab_menu{ @extend %clearfix; border: 1px solid $gray;}
-.tab_1 .tab_menu a { padding: 10px; width:33.333%; border-right: 1px solid $gray_light ; color: $gray_light; text-align: center; letter-spacing: 3px; /*font-size:14px;*/ float: left }
+.tab_1 .tab_menu a { padding: 10px; width:33.333%; border-right: 1px solid $gray_light ; color: $gray_light; text-align: center; letter-spacing: 3px;  float: left }
 .tab_1 .tab_menu a:hover{ background: $gray_light; color: $white;}
 .tab_1 .tab_menu a:nth-last-of-type(1){ border: none;}
 .tab_1 .tab_menu a.current{ background: $gray; color: $white;}
-.tab_1 .tab_content{ border: 1px solid pink;}
+.tab_1 .tab_content{ padding: 30px;}
 .tab_1 .tab_content .piece{}
 /*pad (768)*/
 @include breakpoint($pad){
@@ -120,13 +158,14 @@ h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; b
 
 
 
+
 /*tab_2========================*/
 .tab_2 { margin-bottom:40px; }
 .tab_2 .tab_menu { } 
-.tab_2 .tab_menu a.btn { padding:5px 30px; background:#999; color:#fff; margin-bottom:0;}
+.tab_2 .tab_menu a.btn { padding:5px 30px; background:$gray_light; color:$white; margin-bottom:0;}
 .tab_2 .tab_menu a.btn:nth-last-of-type(1) { margin-right:0;}
-.tab_2 .tab_menu a.btn.active { background: $white; color:#333; border:1px solid #999; border-bottom:none; position:relative; bottom:-1px;}
-.tab_2 .tab_content { background:$white; min-height:100px; border:1px solid #999; padding:20px;} 
+.tab_2 .tab_menu a.btn.active { background: $white; color:$gray_dark; border:1px solid #999; border-bottom:none; position:relative; bottom:-1px;}
+.tab_2 .tab_content { background:$white; min-height:100px; border:1px solid $gray_light; padding:20px;} 
 
 
 /*pad (768)*/
@@ -137,7 +176,7 @@ h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; b
 /*mobile (480)*/
 @include breakpoint($mobile){
 .tab_2 .tab_menu { margin-bottom:20px;}
-.tab_2 .tab_menu a.btn { padding:5px;}
+.tab_2 .tab_menu a.btn { padding:5px; margin-right:5px;}
 .tab_2 .tab_menu a.btn.active { border-bottom:1px solid #999;}
 .tab_2 .tab_content { border:none; padding:10px;} 
 }
@@ -161,10 +200,17 @@ border-radius:5px; background:$gray; color:$white; margin-right:0; }
 /*form========================*/
 .form { margin-bottom:30px;}
 .form label { display: inline-block;}
-.form input,
+.form input[type="text"],
+.form input[type="submit"],
+.form input[type="number"],
+.form input[type="email"],
+.form input[type="tel"],
+.form input[type="password"],
+.form input[type="date"],
+.form input[type="submit"],
 .form select,
 .form textarea
- { display: inline-block; height:50px; letter-spacing:2px; border:1px solid $gray_light; padding-left:10px;}
+ { display: inline-block; height:45px; letter-spacing:2px; border:1px solid $gray_light; padding-left:10px; -webkit-appearance:none; border-radius:0;}
 .form textarea { height:auto;}
 .form p { display:inline-block; height:50px; letter-spacing:2px;}
 .form input:focus, .form select:focus
@@ -199,7 +245,7 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 // 勾選
 .form .item.check { text-align:center;}
 .form .item.check input { display:inline-block; width:30px;}
-.form .item.check span { color:$gray_dark;}
+.form .item.check span { color:$gray_dark; font-size:14px;}
 
 /*pad (768)*/
 @include breakpoint($pad){
@@ -216,6 +262,11 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 .form select {  background-position-y: 5px;}
 }
 
+/*mobileS (360)*/
+@include breakpoint($mobileS){
+.form .item.address select { width:75px;}
+}
+
 
 /*form_1================*/
 .form_1 .item { margin-bottom:30px;}
@@ -224,7 +275,7 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 .form_1 .item textarea,
 .form_1 .item input { width:calc(100% - 100px);}
 .form_1 .item.address select { margin-bottom:10px;}
-.form_1 .item.address input { width:calc(100% -  95px); margin-left:93px;}
+.form_1 .item.address input { width:calc(100% -  95px); margin-left:95px;}
 /*pad (768)*/
 @include breakpoint($pad){
 .form_1 .item { margin-bottom:20px;}
@@ -250,14 +301,15 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 
 /*form_3=======================AB*/
 .form_3 .item{ display: inline-block; }
-.form_3 .item:nth-last-of-type(1){ margin-right: 5px;}
+.form_3 .item:nth-of-type(1){ margin-right: 5px;}
+
 
 // block_1==================
 .block_1 { padding:15px 10px; margin-bottom:30px; border:1px solid $gray_light;}
 .block_2 { margin-bottom:20px;}
 
 .block_1 .title_1,
-.block_2 .title_1 { color:$gray_dark; font-size:16px; padding-bottom:10px; letter-spacing:0.13em;}
+.block_2 .title_1 { color:$gray_dark; font-size:16px; border-bottom:1px solid $gray_light; padding-bottom:10px; margin-bottom:10px; letter-spacing:0.13em;}
 /*pad (480)*/
 @include breakpoint($mobile){
 .block_1 { margin-bottom:20px;}
@@ -289,7 +341,7 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 
 /* part_thumb_1 商品列表========================AB*/
 .part_thumb_1{ @extend %clearfix; clear: both; }
-.part_thumb_1 .piece{ display: inline-block; min-height: 405px; vertical-align: top; width: 270px;  margin-bottom: 70px;  }
+.part_thumb_1 .piece{ display: inline-block; vertical-align: top; width: 270px;  margin-bottom: 70px;  }
 .part_thumb_1 .piece:nth-child(4n+1){clear: both;}
 .part_thumb_1 .piece:not(:nth-child(4n-4)){margin-right:34px;}
 .part_thumb_1 .piece a.pic{ width: 100%; height: 0; padding-bottom: 100%;  display: block; margin-bottom: 12px; overflow:hidden;}
@@ -300,24 +352,24 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 .part_thumb_1 .piece > p span.item_old_price{ text-decoration: line-through; color: $gray_light;}
 .part_thumb_1 .piece .box_1{ margin-bottom: 5px;}
 .part_thumb_1 .piece .box_2{}
-
-
+/*手機板隱藏*/
+.part_thumb_1 .piece.pad_only{ display: none;}
 
 @include breakpoint($pc){
     .part_thumb_1{ max-width: 900px; margin: 0 auto;}
-    .part_thumb_1 .piece{ }
-    .part_thumb_1 .piece:not(:nth-child(4n-4)){margin-right:0px;}
-    .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:34px;}
+    .part_thumb_1 .piece{ width: 195px; margin-bottom: 40px; }
 }
 
 
-
 @include breakpoint($pad){
+    .part_thumb_1 .piece.pad_only{ display:inline-block; }
     .part_thumb_1 .piece{ width: 230px; min-height:368px;}
+    .part_thumb_1 .piece:not(:nth-child(4n-4)){margin-right:0px;}
     .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:13px;}
 }
  
 @include breakpoint($mobile){
+    .part_thumb_1 .piece.pad_only{ display: none;}
     .part_thumb_1 .piece{ width: 48%; min-height:290px; margin-bottom:30px; }
     .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:0px;}
     .part_thumb_1 .piece:not(:nth-child(2n-2)){margin-right:2%;}
@@ -337,9 +389,10 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 .part_pictxt_1 .piece p.summary{color: $gray;}
 
 @include breakpoint($pc){
-    .part_pictxt_1{ max-width: 810px; margin: 0 auto;}
-    .part_pictxt_1 .piece:not(:nth-child(3n-3)){ margin-right: 0px;}
-    .part_pictxt_1 .piece:not(:nth-child(2n)){ margin-right: 50px;}
+    .part_pictxt_1{ max-width: 900px; margin: 0 auto;}
+    .part_pictxt_1 .piece{width: 280px;}
+    .part_pictxt_1 .piece:not(:nth-child(3n-3)){ margin-right: 30px;}
+    .part_pictxt_1 .piece a.pic{ width: 280px; height: 170px;}
 }
 
 
@@ -423,7 +476,7 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 /*引言*/
 .story a { @include link ($red,$red); padding:3px 5px;}
 .story a:hover, .story a:active {text-decoration: underline;}
-.story blockquote { background:#efefef; border-bottom:2px solid $gray_light; border-radius:3px; padding:10px; margin-bottom:15px; box-shadow:0 2px 3px 0 rgba(0,0,0,0.1);}
+.story blockquote { background:$gray_light; border-bottom:2px solid $gray_light; border-radius:3px; padding:10px; margin-bottom:15px; box-shadow:0 2px 3px 0 rgba(0,0,0,0.1);}
 .story blockquote p { margin:0;}
 .story iframe { max-width:100%; height:auto;}
 /*table*/
@@ -431,4 +484,4 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 .story table caption { font-size:20px; color:rgba(2, 3, 47,0.8); margin-bottom:10px;}
 .story tr th { padding:5px; background:$gray; color:#fff; border-bottom:1px solid $gray_light;}
 .story tr td { padding:5px; border:1px solid $gray_light; color:$gray;}
-.story table tr:hover td { background:#f7f3ff;}
+.story table tr:hover td { background:$gray_light; }

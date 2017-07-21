@@ -1,0 +1,397 @@
+@charset "UTF-8";
+/*========================global=======================*/
+/* variable */
+/*************************variable.scss*********************************/
+/* mixin */
+/*************************extend*********************************/
+/*=============================layout===============================*/
+.wrapper.side_open::before {
+  background: rgba(0, 0, 0, 0.5); }
+
+.top_bar_box {
+  background: #666; }
+
+.top_bar .menu_1 a {
+  text-decoration: none; }
+  .top_bar .menu_1 a:link, .top_bar .menu_1 a:visited {
+    color: #fff; }
+  .top_bar .menu_1 a:hover, .top_bar .menu_1 a:focus, .top_bar .menu_1 a:active {
+    color: #999; }
+
+.top_bar .menu_1 a:not(:nth-last-child(1))::after {
+  color: #fff; }
+
+.top_bar .menu_2 li a.cart {
+  color: #666; }
+
+.top_bar .menu_2 li a.member + .sub_menu {
+  border: 1px solid #666;
+  background: #fff; }
+
+.top_bar .menu_2 li a.member + .sub_menu a {
+  text-decoration: none; }
+  .top_bar .menu_2 li a.member + .sub_menu a:link, .top_bar .menu_2 li a.member + .sub_menu a:visited {
+    color: #666; }
+  .top_bar .menu_2 li a.member + .sub_menu a:hover, .top_bar .menu_2 li a.member + .sub_menu a:focus, .top_bar .menu_2 li a.member + .sub_menu a:active {
+    color: #c0272c; }
+
+/*pad (768)*/
+@media only screen and (max-width: 768px) {
+  .top_bar {
+    background: #666; }
+  .top_bar .menu_2 li > a {
+    color: #fff; }
+  .top_bar .menu_2 li a.cart {
+    color: #fff; }
+  .top_bar .menu_2 li a.cart strong {
+    color: #666; } }
+
+/*pad (768)*/
+@media only screen and (max-width: 768px) {
+  .header {
+    background: #fff; } }
+
+#main_nav {
+  border-bottom: 1px solid #666; }
+
+#main_nav .inner > ul > li > a {
+  color: #333; }
+
+#main_nav .inner > ul > li.menu_hover:hover > a {
+  color: #c0272c; }
+
+#main_nav .inner ul.second {
+  background: #fff;
+  border: 1px solid #fafafa; }
+
+#main_nav .inner ul.second > li > a {
+  color: #666; }
+
+#main_nav .inner ul.second .third {
+  border: 1px solid #fff; }
+
+#main_nav .inner ul.second .third > a {
+  color: #666; }
+
+/*pad (768)*/
+@media only screen and (max-width: 768px) {
+  #main_nav {
+    background: #e0e0e0; }
+  #main_nav .inner > ul > li.mobile_only {
+    background: #666; }
+  #main_nav .inner > ul > li.mobile_only a {
+    color: #fff; }
+  #main_nav .inner ul.second {
+    background: #fff; }
+  #main_nav .inner ul.second .third {
+    border-top: 2px dotted #c0272c; }
+  #main_nav .inner ul.second .third > a {
+    color: #c0272c; }
+  #main_nav .search_box {
+    border-bottom: 1px solid #666; } }
+
+/*------------ side_nav 側選單 【PC only】------------*/
+.side_nav ul li a {
+  color: #666; }
+
+.side_nav ul li a.active {
+  background: #333;
+  color: #fff; }
+
+/*footer=========================*/
+.footer_box {
+  background: #666; }
+
+.footer .menu_2 a {
+  color: #fff; }
+
+.footer p {
+  color: #fff; }
+
+/*pad (768)*/
+@media only screen and (max-width: 768px) {
+  .footer_box {
+    background: #fafafa; }
+  .footer .menu_2 a {
+    color: #666; }
+  .footer p {
+    color: #666; } }
+
+/*===============================block===================================*/
+.btn, a.btn {
+  background: #333;
+  color: #fff; }
+
+a.btn.style_1 {
+  background: #fff;
+  color: #000;
+  border: 1px solid #999; }
+
+a.btn.style_2 {
+  background: #999;
+  color: #fff; }
+
+a.btn.fb {
+  color: #fff;
+  background: #4268b3; }
+
+h3.title_1 {
+  border-bottom: 1px solid #666; }
+
+h3.title_1 a.btn_more {
+  background: #666;
+  color: #fff; }
+
+h3.title_1 a.btn_more:hover {
+  background: #999; }
+
+h3.title_2 {
+  border-top: 1px solid #666; }
+
+h3.title_3 {
+  color: #fff;
+  background: #666; }
+
+.product_tag .part_tag.color_1 {
+  background: #666;
+  color: #fff; }
+
+.product_tag .part_tag.color_2 {
+  background: #c0272c;
+  color: #fff; }
+
+.product_tag .part_tag.color_3 {
+  background: #333;
+  color: #fff; }
+
+.product_tag .part_tag.border {
+  border: 1px solid #333; }
+
+.part_breadcrumb_1 > a, .part_breadcrumb_1 span.current {
+  color: #333; }
+
+.part_breadcrumb_1 > a:hover {
+  color: #666; }
+
+.line_1 span {
+  color: #999; }
+
+.line_1 b {
+  background: #999; }
+
+.more_box .btn_more:link, .more_box .btn_more:visited {
+  background-color: #666; }
+
+.more_box .btn_more:hover, .more_box .btn_more:focus, .more_box .btn_more:active {
+  background-color: #999; }
+
+.part_pager a {
+  text-decoration: none; }
+  .part_pager a:link, .part_pager a:visited {
+    color: #666; }
+  .part_pager a:hover, .part_pager a:focus, .part_pager a:active {
+    color: #999; }
+
+.part_pager li > span.current {
+  color: #fff;
+  background: #666; }
+
+.part_pager li > a:hover {
+  color: #fff;
+  background: #999; }
+
+/*tab_1====================AB*/
+.tab_1 .tab_menu {
+  border: 1px solid #666; }
+
+.tab_1 .tab_menu a {
+  border-right: 1px solid #999;
+  color: #999; }
+
+.tab_1 .tab_menu a:hover {
+  background: #999;
+  color: #fff; }
+
+.tab_1 .tab_menu a.current {
+  background: #666;
+  color: #fff; }
+
+/*pad (768)*/
+@media only screen and (max-width: 768px) {
+  .tab_1 .tab_menu {
+    border-top: 1px solid #666; }
+  .tab_1 .tab_menu a:hover {
+    color: #333; }
+  .tab_1 .tab_menu a.current {
+    background: #fff;
+    color: #333; }
+  .tab_1 .tab_menu a.current:after, .tab_1 .tab_menu a:hover:after {
+    background: #333; } }
+
+/*tab_2========================*/
+/*mobile (480)*/
+@media only screen and (max-width: 480px) {
+  .tab_2 .tab_menu a.btn.active {
+    border-bottom: 1px solid #999; } }
+
+/*tab_3========================*/
+.tab_3 .tab_menu a {
+  background: #666;
+  color: #fff; }
+
+.tab_3 .tab_menu a.active {
+  background: #fff;
+  color: #666;
+  border: 1px solid #666; }
+
+/*form========================*/
+.form textarea {
+  border: 1px solid #999; }
+
+.form input:focus, .form select:focus {
+  border: 1px solid #333; }
+
+.form option {
+  background-color: #fff; }
+
+.form .item.check span {
+  color: #333; }
+
+.block_1 {
+  border: 1px solid #999; }
+
+.block_1 .title_1,
+.block_2 .title_1 {
+  color: #333; }
+
+/*AB search==================================*/
+.search_box input.keyword {
+  border: 1px solid #666; }
+
+.note {
+  color: #666; }
+
+.part_thumb_1 .piece > p span {
+  color: #c0272c; }
+
+.part_thumb_1 .piece > p span.item_old_price {
+  color: #999; }
+
+.part_pictxt_1 .piece h3 {
+  border-bottom: 1px solid #666; }
+
+.part_pictxt_1 .piece h3 a {
+  text-decoration: none; }
+  .part_pictxt_1 .piece h3 a:link, .part_pictxt_1 .piece h3 a:visited {
+    color: #333; }
+  .part_pictxt_1 .piece h3 a:hover, .part_pictxt_1 .piece h3 a:focus, .part_pictxt_1 .piece h3 a:active {
+    color: #666; }
+
+.part_pictxt_1 .piece p.date {
+  color: #666; }
+
+.part_pictxt_1 .piece p.summary {
+  color: #666; }
+
+.gallery_1 .bx-wrapper .bx-pager.bx-default-pager a:link, .gallery_1 .bx-wrapper .bx-pager.bx-default-pager a:visited {
+  background-color: #fff; }
+
+.gallery_1 .bx-wrapper .bx-pager.bx-default-pager a:hover, .gallery_1 .bx-wrapper .bx-pager.bx-default-pager a:focus, .gallery_1 .bx-wrapper .bx-pager.bx-default-pager a:active {
+  background-color: #999; }
+
+.gallery_1 .bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: #999; }
+
+/*story 基本樣式 ================*/
+/*標題*/
+.story h1,
+.story h2,
+.story h3,
+.story h4,
+.story h5,
+.story h6 {
+  color: #666; }
+
+/*列表*/
+.story ol {
+  color: #666; }
+
+.story ul {
+  color: #666; }
+
+.story ul li:before {
+  background: #666; }
+
+/*引言*/
+.story a {
+  text-decoration: none; }
+  .story a:link, .story a:visited {
+    color: #c0272c; }
+  .story a:hover, .story a:focus, .story a:active {
+    color: #c0272c; }
+
+.story blockquote {
+  background: #999;
+  border-bottom: 2px solid #999; }
+
+.story tr th {
+  background: #666;
+  color: #fff; }
+
+.story tr td {
+  border: 1px solid #999;
+  color: #666; }
+
+.story table tr:hover td {
+  background: #999; }
+
+/*product_list=========*/
+.section_product_list .select_box a {
+  color: #666; }
+
+.select_box .item_2 a + .sub {
+  border: 1px solid #666;
+  background: #fff; }
+
+.section_product_list .select_box .item_2 a + .sub {
+  border: 1px solid #666;
+  background: #fff; }
+
+.section_product_list .select_box .item_2 .sub .select_range .irs-bar {
+  background: #666;
+  border-color: #666; }
+
+.select_box .irs-to, .select_box .irs-single {
+  background: #666; }
+
+.section_product_list .select_box .item_2 .sub .select_range .irs-slider {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #999; }
+
+.section_product_detail .price span.item_old_price {
+  color: #999; }
+
+.section_product_detail .info {
+  border: 1px solid #666; }
+
+.section_product_detail .area_2 .form_2 li a.btn.sale {
+  background: #c0272c; }
+
+.section_blog_detail .title {
+  border-bottom: 1px solid #666; }
+
+.section_blog_detail .title .date {
+  color: #999; }
+
+.gallery_5 .run .inner .piece h3 a {
+  color: #666; }
+
+.section_onsale .info {
+  border: 1px solid #666; }
+
+.section_onsale_plus .info {
+  border: 1px solid #666; }
+
+.section_onsale_plus .part_thumb_1 {
+  border: 1px solid #666; }

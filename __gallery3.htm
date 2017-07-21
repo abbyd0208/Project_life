@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="js/jquery.bxslider/jquery.bxslider.css">
+    <!-- <script src="js/gallery.js"></script> -->
+    <!-- <script src="js/common.js"></script> -->
+
+    <style>
+        .box_0 {
+            width: 100%;
+            max-width: 1220px;
+            margin: 0 auto;
+            border: 1px solid green;
+        }
+
+        /* CSS Document */
+        .area_1{ width: 730px;  float:left; }
+
+        /*pc (1024)*/
+        @media only screen and (max-width:1024px){
+        .area_1{ width: 58%;}
+        }
+
+        /*768px*/
+        @media only screen and (max-width:768px) {
+            .area_1{ width: 48%; }
+        }
+
+        /*padM (640)*/
+        @media only screen and (max-width:640px){
+            .area_1{ width: 100%; float: none;}
+        }
+
+
+       /* // gallery_2 產品圖切換 */
+        .gallery_2 {position: relative;}
+
+        /*外掛歸零*/
+        .gallery_2 .bx-wrapper{ margin: auto; }
+        .gallery_2 .bx-wrapper .bx-viewport{  height: 530px!important; box-shadow:none; border:none; left:0px; }
+
+        /*滾動組*/
+        .gallery_2 .run {width: 100px; padding-top: 40px;}
+
+        /*組*/
+        .gallery_2 .run .inner .piece{ margin-bottom:10px; }
+        .gallery_2 .run .inner .piece img{display: none;}
+
+        /*自訂義方向鍵*/
+        .gallery_2 .operate { height:600px; width: 100px; position: absolute; left: 0px; top: 0px;  }
+
+        .gallery_2 .operate .prev { width: 100px; height: 20px; background: url(images/icon_arrow_2.png) center top no-repeat; background-size: auto 40px;  position: absolute;left: 0px;top: 0px;}
+        .gallery_2 .operate .next { width: 100px; height: 20px;   background: url(images/icon_arrow_2.png) center bottom no-repeat; background-size: auto 40px; position: absolute; left: 0px; bottom: 0px;}
+        .gallery_2 .operate .prev a.bx-next,.operate .next a.bx-prev  {display: block;width: 100px; height: 20px}
+        /*圖片切換*/
+        .gallery_2 .stage {width: 600px; height: 600px; position: absolute; right: 0px; top: 0px;}
+        .gallery_2 .stage img{ width: 100%; height: auto;}
+
+        /*pc (1024)*/
+        @media only screen and (max-width:1024px){
+            .gallery_2 .stage{ width: 400px; height: 400px;}
+        }
+
+        /*768px*/
+        @media only screen and (max-width:768px){
+            .gallery_2 .bx-wrapper .bx-viewport{  height: auto!important;}
+            .gallery_2 .run { width: auto; padding-top: 0px;}
+            .gallery_2 .operate {display: none;}
+            .gallery_2 .stage { display: none;}
+
+        }
+
+        /*padM (640)*/
+        @media only screen and (max-width:640px){
+            .gallery_2{ margin-bottom: 30px;}
+        }
+
+        
+    </style>
+    <script>
+       $(function(){
+    
+    if($(".gallery_2").length>0){
+         var oPc = {
+            slideWidth: 100,
+            mode: 'vertical',
+            pager: false,
+            nextSelector: ".gallery_2 .operate .prev span",
+            prevSelector: ".gallery_2 .operate .next span",
+            nextText: "",
+            prevText: "",
+            minSlides: 5,
+            maxSlides: 5,
+            moveSlides: 1,
+            onSliderLoad: function (currentIndex) {
+                $(".gallery_2 .run .inner .piece img").show();
+                var $slideElement = $(".gallery_2 .run .inner .piece").eq(currentIndex + 5); //自訂選擇器名稱
+                var currentImg = $slideElement.find("img").attr("src");
+                $(".stage img").attr("src", currentImg);
+            }
+        }
+
+        var oMobile = {
+            pager: true,
+            controls:false,	
+            auto : true,
+            pause : 4000,
+            autoHover : true, //懸停
+            autoDelay : 0,
+            slideWidth: 400,
+            minSlides: 1,
+            maxSlides: 1,
+        }
+
+        // 桌機
+        if ($(window).width() > 768) {
+            var gallery_2 = $(".gallery_2 .run .inner").bxSlider(oPc);
+        }
+        // 平板
+        else if ($(window).width() < 769 && $(window).width() > 640) {
+           var gallery_2 = $(".gallery_2 .run .inner").bxSlider(oMobile);
+        }
+
+
+        //重新計算寬度   加setTimeOut
+        var oScrollTimer = null;
+        $(window).on("resize", function () {
+
+            if(oScrollTimer){
+                clearTimeout(oScrollTimer);
+            };
+
+            oScrollTimer = setTimeout(function(){
+                if ($(window).width() > 768) {
+                    gallery_2.reloadSlider(oPc);
+                } else if ($(window).width() < 769 && $(window).width() > 640)  {
+                    gallery_2.reloadSlider(oMobile);
+                }
+            },100);
+        }).trigger("resize");
+
+        //寫入目前圖片
+        function getCurrentImg() {
+            var current = gallery_2.getCurrentSlide() + 5;
+            var currentImg = $(".piece").eq(current).find("img").attr("src");
+            $(".stage img").attr("src", currentImg);
+        }
+
+        $(".operate").find(".getImg").on("click", getCurrentImg);
+
+    }
+
+   
+});
+
+       
+    </script>
+
+</head>
+
+<body>
+    <h1>拉動視窗 resize 會壞掉</h1>
+    <div class="area_1">
+        <!--圖集 開始-->
+        <div class="gallery_2">
+            <!--滾動 開始-->
+            <div class="run">
+                <div class="inner">
+                    <div class="piece"><img src="images/pic_1.jpg" /></div>
+                    <div class="piece"><img src="images/pic_2.jpg" /></div>
+                    <div class="piece"><img src="images/pic_3.jpg" /></div>
+                    <div class="piece"><img src="images/pic_4.jpg" /></div>
+                    <div class="piece"><img src="images/pic_5.jpg" /></div>
+                    <div class="piece"><img src="images/pic_6.jpg" /></div>
+                    <div class="piece"><img src="images/pic_7.jpg" /></div>
+                    <div class="piece"><img src="images/pic_8.jpg" /></div>
+                    <div class="piece"><img src="images/pic_9.jpg" /></div>
+                </div>
+                <!--操作 開始-->
+                <div class="operate">
+                    <a class="prev getImg" href="javascript:void(0)"><span><!-- --></span></a>
+                    <a class="next getImg" href="javascript:void(0)"><span><!-- --></span></a>
+                </div>
+                <!--操作 結束-->
+            </div>
+            <!--滾動 結束-->
+            <div class="stage">
+                <img src="" alt="">
+            </div>
+        </div>
+        <!--圖集 結束-->
+    </div>
+
+
+</body>
+
+</html>

@@ -1,17 +1,32 @@
 
 @charset "utf-8";
 /* CSS Document */
-.section_product_detail{ border: 1px solid olive; @extend %clearfix;}
+
+.section_product_detail .btn{ padding: 10px;}
+.section_product_detail{  @extend %clearfix;}
 .section_product_detail .area{ margin-bottom: 60px;@extend %clearfix;}
 .section_product_detail .area_1{ width: 730px;  float:left; }
 .section_product_detail .area_2{ width: 400px; float:right; }
 .section_product_detail h1{ margin-bottom: 10}
 
+/*pc (1024)*/
+@include breakpoint($pc){
+   .section_product_detail .area_1{ width: 58%;}
+   .section_product_detail .area_2{ width: 38%;}
+}
+
 /*768px*/
 @media only screen and (max-width:768px) {
-.section_product_detail .area_1{ width: 48%; border: 1px solid red;}
-.section_product_detail .area_2{ width: 48%; border: 1px solid red;}
+    .section_product_detail .area_1{ width: 48%; }
+    .section_product_detail .area_2{ width: 48%; }
 }
+
+/*padM (640)*/
+@include breakpoint($padM){
+    .section_product_detail .area_1{ width: 100%; float: none;}
+    .section_product_detail .area_2{width: 100%; float: none;}
+}
+
 
 
 /*tag*/
@@ -49,7 +64,7 @@
 
 /*組*/
 .gallery_2 .run .inner .piece{ margin-bottom:10px; }
-.gallery_2 .run .inner .piece img{display: none;}
+.gallery_2 .run .inner .piece img{}
 
 /*自訂義方向鍵*/
 .gallery_2 .operate { height:600px; width: 100px; position: absolute; left: 0px; top: 0px;  }
@@ -60,14 +75,25 @@
 /*圖片切換*/
 .gallery_2 .stage {width: 600px; height: 600px; position: absolute; right: 0px; top: 0px;}
 .gallery_2 .stage img{ width: 100%; height: auto;}
+
+/*pc (1024)*/
+@include breakpoint($pc){
+    .gallery_2 .stage{ width: 400px; height: 400px;}
+}
+
 /*768px*/
 @media only screen and (max-width:768px) {
-.gallery_2 .bx-wrapper .bx-viewport{  height: auto!important;}
-.gallery_2 .run { width: auto; padding-top: 0px;}
-.gallery_2 .operate {display: none;}
-.gallery_2 .stage { display: none;}
-
+    .gallery_2 .bx-wrapper .bx-viewport{  height: auto!important;}
+    .gallery_2 .run { width: auto; padding-top: 0px;}
+    .gallery_2 .operate {display: none;}
+    .gallery_2 .stage { display: none;}
 }
+
+/*padM (640)*/
+@include breakpoint($padM){
+    .gallery_2{ margin-bottom: 30px;}
+}
+
 
 
 
@@ -75,11 +101,9 @@
 .gallery_3{position: relative; }
 
 /*外掛歸零*/
-.gallery_3 .bx-wrapper{ max-width: 1060px!important;}
-.gallery_3 .bx-wrapper .bx-viewport{  box-shadow:none; border:none; left:0px;}
-@media only screen and (max-width:768px) {
-   .gallery_3 .bx-wrapper{ max-width: 525px!important;} 
-}
+.gallery_3 .bx-wrapper{}
+.gallery_3 .bx-wrapper .bx-viewport{  box-shadow: none;border: none; left: 0px;}
+
 
 /*滾動組*/
 .gallery_3 .run{ @extend %clearfix; }
@@ -94,40 +118,50 @@
 .gallery_3 .bx-wrapper .bx-next:hover{ background-position: right bottom;}
 
 
-
 /*組*/
-.gallery_3 .run .inner .piece{ margin-right: 15px;}
+.gallery_3 .run .inner .piece{ }
 .gallery_3 .run .inner .piece .btn{ margin: 0px;}
 
 /*圖片*/
-.gallery_3 .run .inner .piece a.pic{ display:block;}
-.gallery_3 .run .inner .piece a.pic img{ display: none;}
+.gallery_3 .run .inner .piece a.pic{ display:block; margin-bottom: 15px;}
+.gallery_3 .run .inner .piece a.pic img{}
 
 
 
 //相關推薦======================================== 
-.gallery_4{position: relative; }
-
+ .gallery_4 {position: relative;}
 /*外掛歸零*/
-.gallery_4 .bx-wrapper{ max-width: 1060px!important;}
-.gallery_4 .bx-wrapper .bx-viewport{  box-shadow:none; border:none; left:0px;}
-@media only screen and (max-width:768px) {
-   .gallery_4 .bx-wrapper{ max-width: 525px!important;} 
-}
+.gallery_4 .bx-wrapper {}
+.gallery_4 .bx-wrapper .bx-viewport {box-shadow: none;border: none; left: 0px;}
+
+
 /*滾動組*/
-.gallery_4 .run{ @extend %clearfix; }
-.gallery_4 .run .inner{}
+.gallery_4 .run {}
+.gallery_4 .run .inner {}
 
-// 方向鍵
-.gallery_4 .bx-wrapper .bx-controls-direction a{ width: 24px; height: 34px;}
-.gallery_4 .bx-wrapper .bx-prev{left: -50px; background: url(../images/icon_arrow_3.png) left top no-repeat; background-size: auto 70px; }
-.gallery_4 .bx-wrapper .bx-next{right: -50px;background: url(../images/icon_arrow_3.png) right top no-repeat; background-size: auto 70px;}
+/* // 方向鍵 */
+.gallery_4 .bx-wrapper .bx-controls-direction a {width: 24px;height: 34px;}
+
+.gallery_4 .bx-wrapper .bx-prev{left: -50px;background: url(../images/icon_arrow_3.png) left top no-repeat;background-size: auto 70px;}
+/*有margin-left所以右邊會空出15px right少一點  */
+.gallery_4 .bx-wrapper .bx-next {right: -50px;background: url(../images/icon_arrow_3.png) right top no-repeat;background-size: auto 70px;}
 /*hover*/
-.gallery_4 .bx-wrapper .bx-prev:hover{ background-position: left bottom;}
-.gallery_4 .bx-wrapper .bx-next:hover{ background-position: right bottom;}
-/*組*/
-.gallery_4 .run .inner .piece{margin-right: 15px;}
 
+.gallery_4 .bx-wrapper .bx-prev:hover {
+    background-position: left bottom;
+}
+
+.gallery_4 .bx-wrapper .bx-next:hover {
+    background-position: right bottom;
+}
+/*組*/
+
+.gallery_4 .run .inner .piece {
+        /* margin-right: 15px;  */
+}
 /*圖片*/
-.gallery_4 .run .inner .piece a.pic{ display:block;}
-.gallery_4 .run .inner .piece a.pic img{ display: none;}
+.gallery_4 .run .inner .piece a.pic { display: block;}
+
+
+.gallery_4 .run .inner .piece a.pic img {}
+

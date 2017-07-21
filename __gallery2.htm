@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="js/jquery.bxslider/jquery.bxslider.css">
+    <!-- <script src="js/gallery.js"></script> -->
+    <!-- <script src="js/common.js"></script> -->
+
+    <style>
+        .box_0 {
+            width: 100%;
+            max-width: 1220px;
+            margin: 0 auto;
+            border: 1px solid green;
+        }
+       
+
+        .gallery_4 {position: relative;}
+        /*外掛歸零*/
+        .gallery_4 .bx-wrapper {border: 1px solid lightblue;}
+        .gallery_4 .bx-wrapper .bx-viewport {box-shadow: none;border: none; left: 0px;}
+
+       
+        /*滾動組*/
+        .gallery_4 .run {}
+        .gallery_4 .run .inner {}
+        
+        /* // 方向鍵 */
+        .gallery_4 .bx-wrapper .bx-controls-direction a {width: 24px;height: 34px;}
+
+        .gallery_4 .bx-wrapper .bx-prev{left: -50px;background: url(images/icon_arrow_3.png) left top no-repeat;background-size: auto 70px;}
+        /*有margin-left所以右邊會空出15px right少一點  */
+        .gallery_4 .bx-wrapper .bx-next {right: -35px;background: url(images/icon_arrow_3.png) right top no-repeat;background-size: auto 70px;}
+        /*hover*/
+
+        .gallery_4 .bx-wrapper .bx-prev:hover {
+            background-position: left bottom;
+        }
+
+        .gallery_4 .bx-wrapper .bx-next:hover {
+            background-position: right bottom;
+        }
+        /*組*/
+
+        .gallery_4 .run .inner .piece {
+             /* margin-right: 15px;  */
+        }
+        /*圖片*/
+
+        .gallery_4 .run .inner .piece a.pic {
+            display: block;
+             margin-right: 15px;
+            
+        }
+
+        .gallery_4 .run .inner .piece a.pic:not(:nth-child(4n-4)){
+           
+            border: 1px  solid green;
+        }
+
+        .gallery_4 .run .inner .piece a.pic img {
+             display: none; 
+             
+        }
+    </style>
+    <script>
+        //gallery_4 相關推薦=======================================================================
+        $(function () {
+            if ($(".gallery_4").length > 0) {
+                var oPc = {
+                    slideWidth: 215,  //因為有margin-left會讓圖片變小，所以在初始化的時候設大一點
+                    minSlides: 5,
+                    maxSlides: 5,
+                    moveSlides: 1,
+                    pager: false,
+                    onSliderLoad: function () {
+                        $(".gallery_4 .run .inner .piece a.pic img").show();
+                    }
+                }
+
+                var oPcm = {
+                    slideWidth: 175,
+                    minSlides: 4,
+                    maxSlides: 4,
+                    moveSlides: 1,
+                    pager: false,
+                    onSliderLoad: function () {
+                        $(".gallery_4 .run .inner .piece a.pic img").show();
+                    }
+                }
+
+                var oTablet = {
+                    slideWidth: 175,
+                    minSlides: 3,
+                    maxSlides: 3,
+                    moveSlides: 1,
+                    pager: false,
+                    onSliderLoad: function () {
+                        $(".gallery_4 .run .inner .piece a.pic img").show();
+                    }
+                }
+
+                var oMobile = {
+                    slideWidth: 145,
+                    minSlides: 2,
+                    maxSlides: 2,
+                    moveSlides: 1,
+                    pager: false,
+                    onSliderLoad: function () {
+                        $(".gallery_4 .run .inner .piece a.pic img").show();
+                    }
+                }
+
+                // 桌機1220
+                if ($(window).width() > 1220) {
+                    var gallery_4 = $(".gallery_4 .run .inner").bxSlider(oPc);
+                }//小於桌機
+                else if ($(window).width() < 1221 && $(window).width() > 768) {
+                    var gallery_4 = $(".gallery_4 .run .inner").bxSlider(oPcm);
+                } // 平板
+                else if ($(window).width() < 769 && $(window).width() > 640){
+                     var gallery_4 = $(".gallery_4 .run .inner").bxSlider(oTablet);
+                }
+                //手機
+                else {
+                    var gallery_4 = $(".gallery_4 .run .inner").bxSlider(oMobile);
+                }
+
+                //重新計算寬度   加setTimeOut
+                var oScrollTimer = null;
+                $(window).on("resize", function () {
+
+                    if (oScrollTimer) {
+                        clearTimeout(oScrollTimer);
+                    };
+
+                    oScrollTimer = setTimeout(function () {
+                        if ($(window).width() > 1220) {
+                            gallery_4.reloadSlider(oPc);
+                        } else if ($(window).width() < 1221 && $(window).width() >768) {
+                            gallery_4.reloadSlider(oPcm);
+                        }else if ($(window).width() < 769 && $(window).width() > 640) {
+                            gallery_4.reloadSlider(oTablet);
+                        }else {
+                            gallery_4.reloadSlider(oMobile);
+                        }
+                    }, 100);
+
+                }).trigger("resize")
+
+            }
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <h1>兩個gallery在同一個頁面出不來</h1>
+    <div class="box_0">
+        <!--gallery_4 相關推薦 開始-->
+        <div class="gallery_4">
+            <!--滾動 開始-->
+            <div class="run">
+                <div class="inner">
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_1.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_2.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_3.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_4.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_5.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_6.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_7.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_8.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_9.jpg"/></a></div>
+                </div>
+            </div>
+            <!--滾動 結束-->
+        </div>
+        <!--gallery_4 相關推薦 結束-->
+
+         <!--gallery_4 相關推薦 開始-->
+        <div class="gallery_4">
+            <!--滾動 開始-->
+            <div class="run">
+                <div class="inner">
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_1.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_2.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_3.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_4.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_5.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_6.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_7.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_8.jpg"/></a></div>
+                    <div class="piece"><a class="pic" href="#"><img src="images/pic_9.jpg"/></a></div>
+                </div>
+            </div>
+            <!--滾動 結束-->
+        </div>
+        <!--gallery_4 相關推薦 結束-->
+    </div>
+
+
+</body>
+
+</html>

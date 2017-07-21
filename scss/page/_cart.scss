@@ -1,6 +1,6 @@
 @charset "utf-8";
 /*------------ 【 購物車 】 section_cart ------------*/
-.section_cart { padding:10px; @extend %clearfix;}
+.section_cart { padding:10px 0px; @extend %clearfix;}
 
 /*------------ step 步驟 ------------*/
 .section_cart .step { text-align: center; margin-bottom:30px;}
@@ -43,6 +43,12 @@
     .discount .box_1 .item .right { display:block; float:none; text-align: left;}
     .discount .box_1 .item .right select { padding-right:0; width:100%;}
     .discount .box_1 .item .right input.code { width:190px;}
+}
+
+/*mobileS (360)*/
+@include breakpoint($mobileS){
+    .discount .box_1 .item .right input[type="text"] { width:100px;}
+    .discount .box_1 .item .right input.code { width:100px;}
 }
 
 

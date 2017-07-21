@@ -1,164 +1,498 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-        <script src="js/jquery.js"></script>
-        <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
-        <link rel="stylesheet" href="js/jquery.bxslider/jquery.bxslider.css">
-        <script src="js/gallery.js"></script>
-        <script src="js/common.js"></script>
-    </head>
-    <body>
-        <div class="container">
-            <section class="section_blog_detail">
-                
-                <header>
-                    <div class="part_breadcrumb_1">
-                        <a href="#">居家雜貨</a><a href="#">床具</a><span class="current">寢具被套</span>
-                    </div>  
-                </header>
+<html lang="en"><!-- InstanceBegin template="/Templates/layout.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>blog | 文章詳情</title>
+<!-- InstanceEndEditable -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/style.css" rel="stylesheet">
+<script src="js/jquery.js"></script>
+<!-- InstanceBeginEditable name="js" -->
+<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
+<link rel="stylesheet" href="js/jquery.bxslider/jquery.bxslider.css">
+<script src="js/gallery.js"></script>
+	<!-- InstanceEndEditable -->
+<script src="js/common.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+	<!-- InstanceEndEditable -->
+<!-- touch icon 開始 -->
+<link rel="apple-touch-icon" sizes="180x180" href="images/touch-icon.png"/> 
+<link rel="shortcut icon" sizes="192x192" href="images/touch-icon.png" />
+<!-- touch icon 結束 -->
 
-                <div class="title">
-                    <h1>文章標題</h1>
-                    <p class="date">2017/05/05</p>
+</head>
+
+<body>
+<!--wrapper_box 開始-->
+<div class="wrapper_box">
+    <!--wrapper 開始-->
+    <div class="wrapper">
+        <!--top_bar 開始-->
+        <div class="top_bar_box">
+            <div class="top_bar">
+                <div class="menu_1">
+                    <a href="shop_guide_buy.htm"> 購物指南</a>
+                    <a href="about_us_contact.htm"> 聯絡我們</a>
                 </div>
-
-                <div class="story">
-                    <p>我是文字編輯器，由後台上資料</p>
-                    <p><img src="images/1220x500_3.jpg" alt="圖片說明"></p>
-                    <p>我是文字編輯器，由後台上資料我是文字編輯器，由後台上資料我是文字編輯器，由後台上資料我<a href="#">文字編輯器</a>是，由後台上資料我是文字編輯器，由後台上資料我是文字編輯器，由後台上資料我是文字編輯器，由後台上資料我是文字編輯器，由後台上資料</p>
+                <div class="menu_2">
+                    <div class="search_box">
+                        <form name="form_search">
+                            <input class="keyword" type="text" name="keywords" value="" placeholder="請輸入關鍵字">
+                            <button class="btn_search" type="button" onclick="#">搜尋</button>
+                        </form>
+                    </div>
+                    <ul class="operate">
+                        <li class="m">
+                            <a class="blog" href="blog.htm"> 生活日誌</a>
+                        </li>
+                        <li class="menu_hover pc_only">
+                            <a class="member" href="login_sign_in.htm"> 會員專區
+                            </a>
+                            <div class="sub_menu">
+                                <a href="member_manage.htm">個人帳戶</a>
+                                <a href="member_order_list.htm">訂單查詢</a>
+                                <a href="member_coupon.htm">購物金</a>
+                                <a href="member_e_coupon.htm">電子折價券</a>
+                                <a href="member_collection.htm">收藏清單</a>
+                                <a href="#">登出</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="cart" href="cart_pay.htm"><strong>1</strong>購物車</a>
+                        </li>
+                        <li>
+                            <a class="fb" href="https://www.facebook.com/LifeWH/" target="_blank"> 粉絲團</a>
+                        </li>
+                    </ul>
                 </div>
-
-                <div class="part_thumb_1">
-                    <div class="piece">
-                        <a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
-                        <h2>英式格紋床包組</h2>
-                        <p>
-                            <span class="item_old_price">NT.390</span>
-                            <span>NT.343</span>
-                        </p>
-                        <div class="product_tag">
-                            <div class="tag_1">
-                                <span class="part_tag color_1">新品</span>
-                                <span class="part_tag color_2">促銷</span>
-                                <span class="part_tag color_3">免運</span>
-                                <span class="part_tag border">現貨</span>
-                            </div>
-                            <div class="tag_2">
-                                <span class="part_tag border">台灣製</span>
-                                <span class="part_tag border">母親節推薦</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="piece">
-                        <a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
-                        <h2>英式格紋床包組</h2>
-                        <p>
-                            <span class="item_old_price">NT.390</span>
-                            <span>NT.343</span>
-                        </p>
-                        <div class="product_tag">
-                            <div class="tag_1">
-                                <span class="part_tag color_1">新品</span>
-                                <span class="part_tag color_2">促銷</span>
-                                <span class="part_tag color_3">免運</span>
-                                <span class="part_tag border">現貨</span>
-                            </div>
-                            <div class="tag_2">
-                                <span class="part_tag border">台灣製</span>
-                                <span class="part_tag border">母親節推薦</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="piece">
-                        <a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
-                        <h2>英式格紋床包組</h2>
-                        <p>
-                            <span class="item_old_price">NT.390</span>
-                            <span>NT.343</span>
-                        </p>
-                        <div class="product_tag">
-                            <div class="tag_1">
-                                <span class="part_tag color_1">新品</span>
-                                <span class="part_tag color_2">促銷</span>
-                                <span class="part_tag color_3">免運</span>
-                                <span class="part_tag border">現貨</span>
-                            </div>
-                            <div class="tag_2">
-                                <span class="part_tag border">台灣製</span>
-                                <span class="part_tag border">母親節推薦</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="piece">
-                        <a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
-                        <h2>英式格紋床包組</h2>
-                        <p>
-                            <span class="item_old_price">NT.390</span>
-                            <span>NT.343</span>
-                        </p>
-                        <div class="product_tag">
-                            <div class="tag_1">
-                                <span class="part_tag color_1">新品</span>
-                                <span class="part_tag color_2">促銷</span>
-                                <span class="part_tag color_3">免運</span>
-                                <span class="part_tag border">現貨</span>
-                            </div>
-                            <div class="tag_2">
-                                <span class="part_tag border">台灣製</span>
-                                <span class="part_tag border">母親節推薦</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                 <!--gallery_5 閱讀推薦 開始-->
-                <div class="gallery_5">
-                    <!--滾動 開始-->
-                    <div class="run">
-                        <div class="inner">
-                            <div class="piece">
-                                <a class="pic" href="#"><img src="images/pic_1.jpg" alt=""></a>
-                                <h3><a href="#">我是標題</a></h3>
-                                <p class="date">2017/05/15</p>
-                                <p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
-                            </div>
-                            <div class="piece">
-                                <a class="pic" href="#"><img src="images/pic_2.jpg" alt=""/></a>
-                                <h3><a href="#">我是標題</a></h3>
-                                <p class="date">2017/05/15</p>
-                                <p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
-                            </div>
-                            <div class="piece"><a class="pic" href="#"><img src="images/pic_3.jpg"/></a>
-                            </div>
-                            <div class="piece">
-                                <a class="pic" href="#"><img src="images/pic_4.jpg"/></a>
-                                <h3><a href="#">我是標題</a></h3>
-                                <p class="date">2017/05/15</p>
-                                <p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
-                            </div>
-                            <div class="piece">
-                                <a class="pic" href="#"><img src="images/pic_5.jpg"/></a>
-                                <h3><a href="#">我是標題</a></h3>
-                                <p class="date">2017/05/15</p>
-                                <p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
-                            </div>
-                            <div class="piece">
-                                <a class="pic" href="#"><img src="images/pic_6.jpg"/></a>
-                                <h3><a href="#">我是標題</a></h3>
-                                <p class="date">2017/05/15</p>
-                                <p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--滾動 結束--> 
-                </div>
-                <!--gallery_5 閱讀推薦 結束-->
-
-            </section>
+            </div>
         </div>
-    </body>
-</html>
+        <!--top_bar 結束-->
+        
+        <header>
+        <!--header_box 開始-->
+        <div class="header_box">
+            <!--header 開始-->
+            <div class="header">
+                <!--btn_open 打開測選單-->
+                <div class="switch btn_side_open">
+                </div>
+                <h2 class="logo_life"><a href="index.htm"> 生活倉庫</a></h2>
+            </div>
+            <!--header 結束-->
+        </div>
+        <!--header_box 結束-->
+        </header>
+        
+        <nav>
+            <div id="main_nav">
+                <div class="switch btn_side_close">
+                </div>
+                <div class="inner">
+                    <div class="search_box">
+                        <form name="form_search">
+                            <input class="keyword" type="text" name="keywords" value="" placeholder="請輸入關鍵字">
+                            <button class="btn_search" type="button" onclick="#">搜尋</button>
+                            <label><input type="radio"/>商品搜尋</label>
+                            <label><input type="radio"/> 網誌搜尋</label>
+                        </form>
+                    </div>
+                    <ul>
+                        <li class="menu_hover">
+                            <a href="blog.htm"><span><img src="images/icon_1.png" alt=""></span>生活日誌</a>
+                        </li>
+                        <li class="menu_hover">
+                            <a href="product_list.htm"><span><img src="images/icon_2.png" alt=""></span>人氣商品</a>
+                        </li>
+                        <li class="menu_hover">
+                            <a href="product_list.htm"><span><img src="images/icon_3.png" alt=""></span>最新商品</a>
+                        </li>
+                        <li class="menu_hover">
+                            <a href="onsale.htm"><span><img src="images/icon_4.png" alt=""></span>促銷活動</a>
+                        </li>
+                        <li class="menu_hover">
+                            <a class="first" href="product_list.htm"><span><img src="images/icon_5.png" alt=""></span>居家雜貨</a>
+                            <ul class="second">
+                                <li><a href="product_list.htm">時鐘</a></li>
+                                <li><a href="product_list.htm">地毯</a></li>
+                                <li><a href="product_list.htm">燈飾</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">霓虹燈</a>
+                                        <a href="product_list.htm">造型燈串</a>
+                                        <a href="product_list.htm">檯燈</a>
+                                        <a href="product_list.htm">立燈</a>
+                                        <a href="product_list.htm">夜燈</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">裝飾品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">壁掛</a>
+                                        <a href="product_list.htm">門簾</a>
+                                        <a href="product_list.htm">燭台</a>
+                                        <a href="product_list.htm">公仔</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">杯盤器皿</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">杯子</a>
+                                        <a href="product_list.htm">餐盤</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">衛浴用品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">盥洗用品</a>
+                                        <a href="product_list.htm">牙膏</a>
+                                        <a href="product_list.htm">毛巾</a>
+                                        <a href="product_list.htm">浴巾</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">寢具被套</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">床包組</a>
+                                        <a href="product_list.htm">枕套</a>
+                                        <a href="product_list.htm">蓋毯</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">居家風格</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">銀河系列</a>
+                                        <a href="product_list.htm">波希米亞系列</a>
+                                        <a href="product_list.htm">美式風格系列</a>
+                                        <a href="product_list.htm">復古工業系列</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu_hover">
+                            <a class="first" href="product_list.htm">
+                                <span><img src="images/icon_6.png" alt=""></span>隨身品味
+                            </a>
+                            <ul class="second">
+                                <li><a href="product_list.htm">時鐘</a></li>
+                                <li><a href="product_list.htm">地毯</a></li>
+                                <li><a href="product_list.htm">燈飾</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">霓虹燈</a>
+                                        <a href="product_list.htm">造型燈串</a>
+                                        <a href="product_list.htm">檯燈</a>
+                                        <a href="product_list.htm">立燈</a>
+                                        <a href="product_list.htm">夜燈</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">裝飾品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">壁掛</a>
+                                        <a href="product_list.htm">門簾</a>
+                                        <a href="product_list.htm">燭台</a>
+                                        <a href="product_list.htm">公仔</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">杯盤器皿</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">杯子</a>
+                                        <a href="product_list.htm">餐盤</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">衛浴用品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">盥洗用品</a>
+                                        <a href="product_list.htm">牙膏</a>
+                                        <a href="product_list.htm">毛巾</a>
+                                        <a href="product_list.htm">浴巾</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">寢具被套</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">床包組</a>
+                                        <a href="product_list.htm">枕套</a>
+                                        <a href="product_list.htm">蓋毯</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">居家風格</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">銀河系列</a>
+                                        <a href="product_list.htm">波希米亞系列</a>
+                                        <a href="product_list.htm">美式風格系列</a>
+                                        <a href="product_list.htm">復古工業系列</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu_hover">
+                            <a class="first" href="product_list.htm">
+                                <span><img src="images/icon_7.png" alt=""></span>生活美妝
+                            </a>
+                            <ul class="second">
+                                <li><a href="product_list.htm">時鐘</a></li>
+                                <li><a href="product_list.htm">地毯</a></li>
+                                <li><a href="product_list.htm">燈飾</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">霓虹燈</a>
+                                        <a href="product_list.htm">造型燈串</a>
+                                        <a href="product_list.htm">檯燈</a>
+                                        <a href="product_list.htm">立燈</a>
+                                        <a href="product_list.htm">夜燈</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">裝飾品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">壁掛</a>
+                                        <a href="product_list.htm">門簾</a>
+                                        <a href="product_list.htm">燭台</a>
+                                        <a href="product_list.htm">公仔</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">杯盤器皿</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">杯子</a>
+                                        <a href="product_list.htm">餐盤</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">衛浴用品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">盥洗用品</a>
+                                        <a href="product_list.htm">牙膏</a>
+                                        <a href="product_list.htm">毛巾</a>
+                                        <a href="product_list.htm">浴巾</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">寢具被套</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">床包組</a>
+                                        <a href="product_list.htm">枕套</a>
+                                        <a href="product_list.htm">蓋毯</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">居家風格</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">銀河系列</a>
+                                        <a href="product_list.htm">波希米亞系列</a>
+                                        <a href="product_list.htm">美式風格系列</a>
+                                        <a href="product_list.htm">復古工業系列</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">居家風格</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">銀河系列</a>
+                                        <a href="product_list.htm">波希米亞系列</a>
+                                        <a href="product_list.htm">美式風格系列</a>
+                                        <a href="product_list.htm">復古工業系列</a>
+                                    </div>
+                                </li>
+                                <li class="mobile_only"><a href="product_list.htm">居家風格</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">銀河系列</a>
+                                        <a href="product_list.htm">波希米亞系列</a>
+                                        <a href="product_list.htm">美式風格系列</a>
+                                        <a href="product_list.htm">復古工業系列</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu_hover mobile_only">
+                            <a href="shop_guide_buy.htm">
+                                <span><img src="images/icon_5.png" alt="購物指南"></span>購物指南
+                            </a>
+                        </li>
+                        <li class="menu_hover mobile_only">
+                            <a href="about_us.htm">
+                                <span><img src="images/icon_5.png" alt="關於生活倉庫"></span>關於生活倉庫
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <content>
+        <!-- InstanceBeginEditable name="container" -->
+		<!--container_box 開始-->
+		<div class="container_box">
+			<!--container 開始-->
+			<div class="container">
+                <section class="section_blog_detail">
+
+                    <header>
+                        <div class="part_breadcrumb_1">
+                            <a href="#">居家雜貨</a><a href="#">床具</a><span class="current">寢具被套</span>
+                        </div>
+                    </header>
+
+                    <div class="title">
+                        <h1>文章標題</h1>
+                        <p class="date">2017/05/05</p>
+                    </div>
+
+                    <div class="story">
+                        <p>我是文字編輯器，由後台上資料</p>
+                        <p><img src="images/1220x500_3.jpg" alt="圖片說明"></p>
+                        <p>我是文字編輯器，由後台上資料我是文字編輯器，由後台上資料我是文字編輯器，由後台上資料我<a href="#">文字編輯器</a>是，由後台上資料我是文字編輯器，由後台上資料我是文字編輯器，由後台上資料我是文字編輯器，由後台上資料我是文字編輯器，由後台上資料</p>
+                    </div>
+
+                    <div class="part_thumb_1">
+                        <div class="piece">
+                            <a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
+                            <h2>英式格紋床包組</h2>
+                            <p>
+                                <span class="item_old_price">NT.390</span>
+                                <span>NT.343</span>
+                            </p>
+                            <div class="product_tag">
+                                <div class="tag_1">
+                                    <span class="part_tag color_1">新品</span>
+                                    <span class="part_tag color_2">促銷</span>
+                                    <span class="part_tag color_3">免運</span>
+                                    <span class="part_tag border">現貨</span>
+                                </div>
+                                <div class="tag_2">
+                                    <span class="part_tag border">台灣製</span>
+                                    <span class="part_tag border">母親節推薦</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="piece">
+                            <a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
+                            <h2>英式格紋床包組</h2>
+                            <p>
+                                <span class="item_old_price">NT.390</span>
+                                <span>NT.343</span>
+                            </p>
+                            <div class="product_tag">
+                                <div class="tag_1">
+                                    <span class="part_tag color_1">新品</span>
+                                    <span class="part_tag color_2">促銷</span>
+                                    <span class="part_tag color_3">免運</span>
+                                    <span class="part_tag border">現貨</span>
+                                </div>
+                                <div class="tag_2">
+                                    <span class="part_tag border">台灣製</span>
+                                    <span class="part_tag border">母親節推薦</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="piece">
+                            <a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
+                            <h2>英式格紋床包組</h2>
+                            <p>
+                                <span class="item_old_price">NT.390</span>
+                                <span>NT.343</span>
+                            </p>
+                            <div class="product_tag">
+                                <div class="tag_1">
+                                    <span class="part_tag color_1">新品</span>
+                                    <span class="part_tag color_2">促銷</span>
+                                    <span class="part_tag color_3">免運</span>
+                                    <span class="part_tag border">現貨</span>
+                                </div>
+                                <div class="tag_2">
+                                    <span class="part_tag border">台灣製</span>
+                                    <span class="part_tag border">母親節推薦</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="piece">
+                            <a href="#" class="pic"><img src="images/270@2x.jpg" alt=""></a>
+                            <h2>英式格紋床包組</h2>
+                            <p>
+                                <span class="item_old_price">NT.390</span>
+                                <span>NT.343</span>
+                            </p>
+                            <div class="product_tag">
+                                <div class="tag_1">
+                                    <span class="part_tag color_1">新品</span>
+                                    <span class="part_tag color_2">促銷</span>
+                                    <span class="part_tag color_3">免運</span>
+                                    <span class="part_tag border">現貨</span>
+                                </div>
+                                <div class="tag_2">
+                                    <span class="part_tag border">台灣製</span>
+                                    <span class="part_tag border">母親節推薦</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="title_2">精選推薦</h3>
+                    <!--gallery_5 精選推薦 開始-->
+                    <div class="gallery_5">
+                        <!--滾動 開始-->
+                        <div class="run">
+                            <div class="inner">
+                                <div class="piece">
+                                    <a class="pic" href="#"><img src="images/pic_1.jpg" alt=""></a>
+                                    <h3><a href="#">我是標題</a></h3>
+                                    <p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
+                                </div>
+                                <div class="piece">
+                                    <a class="pic" href="#"><img src="images/pic_2.jpg" alt=""/></a>
+                                    <h3><a href="#">我是標題</a></h3>
+                                    <p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
+                                </div>
+                                <div class="piece">
+                                    <a class="pic" href="#"><img src="images/pic_3.jpg"/></a>
+                                    <h3><a href="#">我是標題</a></h3>
+                                    <p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
+                                </div>
+                                <div class="piece">
+                                    <a class="pic" href="#"><img src="images/pic_4.jpg"/></a>
+                                    <h3><a href="#">我是標題</a></h3>
+                                    <p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
+                                </div>
+                                <div class="piece">
+                                    <a class="pic" href="#"><img src="images/pic_5.jpg"/></a>
+                                    <h3><a href="#">我是標題</a></h3>
+                                    <p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
+                                </div>
+                                <div class="piece">
+                                    <a class="pic" href="#"><img src="images/pic_6.jpg"/></a>
+                                    <h3><a href="#">我是標題</a></h3>
+                                    <p class="summary">壹二三四五六七八九十壹二三四五六七八九十壹二三四五</p>
+                                </div>
+                            </div>
+                        </div> 
+                        <!--滾動 結束--> 
+                    </div>
+                    <!--gallery_5 精選推薦 結束-->
+
+                </section>
+			</div>
+			<!--container 結束-->
+		</div>
+		<!--container_box 結束-->
+        <!-- InstanceEndEditable -->
+        </content>
+        
+        <footer>
+        <!--footer_box 開始-->
+        <div class="footer_box">
+            <!--footer 開始-->
+            <div class="footer">
+                <div class="menu_1">
+                    <a class="icon_ig" href="https://www.instagram.com/lifewarehouse/" target="_blank">
+                    </a>
+                    <a class="icon_line" href="https://goo.gl/xtA521" target="_blank">
+                    </a>
+                </div>
+                <div class="menu_2">
+                    <a href="about_us.htm"> 關於生活倉庫
+                    </a>
+                    <a href="about_us_privacy.htm"> 隱私權政策
+                    </a>
+                </div>
+                <p>
+                    &copy;LifeWareHouse</p>
+            </div>
+            <!--footer 結束-->
+        </div>
+        <!--footer_box 結束-->
+        </footer>
+        <aside></aside>
+        <div class="gototop">
+        </div>
+    </div>
+    <!--wrapper 結束-->
+</div>
+<!--wrapper_box 結束-->
+</body>
+<!-- InstanceEnd --></html>
