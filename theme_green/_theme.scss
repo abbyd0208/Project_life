@@ -1,0 +1,30 @@
+$green_dark: #206a77;
+$green: #5ea5a1;
+$gray:#666;
+$gray_light:#999;
+$white:#fff;
+
+
+// block
+.btn, a.btn { background:$green_dark;}
+.btn:hover, a.btn:hover { background:$green;}
+h3.title_3 { background:$green;}
+
+// layout
+.side_nav ul li a:hover, .side_nav ul li a.active { background:$green_dark;}
+
+// login
+.tab_3 .tab_menu a { background:$white; color:$green; border:1px solid $green;}
+.tab_3 .tab_menu a.active { background:$green; color:$white; border-color:$green;}
+
+// member
+.table_2 thead th { background: $green; border-color:$green;}
+
+// cart
+.discount .box_1 { background:$green;}
+.amount a.btn { background: $white; color:$gray; border:1px solid $gray_light;}
+.amount a.btn:nth-of-type(1) { background: $green_dark; color:$white; border:none;}
+
+.table_1 .favorite a { background-image: url(../images/icon_favorite.svg);}
+.table_1 .delete a { background-image: url(../images/icon_delete.svg);}
+.table_1 .cart a { background-image: url(../images/icon_cart.svg);}

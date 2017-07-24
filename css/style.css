@@ -831,18 +831,24 @@ h5 {
 @media only screen and (max-width: 768px) {
   .container {
     width: 768px;
-    padding-bottom: 30px; } }
+    padding: 40px 30px; } }
+
+/*pad (768)*/
+@media only screen and (max-width: 640px) {
+  .container {
+    width: padMpx;
+    padding: 30px 10px; } }
 
 /*mobile (480)*/
 @media only screen and (max-width: 480px) {
   .container {
     width: 100%;
-    padding: 15px; } }
+    padding: 40px 15px; } }
 
 /*mobileS (360)*/
 @media only screen and (max-width: 360px) {
   .container {
-    padding: 5px; } }
+    padding: 30px 5px; } }
 
 /*------------ 版型 2欄式 ------------*/
 .layout_col_2 {
@@ -1712,12 +1718,12 @@ h3.title_3 {
   .part_thumb_1 .piece.pad_only {
     display: inline-block; }
   .part_thumb_1 .piece {
-    width: 230px;
+    width: 220px;
     min-height: 368px; }
   .part_thumb_1 .piece:not(:nth-child(4n-4)) {
     margin-right: 0px; }
   .part_thumb_1 .piece:not(:nth-child(3n-3)) {
-    margin-right: 13px; } }
+    margin-right: 18px; } }
 
 @media only screen and (max-width: 480px) {
   .part_thumb_1 .piece.pad_only {
@@ -2891,9 +2897,6 @@ h3.title_3 {
     margin-bottom: 10px; } }
 
 /* CSS Document */
-.section_product_detail .btn {
-  padding: 10px; }
-
 .section_product_detail .area {
   margin-bottom: 60px; }
 
@@ -2966,6 +2969,9 @@ h3.title_3 {
   text-align: right;
   background: #c0272c;
   padding: 5px 10px; }
+
+.section_product_detail .btn.full {
+  padding: 10px; }
 
 /*tab_1 切換編輯器*/
 .gallery_2 {
@@ -3089,6 +3095,10 @@ h3.title_3 {
 .gallery_3 .bx-wrapper .bx-next:hover {
   background-position: right bottom; }
 
+@media only screen and (max-width: 640px) {
+  .gallery_3 .bx-wrapper .bx-pager {
+    bottom: -50px; } }
+
 /*組*/
 .gallery_3 .run .inner .piece .btn {
   margin: 0px; }
@@ -3119,11 +3129,14 @@ h3.title_3 {
   background: url(../images/icon_arrow_3.png) left top no-repeat;
   background-size: auto 70px; }
 
-/*有margin-left所以右邊會空出15px right少一點  */
 .gallery_4 .bx-wrapper .bx-next {
   right: -50px;
   background: url(../images/icon_arrow_3.png) right top no-repeat;
   background-size: auto 70px; }
+
+@media only screen and (max-width: 640px) {
+  .gallery_4 .bx-wrapper .bx-pager {
+    bottom: -50px; } }
 
 /*hover*/
 .gallery_4 .bx-wrapper .bx-prev:hover {
@@ -3133,9 +3146,6 @@ h3.title_3 {
   background-position: right bottom; }
 
 /*組*/
-.gallery_4 .run .inner .piece {
-  /* margin-right: 15px;  */ }
-
 /*圖片*/
 .gallery_4 .run .inner .piece a.pic {
   display: block; }
@@ -3148,7 +3158,6 @@ h3.title_3 {
 /*篩選=======================*/
 .section_product_list .select_box {
   float: right;
-  padding-top: 38px;
   height: 46px; }
 
 .section_product_list .select_box .select {

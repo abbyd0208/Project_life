@@ -7,10 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="../css/style.css" rel="stylesheet">
-<script src="../js/jquery.js"></script>
-<!-- TemplateBeginEditable name="js" -->
-<!-- TemplateEndEditable -->
-<script src="../js/common.js"></script>
+
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
 <!-- touch icon 開始 -->
@@ -348,5 +345,12 @@
     <!--wrapper 結束-->
 </div>
 <!--wrapper_box 結束-->
+
+<script src="../js/jquery.js"></script>
+<!-- TemplateBeginEditable name="js" -->
+<!-- TemplateEndEditable -->
+<script src="../js/common.js"></script>
+
+
 </body>
 </html>

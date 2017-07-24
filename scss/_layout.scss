@@ -260,17 +260,23 @@ position: absolute; right:0; top:8px; transform: rotate(-90deg);}
 
  /*pad (768)*/
 @include breakpoint($pad){
-    .container{ width: $pad+px; padding-bottom: 30px;}
+    .container{ width: $pad+px; padding: 40px 30px;}
+}
+
+
+ /*pad (768)*/
+@include breakpoint($padM){
+    .container{ width: padM+px; padding: 30px 10px;;}
 }
 
  /*mobile (480)*/
 @include breakpoint($mobile){
-    .container{ width: 100%; padding: 15px;}
+    .container{ width: 100%; padding: 40px 15px;}
 }
 
  /*mobileS (360)*/
 @include breakpoint($mobileS){
-    .container{ padding: 5px;}
+    .container{ padding: 30px 5px;}
 }
 
 /*------------ 版型 2欄式 ------------*/

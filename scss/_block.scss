@@ -363,9 +363,9 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 
 @include breakpoint($pad){
     .part_thumb_1 .piece.pad_only{ display:inline-block; }
-    .part_thumb_1 .piece{ width: 230px; min-height:368px;}
+    .part_thumb_1 .piece{ width: 220px; min-height:368px;}
     .part_thumb_1 .piece:not(:nth-child(4n-4)){margin-right:0px;}
-    .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:13px;}
+    .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:18px;}
 }
  
 @include breakpoint($mobile){

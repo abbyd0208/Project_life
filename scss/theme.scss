@@ -4,6 +4,12 @@
 /* mixin */
 @import "mixin/default";
 @import "mixin/breakpoint";
+
+
+/*預設連結狀態*/
+a:link, a:visited{ color:$gray_dark;}
+a:hover, a:active{ color:$gray;}
+
 /*=============================layout===============================*/
 .wrapper.side_open::before{background:rgba(000,000,000,0.5);}
 .top_bar_box{ background: $gray;}
@@ -194,3 +200,86 @@ h3.title_3{ color: $white; background: $gray;}
 //section_onsale_plus==================== 
 .section_onsale_plus .info{border: 1px solid $gray;}
 .section_onsale_plus .part_thumb_1{ border:1px solid $gray;}
+
+/*------------ 【 空白頁 】 section_blank ------------*/
+.section_blank p { color:$gray; }
+
+
+// .section_cart ============================
+/*------------ step 步驟 ------------*/
+// active
+.section_cart .step li.active strong { color:$red;}
+.section_cart .step li.active span { color:$red;}
+
+/*------------ discount 購物金 ------------*/
+.discount .box_1 { background:$gray; color:$white;}
+.discount .box_1 .item .right input[type="text"] { border-bottom:1px solid $white;}
+.discount .box_1 .item .right select {background-color:$white; }
+/*------------ amount 訂單金額 ------------*/
+.amount p.all { border-top: 1px dashed $gray; }
+/*------------ table_1 購物車內容 ------------*/
+.section_cart .tab_content .note { display:block; padding:30px; border-top: 1px dashed #bbb;}
+
+// table
+.table_1 td em { color: $red;}
+// thead
+.table_1 thead th { color: #777; border-bottom:1px solid $gray;}
+// tr
+.table_1 tbody tr + tr { @extend %clearfix; border-top: 1px dashed #bbb;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+    .table_1 td[data-title]:before {  color: #aaa; }
+
+}
+
+/*------------ 【 會員登入 】 section_member_login ------------*/
+.section_member_login p.note { color:$gray;}
+
+/*------------ order_detail 訂單明細 ------------*/
+.order_detail {  color:$gray;}
+.order_detail .box_1 { border-right:1px dashed $gray;}
+/*pad (768)*/
+@include breakpoint($pad){
+	.order_detail .box_1 { border-bottom:1px dashed $gray;}	
+}
+/*------------  留言板 ------------*/
+.comment_box li p.txt { border:1px solid $gray_light;}
+.comment_box li p.pic {border:1px solid $gray_light;}
+.comment_box li span.time {color:$gray;}
+
+/*------------  退換貨申請 ------------*/
+.return_apply { color:$gray; }
+/*------------  退貨須知 ------------*/
+.return_rule {  color:$gray; }
+/*------------ member_level 會員等級 ------------*/
+.member_level { color:$gray;}
+/*------------ table_2 訂單內容 ------------*/
+.order_info .note {  border-top: 1px dashed #bbb;}
+
+// table_2
+.table_2 td em { color: $red;}
+.table_2 td em { color: $red;}
+// thead
+.table_2 thead th { background:$gray; color: $white; border-bottom:1px solid $gray;}
+// tr
+.table_2 tbody tr { border-bottom: 1px solid #bbb;}
+.table_2 tbody tr:hover { background:#eee;}
+
+/*mobile (480)*/
+@include breakpoint($mobile){
+
+	.title_hide tr:nth-child(1){ border-top:1px solid $gray_light;}
+	.title_hide td[data-title]:before {  color: $gray; }
+}
+
+/*------------ 【 購物指南 】 section_shop_guide ------------*/
+
+/*pad (768)*/
+@include breakpoint($pad){
+    .section_shop_guide .c1 { border-bottom:1px solid $gray;}
+}
+/*------------ list 清單說明 ------------*/
+
+.list li h4:before { background:$gray_dark; }
+.list li p { color:$gray_dark; }

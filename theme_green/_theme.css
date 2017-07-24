@@ -1,0 +1,47 @@
+.btn, a.btn {
+  background: #206a77; }
+
+.btn:hover, a.btn:hover {
+  background: #5ea5a1; }
+
+h3.title_3 {
+  background: #5ea5a1; }
+
+.side_nav ul li a:hover, .side_nav ul li a.active {
+  background: #206a77; }
+
+.tab_3 .tab_menu a {
+  background: #fff;
+  color: #5ea5a1;
+  border: 1px solid #5ea5a1; }
+
+.tab_3 .tab_menu a.active {
+  background: #5ea5a1;
+  color: #fff;
+  border-color: #5ea5a1; }
+
+.table_2 thead th {
+  background: #5ea5a1;
+  border-color: #5ea5a1; }
+
+.discount .box_1 {
+  background: #5ea5a1; }
+
+.amount a.btn {
+  background: #fff;
+  color: #666;
+  border: 1px solid #999; }
+
+.amount a.btn:nth-of-type(1) {
+  background: #206a77;
+  color: #fff;
+  border: none; }
+
+.table_1 .favorite a {
+  background-image: url(../images/icon_favorite.svg); }
+
+.table_1 .delete a {
+  background-image: url(../images/icon_delete.svg); }
+
+.table_1 .cart a {
+  background-image: url(../images/icon_cart.svg); }
