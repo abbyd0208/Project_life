@@ -4,38 +4,40 @@
 .section_product_list{}
 
 /*麵包屑*/
-.section_product_list .part_breadcrumb_1{ float: left;}
+.section_product_list .part_breadcrumb_1{ float: left; margin-bottom: 0px; padding-top: 10px;}
 
 
 /*篩選=======================*/
-.section_product_list .select_box{ float: right;  height: 46px; }
+.section_product_list .select_box{ float: right;  height: 46px; margin-bottom: 30px;}
 .section_product_list .select_box .select{  width: 258px; height: 46px; border: 1px solid $gray; float: left}
 .section_product_list .select_box .select:nth-of-type(1){ margin-right: 15px;}
 
 .section_product_list .select_box a{color: $gray;}
-.section_product_list .select_box .item_1 a+.sub,.section_product_list .select_box .item_2 a+.sub{ border: 1px solid $gray; background: $white; }
+// 次選單
+.section_product_list .select_box .item_1 a+.sub,.section_product_list .select_box .item_2 a+.sub{ border: 1px solid $gray; background: $white; width: 258px; position: absolute; left: -1px; 
+top:44px;  z-index: 5;}
 /*item_1============*/
 .section_product_list .select_box .item_1{ position: relative;}
 .section_product_list .select_box .item_1>a,.section_product_list .select_box .item_2 a{ display: block; text-align: center; line-height: 45px;background: $white;}
 .section_product_list .select_box .item_1>a,.section_product_list .select_box .item_2>a{ padding-right: 15px; background: url(../images/icon_arrow_5.png) 90% 50% no-repeat; background-size: auto 20%; }
 // 次選單
-.section_product_list .select_box .item_1 a+.sub{ position: absolute; left: 0px; 
-top:45px;  z-index: 5; display: none;}
-.section_product_list .select_box .item_1 a+.sub a{ display: block; width: 258px; padding: 5px;} 
+.section_product_list .select_box .item_1 a+.sub{ display: none;}
+
+.section_product_list .select_box .item_1 a+.sub a{ display: block; padding: 5px;} 
 /*顯示次選單*/
-.section_product_list .select_box .item_1 a.show +.sub { display: block;}
+.section_product_list .select_box .item_1 a.show +.sub { display: block; width: 258px;}
 
 
 /*item_2===========*/
 .section_product_list .select_box .item_2{position: relative; }
 
 // 次選單
-.section_product_list .select_box .item_2 a+.sub{ width: 258px; border: 1px solid $gray;  background: $white; padding: 20px; position: absolute; left: 0px; top: 45px; z-index:5; display:none; }
+.section_product_list .select_box .item_2 a+.sub{  padding: 20px; display:none; }
 .section_product_list .select_box .item_2 a.show +.sub { display: block;}
 /*range*/
 .section_product_list .select_box .item_2 .sub .select_range{ width: 100%; height: 120px; }
 .section_product_list .select_box .item_2 .sub .select_range .select_range{ margin-bottom:30px;}
-.section_product_list .select_box .item_2 .sub .select_range label{ display: block; font-size: 14px; margin-bottom: 5px;}
+.section_product_list .select_box .item_2 .sub .select_range label{ display: block; font-size: 16px; margin-bottom: 5px;}
 .section_product_list .select_box .item_2 .sub .select_range .irs-bar{ background: $gray; border-color: $gray;}
 .section_product_list .select_box .item_2 .sub .select_range .irs-from, .select_box .irs-to, .select_box .irs-single{ background: $gray;}
 .section_product_list .select_box .item_2 .sub .select_range .irs-slider{box-shadow:none; background: $gray_light;}

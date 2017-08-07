@@ -221,3 +221,37 @@ $(function(){
     }
    
 });
+
+
+//會員下拉選單=====================================
+$(function(){
+    var memberSub = $(".top_bar .menu_2 .operate .member");
+    memberSub.on("mouseover",function(){
+        memberSub.next().show();
+    })
+
+    memberSub.next().on("mouseleave",function(){
+        memberSub.next().hide();
+    })
+});
+
+
+
+// iscroll ===================================
+$(function () {
+	if ( $(".iscroll").length > 0 ) {
+		var myScroll = new IScroll('.iscroll', {
+			mouseWheel: true,
+			scrollbars: true
+		});
+	}
+});
+
+
+// lightbox 留言版 點圖放大 ===================================
+$(function () {
+	if ( $(".venobox").length > 0 ) {
+		$('.venobox').venobox();
+	}
+});
+

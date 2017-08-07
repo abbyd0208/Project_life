@@ -1,17 +1,47 @@
 @charset "utf-8";
 /*------------ 【 會員中心 】 section_member_center ------------*/
+.section_member_center .title_3 { padding-left:20px;}
+.section_member_center form { color:$gray;}
+.section_member_center form input[type="submit"]{ font-size:14px;}
+/*------------ form ------------*/
+@include breakpoint($pad){
+	.pad_hide { display:none;}
+}
+
+/*------------ 設定個人資料及密碼 ------------*/
+.section_member_center .title_3 ~ .form { padding-left:20px;}
+.personal_info input[type="text"],
+.personal_info input[type="email"],
+.personal_info input[type="tel"]{ width:260px;}
+.personal_info input[type="submit"]{ margin-bottom:60px;}
+
+/*------------ 購物金 ------------*/
+.member_coupon { margin-bottom:170px;}
+.member_coupon table { margin-bottom:10px;}
+.member_coupon .table_1 { margin-bottom:0px;}
+.member_coupon .btn_box_single a { width:205px; height:30px; padding:3px;}
+/*------------ 購物金 - 帳戶結清 ------------*/
+.member_coupon .form_1 .item input[type="text"] { width:260px;}
+
 
 /*------------ form ------------*/
-.section_member_center form { padding-left:20px;}
 @include breakpoint($pad){
 	.section_member_center form { padding-left:0;}
+	.section_member_center form .item { margin-bottom: 12px;}
+	.section_member_center .form_1 .item p, 
+	.section_member_center .form_1 .item select,
+	.section_member_center .form_1 .item input { height:35px;}
+	.section_member_center .form input[type="submit"] { height:40px;}
 }
+
+/*------------ 訂單查詢 ------------*/
+.section_member_center .table_2 .num { color:lighten($red, 10);}
+
 
 /*------------ order_detail 訂單明細 ------------*/
 .order_detail { @extend %clearfix; color:$gray; letter-spacing:0.15em;}
-// .order_detail .title_1 { display:none;}
-.order_detail .box_1 { width:49%; float:left; border-right:1px dashed $gray;}
-.order_detail .box_2 { width:49%; float:right;}
+.order_detail .box_1 { width:50%; float:left; border-right:1px dashed $gray;}
+.order_detail .box_2 { width:48%; float:right;}
 .order_detail li { font-size:14px; margin-bottom:7px;}
 .order_detail li span { display:inline-block; width:100px;}
 /*pad (768)*/
@@ -22,30 +52,46 @@
 }
 
 /*------------ group_1 付款按鈕 ------------*/
-.section_member_center .group_1 { max-width:250px; margin:20px auto;}
+.section_member_center .group_1 { max-width:250px; margin:25px auto;}
 .section_member_center .group_1 .btn { width:100%; text-align: center;}
-.section_member_center .group_1 p { @extend %clearfix; font-size:13px;}
+.section_member_center .group_1 p { @extend %clearfix; font-size:13px; margin-bottom:15px;}
 .section_member_center .group_1 span { float:right;}
 
 
 /*------------  留言板 ------------*/
-.comment_box { padding:20px 10px; @extend %clearfix;}
-.comment_box a { display:block; text-align: center; margin-bottom:10px;}
+.comment_box { padding:20px; @extend %clearfix;}
+.comment_box a.loading { display:block; text-align: center; margin-bottom:10px;}
+.comment_box a.loading:before { content:""; display:inline-block; width:35px; height:26px;
+background:url("../images/icon_comment_box.svg") no-repeat center top; background-size:80% auto;
+position:relative; top:8px;}
+
 .comment_box ul { border-bottom:1px dashed $gray_light; margin-bottom:20px;}
-.comment_box li { margin-bottom:20px; vertical-align:text-bottom}
+.comment_box li { margin-bottom:20px; vertical-align:text-bottom; position:relative;}
+.comment_box li:before { content:""; display:inline-block; width:35px; height:26px;
+background:url("../images/icon_comment_box.svg") no-repeat center bottom; background-size:100% auto;
+position: absolute; left:-21px; top:4px;}
+.comment_box li.right:before { left:auto; right:-21px; transform:rotate(180deg);}
+
 .comment_box li p.txt { display:inline-block; padding:5px 10px; border:1px solid $gray_light; margin-right:10px;}
-.comment_box li p.pic { max-width:200px; display:inline-block; padding:10px; border:1px solid $gray_light; margin-right:10px;}
-.comment_box li p.pic img { display:block; width:100%; height:auto;}
+.comment_box li a.pic { display: block; max-width:200px; display:inline-block; padding:10px; border:1px solid $gray_light; margin-right:10px;}
+.comment_box li a.pic img { display:block; width:100%; height:auto;}
 .comment_box li span.time { font-size:13px; color:$gray;}
 // 右邊
 .comment_box li.right { @extend %clearfix; text-align:right;}
-.comment_box li.right p.txt { float:right; margin-left:10px;}
-.comment_box li.right p.pic { float:right; margin-left:10px;}
+.comment_box li.right p.txt { float:right; margin-left:10px; margin-right:0;}
+.comment_box li.right a.pic { float:right; margin-left:10px; margin-right:0;}
 // 輸入框
 .comment_box .box_1 { width:49%; float:left;}
-.comment_box .box_1 input { width:100%; }
+.comment_box .box_1 input { width:100%; height:75px;}
 .comment_box .box_1 form { margin-bottom:0;}
-.comment_box .box_2 { width:49%; float:right; clear:none; margin-bottom:0;}
+.comment_box .box_2 { width:49%; float:right; clear:none; margin-bottom:0; padding:13px 0;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+	.comment_box .box_1 { width:100%;}
+	.comment_box .box_1 input { border:1px solid $gray;}
+	.comment_box .box_2 { width:100%;}
+}
 
 /*mobile (480)*/
 @include breakpoint($mobile){
@@ -64,8 +110,9 @@
 }
 
 /*------------  退貨須知 ------------*/
-.return_rule { @extend %clearfix; color:$gray; letter-spacing:0.15em;}
-.return_rule .inner { height:300px; overflow:auto;}
+.return_rule { @extend %clearfix; position:relative; color:$gray; letter-spacing:0.15em;}
+.return_rule .iscroll .inner {  position:relative; padding-right:20px;}
+
 .return_rule + .group_1 { max-width:400px; text-align: center;}
 .return_rule + .group_1 .btn { width:auto;}
 /*pad (480)*/
@@ -78,7 +125,7 @@
 
 /*------------ member_level 會員等級 ------------*/
 .member_level { padding:20px; color:$gray;}
-.member_level strong { font-size:20px;}
+.member_level strong { font-size:20px; color:lighten($red, 10);}
 .member_level p.note { margin-top:40px;}
 /*pad (480)*/
 @include breakpoint($mobile){
@@ -86,19 +133,27 @@
 }
 
 /*------------ note  ------------*/
-.section_member_center .note { overflow:auto; padding:30px;}
+.section_member_center .block_1 { position:relative;}
+.section_member_center .iscroll { position:relative; height:300px; overflow:hidden;}
+.section_member_center .note { position:relative; padding:30px 30px 30px 0;}
 
-
+.iScrollVerticalScrollbar { width:7px!important;}
+.iScrollVerticalScrollbar .iScrollIndicator { background:$gray_light!important;}
 
 /*------------ table_2 訂單內容 ------------*/
-.order_info { padding:20px 10px; margin-bottom:30px;}
+.order_info { padding:0 20px; margin-bottom:30px;}
 .order_info .title_1 { display:none;}
-.order_info .table { padding:20px;}
-.order_info .title_3 { height:30px; font-size:16px; padding:0 0 0 10px; margin-top:20px;} 
-.order_info .note { display:block; padding:30px; border-top: 1px dashed #bbb;}
+.order_info .table { }
+.order_info .title_3 { height:30px; text-align: left; padding:3px 10px; margin-top:20px;} 
+.order_info .note { display:block; padding:40px 40px 40px 105px; border-top: 1px dashed #bbb;}
+.order_info .note span { color:lighten($red, 10);}
+.order_info .note + .title_3 { margin-top:0;}
 /*pad (768)*/
 @include breakpoint($pad){
-	.order_info .title_1 { display:block;}
+.order_info .title_1 { display:block;}
+.order_info > .title_1 { padding-top:15px;}
+.order_info .note { padding:25px 20px 25px 10px;}
+
 }
 /*pad (480)*/
 @include breakpoint($mobile){
@@ -106,19 +161,20 @@
 }
 
 // table
-.table_2 { width:100%; margin-bottom:50px;}
+.table_2 { width:100%; margin-bottom:50px; letter-spacing:0.15em; color:$gray;}
 .table_2 td em { color: $red;}
 .table_2 td em { color: $red;}
 .table_2 select { height:30px; width:50px;}
 .table_2 .align_left { text-align: left;}
 // thead
-.table_2 thead th { background:$gray; color: $white; font-size:15px; padding: 8px 12px; border-bottom:1px solid $gray;}
+.table_2 thead { border-bottom:1px solid $gray_light;}
+.table_2 thead th { background:$gray; color: $white; font-size:15px; padding: 8px 12px;}
 // tr
-.table_2 tbody tr { border-bottom: 1px solid #bbb;}
+.table_2 tbody tr { border-bottom: 1px solid #bbb; cursor:pointer;}
 .table_2 tbody tr:hover { background:#eee;}
 
 // td
-.table_2 td { padding: 30px 6px; font-size:15px; line-height: 1.4; text-align: center; min-width: 76px;}
+.table_2 td { padding: 30px 6px; font-size:15px; line-height: 1.4; text-align: center; min-width: 76px; vertical-align:  middle;}
 .table_2 td.img { width:100px;}
 
 // 產品名稱
@@ -134,7 +190,9 @@
 
 /*pad (768)*/
 @include breakpoint($pad){
+	.table_2 { margin-bottom: 20px;}
 	.table_2 .pad_hide { display: none;}
+	.table_2 thead th { padding: 8px 0px;}
 }
 
 /*mobile (480)*/

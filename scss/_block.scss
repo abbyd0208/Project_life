@@ -25,14 +25,16 @@ a.btn.fb { display:inline-block; color: $white; background:$fb url(../images/Ei-
 
 /*標題=====================AB*/
 /*標題一*/
-h3.title_1{ text-align: center; border-bottom: 1px solid $gray; padding-bottom: 12px; margin-bottom: 20px;}
+h3.title_1{ text-align: center; border-bottom: 1px solid $gray; padding-bottom: 12px; margin-bottom: 20px; position: relative; right:-10px;}
 h3.title_1.left{ text-align: left;}
-h3.title_1 a.btn_more{ display: inline-block; background: $gray;  font-size: 14px; color: $white; letter-spacing: 5px; padding: 3px 8px; border-radius: 50px; float: right;}
-h3.title_1 a.btn_more:hover{ background:$gray_light; }
+h3.title_1 a.btn_more{ width: 110px; height: 30px; line-height: 30px; display: inline-block; background: $gray;  font-size: 14px; color: $white; letter-spacing: 5px; background-image: url(../images/icon_arrow.png);
+    background-repeat: no-repeat; background-size: auto 16px; background-position: 90px center; border-radius: 50px; padding-right: 5px; float: right;}
+h3.title_1 a.btn_more:hover{ background-color:$gray_light; }
 /*標題二*/
 h3.title_2{ font-size:18px; text-align: left; border-top: 1px solid $gray; padding-top: 15px;  margin-bottom: 20px;}
 /*標題三*/
-h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; background: $gray;  margin-bottom: 20px;}
+h3.title_3{ font-size:14px; color: $white;  text-align: center; letter-spacing: 2px; padding: 8px 10px; background: $gray;  margin-bottom: 10px;}
+h3.title_3.left{  text-align: left;}
 
 
 @include breakpoint($pad){
@@ -43,10 +45,12 @@ h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; b
 
 
 /*商品狀態標籤================AB*/
-.product_tag{}
-.product_tag .tag_1{ margin-bottom: 10px;}
+.product_tag{ }
+.product_tag .tag_1,.product_tag .tag_2{ @extend %clearfix;}
+.product_tag .tag_1{margin-bottom: 10px; }
 .product_tag .tag_2 .part_tag{ margin-bottom: 5px;}
-.product_tag .part_tag{ display: inline-block; font-size:12px; letter-spacing: 2px; padding:5px; border-radius: 3px; }
+.product_tag .part_tag{ display: block; font-size:12px; letter-spacing: 2px; height: 25px; line-height: 25px;  padding:0 5px; border-radius: 3px;  float: left;}
+.product_tag .part_tag:not(:nth-last-of-type(1)){ margin-right: 3px;}
 .product_tag .part_tag.color_1{ background:$gray; color: $white; }
 .product_tag .part_tag.color_2{ background: $red; color: $white; }
 .product_tag .part_tag.color_3{ background: $gray_dark;color: $white; }
@@ -60,7 +64,7 @@ h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; b
 
 
 /*麵包屑===========================AB*/
-.part_breadcrumb_1{ padding:15px 0 30px 0 }
+.part_breadcrumb_1{ margin-bottom: 45px;}
 .part_breadcrumb_1>a,.part_breadcrumb_1 span.current{ font-size: 16px; color: $gray_dark;}
 .part_breadcrumb_1>a:hover{ color: $gray;}
 .part_breadcrumb_1 span.current::before{content: "/"; display: inline-block; margin: 0px 10px;}
@@ -69,18 +73,18 @@ h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; b
 
 /*pad (768)*/
 @include breakpoint($pad){
-    .part_breadcrumb_1{ padding: 22px 0;}
+    .part_breadcrumb_1{ margin-bottom: 35px;}
 }
 
 /*mobile (414)*/
 @include breakpoint($mobile){
-    .part_breadcrumb_1{ padding: 10px 0;}
+    .part_breadcrumb_1{ margin: 10px 0;}
     .part_breadcrumb_1>a,.part_breadcrumb_1 span.current{ font-size: 14px;}
 }
 
 /*麵包屑 + 右側下拉選單================AB*/
-.breadcrumb_box{ height: 50px; position: relative; margin-bottom: 50px; }
-.breadcrumb_box .part_breadcrumb_1{  padding: 0px; position: absolute; left: 0px; top: 10px;}
+.breadcrumb_box{ height: 50px; position: relative; margin-bottom: 30px; }
+.breadcrumb_box .part_breadcrumb_1{ position: absolute; left: 0px; top: 10px;}
 .breadcrumb_box .form{ margin-bottom: 0px; }
 .breadcrumb_box .form_3{ position: absolute; right: 0px; top: 0px; }
 
@@ -101,7 +105,7 @@ h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; b
 }
 
 /*banner================AB*/
-.banner_1{ margin-bottom: 30px;}
+.banner_1{ width: 100%; max-width: 1220px; margin: 0 auto;}
 .banner_1 a{display: block; width:100%; height: 0; padding-bottom:32.5%; overflow: hidden;  }
 .banner_1 a img{width: 100%; height: auto;}
 
@@ -137,6 +141,11 @@ h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; b
 .part_pager li > a{  border-radius: 50%; }
 .part_pager li > a:hover{  color: $white; background:$gray_light;}
 
+/*pad (768)*/
+@include breakpoint($pad){
+   .part_pager{ padding: 50px 0;}
+}
+
 
 /*tab_1====================AB*/
 .tab_1{ clear: both; border: 1px solid color;}
@@ -145,7 +154,7 @@ h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; b
 .tab_1 .tab_menu a:hover{ background: $gray_light; color: $white;}
 .tab_1 .tab_menu a:nth-last-of-type(1){ border: none;}
 .tab_1 .tab_menu a.current{ background: $gray; color: $white;}
-.tab_1 .tab_content{ padding: 30px;}
+.tab_1 .tab_content{ padding: 30px 42px;;}
 .tab_1 .tab_content .piece{}
 /*pad (768)*/
 @include breakpoint($pad){
@@ -154,6 +163,7 @@ h3.title_3{ font-size:18px; color: $white;  text-align: center; padding: 10px; b
     .tab_1 .tab_menu a:hover{ background: transparent; color: $gray_dark;}
     .tab_1 .tab_menu a.current{ background:$white; color: $gray_dark; }
     .tab_1 .tab_menu a.current:after,.tab_1 .tab_menu a:hover:after{ content: ""; display: block; width: 80px; height: 1px; margin: 5px auto; background: $gray_dark;}
+    .tab_content{ padding: 20px;}
 }
 
 
@@ -320,8 +330,8 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 /*AB search==================================*/
 .search_box{width: 200px; position: relative;}
 .search_box form{}
-.search_box input.keyword{ display:block; width: 200px; padding-left:5px; border-radius: 50px; height: 30px; border: 1px solid $gray; }
-.search_box .btn_search{ display: block; width: 20px; height: 20px; background:url(../images/icon_search.png) center center no-repeat; background-size: 20px;  @extend %text-hide; text-indent: -9999px; border:0px; position: absolute; right: 5px; top: 5px;}
+.search_box input.keyword{ display:block; width: 200px; padding-left:15px; border-radius: 50px; height: 30px; border: 1px solid $gray; }
+.search_box .btn_search{ display: block; width: 15px; height: 15px; background:url(../images/icon_search.png) center center no-repeat; background-size: 15px;  @extend %text-hide; text-indent: -9999px; border:0px; position: absolute; right: 12px; top: 8px;}
 
 
 
@@ -343,21 +353,24 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 .part_thumb_1{ @extend %clearfix; clear: both; }
 .part_thumb_1 .piece{ display: inline-block; vertical-align: top; width: 270px;  margin-bottom: 70px;  }
 .part_thumb_1 .piece:nth-child(4n+1){clear: both;}
-.part_thumb_1 .piece:not(:nth-child(4n-4)){margin-right:34px;}
+.part_thumb_1 .piece:not(:nth-child(4n-4)){margin-right:41px;}
 .part_thumb_1 .piece a.pic{ width: 100%; height: 0; padding-bottom: 100%;  display: block; margin-bottom: 12px; overflow:hidden;}
 .part_thumb_1 .piece a.pic img{ width: 100%; height: auto;}
 .part_thumb_1 .piece h2{ font-size: 18px;}
 .part_thumb_1 .piece > p{ margin-bottom: 5px;}
-.part_thumb_1 .piece > p span{color: $red; }
+// 價格
+.part_thumb_1 .piece > p span{ color: $gray;}
+.part_thumb_1 .piece > p span.discount{color: $red;}
 .part_thumb_1 .piece > p span.item_old_price{ text-decoration: line-through; color: $gray_light;}
 .part_thumb_1 .piece .box_1{ margin-bottom: 5px;}
 .part_thumb_1 .piece .box_2{}
 /*手機板隱藏*/
 .part_thumb_1 .piece.pad_only{ display: none;}
-
+// 1024
 @include breakpoint($pc){
     .part_thumb_1{ max-width: 900px; margin: 0 auto;}
     .part_thumb_1 .piece{ width: 195px; margin-bottom: 40px; }
+    .part_thumb_1 .piece:not(:nth-child(4n-4)){margin-right:35px;}
 }
 
 
@@ -384,7 +397,7 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 .part_pictxt_1 .piece a.pic{ display: block; width: 380px; height:215px; overflow: hidden; margin-bottom: 10px;}
 .part_pictxt_1 .piece a.pic img{ width: 100%; height: auto;}
 .part_pictxt_1 .piece h3{ border-bottom: 1px solid $gray;margin-bottom: 5px;}
-.part_pictxt_1 .piece h3 a{ @include link($gray_dark,$gray);}
+.part_pictxt_1 .piece h3 a{ font-weight: bold; @include link($gray_dark,$gray);}
 .part_pictxt_1 .piece p.date{ font-size: 14px; color: $gray;}
 .part_pictxt_1 .piece p.summary{color: $gray;}
 
@@ -417,7 +430,7 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 
 
 /*首頁圖集*/
-.gallery_1{position: relative; overflow: hidden; margin-bottom: 60px;}
+.gallery_1{max-width: 1220px; margin: 0 auto;position: relative; overflow: hidden; margin-bottom: 60px;}
 
 /*外掛歸零*/
 .gallery_1 .bx-wrapper{ margin: auto;}

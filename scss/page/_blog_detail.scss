@@ -1,24 +1,25 @@
 @charset "utf-8";
 /* CSS Document */
 
-.section_blog_detail{ }
+.section_blog_detail{ padding-top: 80px;}
 // title
-.section_blog_detail .title{ border-bottom: 1px solid $gray; margin-bottom: 20px;}
-.section_blog_detail .title h1{ font-weight: bold; font-size: 21px; letter-spacing: 2px;}
-.section_blog_detail .title .date{ font-size: 15px; color: $gray_light; margin-bottom: 10px;}
+.section_blog_detail .title{ border-bottom: 1px solid $gray; margin-bottom: 65px;}
+.section_blog_detail .title h1{ font-weight: bold; font-size: 18px; letter-spacing: 2px;}
+.section_blog_detail .title .date{ font-size: 14px; color: $gray_light; margin-bottom: 5px;}
 
-.section_blog_detail .story{}
+.section_blog_detail .story{ margin-bottom: 120px;}
 
 /*part_thumb_1  三欄*/
-.section_blog_detail .part_thumb_1{ max-width: 870px; margin: 0 auto;}
-.section_blog_detail .part_thumb_1 .piece{ }
+.section_blog_detail .part_thumb_1{ max-width: 875px; margin: 0 auto;}
+.section_blog_detail .part_thumb_1 .piece{ width: 270px; }
 .section_blog_detail .part_thumb_1 .piece:not(:nth-child(4n-4)){margin-right:0px;}
-.section_blog_detail .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:25px;}
+.section_blog_detail .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:28px;}
 
 @include breakpoint($pad){
+    .section_blog_detail .title{margin-bottom: 22px;}
     .section_blog_detail .part_thumb_1{max-width: 670px; }
-    .section_blog_detail .part_thumb_1 .piece{ width: 210px; min-height:368px;}
-    .section_blog_detail .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:13px;}
+    .section_blog_detail .part_thumb_1 .piece{ width: 170px; min-height:368px;}
+    .section_blog_detail .part_thumb_1 .piece:not(:nth-child(3n-3)){margin-right:16px;}
 }
 
 @include breakpoint($mobile){

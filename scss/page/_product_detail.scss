@@ -7,7 +7,7 @@
 .section_product_detail .area{ margin-bottom: 60px;@extend %clearfix;}
 .section_product_detail .area_1{ width: 730px;  float:left; }
 .section_product_detail .area_2{ width: 400px; float:right; }
-.section_product_detail h1{ margin-bottom: 10}
+.section_product_detail h1{ margin-bottom: 10px; font-size: 20px; font-weight: bold;}
 
 /*pc (1024)*/
 @include breakpoint($pc){
@@ -34,16 +34,23 @@
 .section_product_detail .area_2 .tag_box_2{margin-bottom: 10px;}
 
 /*price*/
-.section_product_detail .price{ line-height: 24px;}
+.section_product_detail .price{ line-height: 24px; margin-bottom: 10px;}
 .section_product_detail .price span{ font-size: 24px; color: $red;}
+.section_product_detail .price span.discount{}
 .section_product_detail .price span.item_old_price{text-decoration: line-through; color: $gray_light;font-size: 15px}
+.section_product_detail .price span i{ font-style: normal; font-size: 14px;}
+
+.section_product_detail .btn_box_two{ margin-bottom: 0px;}
+.section_product_detail .form_2 .item{ margin: 10px 10px 20px 0px}
+
 /*time*/
-.section_product_detail .time{ margin-bottom: 10px;}
+.section_product_detail p.time{ margin-bottom: 10px;}
+.section_product_detail p.time span{ color: $red;}
 /*info*/
-.section_product_detail .info{ border: 1px solid $gray; padding: 10px; margin-bottom: 20px;}
+.section_product_detail .info{ border: 1px solid $gray_light; padding: 10px; margin-bottom: 20px;}
 /*form*/
 .section_product_detail .area_2 .form_2 li a.btn.sale{ text-align: right; background:$red; padding: 5px 10px;}
-.section_product_detail .btn.full{ padding: 10px;}
+
 
 
 /*tab_1 切換編輯器*/
@@ -164,5 +171,3 @@
 .gallery_4 .run .inner .piece {}
 /*圖片*/
 .gallery_4 .run .inner .piece a.pic { display: block;}
-.gallery_4 .run .inner .piece a.pic img {}
-

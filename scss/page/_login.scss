@@ -1,21 +1,43 @@
 @charset "utf-8";
 /*------------ 【 會員登入 】 section_member_login ------------*/
-.section_member_login { max-width:500px; margin:0 auto; padding-top:70px;}
+.section_member_login { max-width:500px; margin:70px auto;}
 .section_member_login p.note { color:$gray;}
 
 /*pad (768)*/
 @include breakpoint($pad){
-.section_member_login { padding:10px;}
+.section_member_login { padding:10px; margin:30px auto;}
+.section_member_login p.note { max-width:400px; margin:20px auto;}
 }
 
 
 
 /*------------ 會員登入頁 ------------*/
+.section_member_login .form .item input, 
+.section_member_login .form .item select, 
+.section_member_login .form .item  p { height:44px;}
+
 .section_member_login .form { margin-bottom:40px;}
-.section_member_login .form .item.check input { width:30px;}
+.section_member_login .form .item.check { text-align:left; margin-bottom:70px; color:$gray;}
+.section_member_login .form .item.check  a { font-size:14px; color:$gray;}
+.section_member_login .form .item.check input { width:30px; position:relative; top:-2px;}
+.section_member_login .form .item.check label { width:auto;}
 .section_member_login .form .item.check input[type="checkbox"] { width:15px;}
 .section_member_login .form .item input { width:100%;}
+.section_member_login .form input[type="submit"] { height:40px;}
 .section_member_login .line_1 { width:300px;}
+
+
+// .section_member_login a.btn.fb { margin:10px 0; height:40px; line-height:34px;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+    .section_member_login .form { max-width:400px; margin:0 auto;}
+    .section_member_login .form .item.check { margin-bottom:20px;}
+    .section_member_login .form .item.check label,
+    .section_member_login .form .item.check a {  font-size:16px;}
+    .section_member_login .line_1 { width:100%; margin-bottom:20px;}
+    .section_member_login .line_1 span { font-size:16px;}
+}
 
 /*mobileM (414)*/
 @include breakpoint($mobileM){
@@ -27,15 +49,25 @@
 
 /*------------ 加入會員頁------------*/
 .section_member_login .box_1 { margin:40px auto;}
-.section_member_login .box_1 input[type="submit"] { margin-bottom: 50px;}
-.section_member_login .box_1 .line_1 { margin-bottom:20px;}
+.section_member_login .box_1 input[type="submit"] { width:200px; margin-bottom: 50px;}
+.section_member_login .box_1 .line_1 {}
 
+/*pad (768)*/
+@include breakpoint($pad){
+.section_member_login .form .box_1 { margin:20px auto;}
+.section_member_login .form input[type="submit"],
+.section_member_login .form .box_1 input[type="submit"],
+.section_member_login .form a.btn{ width:100%; height:50px; font-size:16px; margin-bottom:20px;}
+.section_member_login .form a.btn { line-height: 45px; }
+}
 /*mobile (480)*/
 @include breakpoint($mobile){
 .section_member_login .box_1 input[type="submit"] { margin-bottom: 20px;}
 }
 
 /*------------ 忘記密碼頁 ------------*/
+.section_member_login.height { margin:130px auto;}
+.section_member_login.height form { margin-bottom:80px;}
 .section_member_login h3 { text-align:center; margin-bottom:30px;}
 
 
