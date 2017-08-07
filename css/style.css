@@ -1035,9 +1035,11 @@ a.btn.style_2 {
 /*fb*/
 a.btn.fb {
   display: inline-block;
+  width: 200px;
   color: #fff;
-  background: #4268b3 url(../images/Ei-sc-facebook.svg) no-repeat 10% center;
-  background-size: auto 90%; }
+  padding: 5px 5px 5px 25px;
+  background: #4268b3 url(../images/icon_fb.svg) no-repeat 13% center;
+  background-size: auto 65%; }
 
 /*btn_box_single 單顆按鈕========================*/
 .btn_box_single {
@@ -1256,7 +1258,7 @@ h3.title_3.left {
 /*分隔線========================*/
 .line_1 {
   width: 100%;
-  margin: 0 auto 20px auto; }
+  margin: 0 auto 40px auto; }
 
 .line_1 span {
   display: inline-block;
@@ -1405,10 +1407,14 @@ h3.title_3.left {
   margin-bottom: 40px; }
 
 .tab_2 .tab_menu a.btn {
-  padding: 5px 30px;
+  font-size: 16px;
+  padding: 18px 30px;
   background: #999;
   color: #fff;
   margin-bottom: 0; }
+
+.tab_2 .tab_menu a.btn:hover {
+  background: gray; }
 
 .tab_2 .tab_menu a.btn:nth-last-of-type(1) {
   margin-right: 0; }
@@ -1430,6 +1436,7 @@ h3.title_3.left {
 /*pad (768)*/
 @media only screen and (max-width: 768px) {
   .tab_2 .tab_menu a.btn {
+    padding: 18px 5px;
     text-align: center;
     width: calc(100% / 3 - 10.3px); } }
 
@@ -1457,10 +1464,13 @@ h3.title_3.left {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 8px;
   background: #666;
   color: #fff;
   margin-right: 0; }
+
+.tab_3 .tab_menu a:hover {
+  background: gray; }
 
 .tab_3 .tab_menu a:nth-of-type(1) {
   border-top-right-radius: 0;
@@ -1478,17 +1488,12 @@ h3.title_3.left {
 /*pad (640)*/
 @media only screen and (max-width: 640px) {
   .tab_3 {
-    margin-bottom: 20px; }
-  .tab_3 .tab_menu a {
-    height: 40px;
-    line-height: 40px; } }
+    margin-bottom: 50px; } }
 
 /*form========================*/
-.form {
-  margin-bottom: 30px; }
-
 .form label {
-  display: inline-block; }
+  display: inline-block;
+  font-size: 14px; }
 
 .form input[type="text"],
 .form input[type="submit"],
@@ -1501,7 +1506,7 @@ h3.title_3.left {
 .form select,
 .form textarea {
   display: inline-block;
-  height: 45px;
+  height: 30px;
   letter-spacing: 2px;
   border: 1px solid #999;
   padding-left: 10px;
@@ -1513,7 +1518,7 @@ h3.title_3.left {
 
 .form p {
   display: inline-block;
-  height: 50px;
+  font-size: 14px;
   letter-spacing: 2px; }
 
 .form input:focus, .form select:focus {
@@ -1528,7 +1533,7 @@ h3.title_3.left {
   -webkit-appearance: none;
   background: url("../images/icon_arrow.svg") no-repeat right top;
   background-size: 30px auto;
-  background-position-y: 12px; }
+  background-position-y: 3px; }
 
 .form select::-ms-expand {
   display: none; }
@@ -1537,12 +1542,13 @@ h3.title_3.left {
   background-color: #fff; }
 
 .form input[type="submit"] {
-  height: 40px;
+  width: 200px;
+  height: 30px;
   outline: none;
   border: none;
   font-family: "微軟正黑體";
-  margin-left: 93px;
-  padding: 10px 50px;
+  margin: 0 0 20px 93px;
+  padding: 5px 50px;
   cursor: pointer; }
 
 .form .btn.center {
@@ -1560,13 +1566,13 @@ h3.title_3.left {
   width: calc(100% - 290px); }
 
 .form .item.password input {
-  width: 150px; }
+  width: 200px; }
 
 .form .item.remark label {
   float: left; }
 
 .form .item.remark textarea {
-  width: calc(100% -  95px); }
+  width: calc(100% -  100px); }
 
 .form .item.check {
   text-align: center; }
@@ -1581,21 +1587,18 @@ h3.title_3.left {
 
 /*pad (768)*/
 @media only screen and (max-width: 768px) {
-  .form .address select {
-    margin-bottom: 10px; }
-  .form .address input {
-    width: calc(100% -  95px);
-    margin-left: 93px; } }
-
-/*pad (640)*/
-@media only screen and (max-width: 640px) {
   .form {
     margin-bottom: 15px; }
   .form input,
   .form select {
-    height: 37px; }
+    height: 40px; }
   .form select {
-    background-position-y: 5px; } }
+    background-position-y: 5px; }
+  .form .address select {
+    margin-bottom: 10px; }
+  .form .address input {
+    width: calc(100% -  100px);
+    margin-left: 93px; } }
 
 /*mobileS (360)*/
 @media only screen and (max-width: 360px) {
@@ -1604,7 +1607,7 @@ h3.title_3.left {
 
 /*form_1================*/
 .form_1 .item {
-  margin-bottom: 30px; }
+  margin-bottom: 20px; }
 
 .form_1 .item label {
   width: 90px; }
@@ -1618,7 +1621,7 @@ h3.title_3.left {
   margin-bottom: 10px; }
 
 .form_1 .item.address input {
-  width: calc(100% -  95px);
+  width: calc(100% -  100px);
   margin-left: 95px; }
 
 /*pad (768)*/
@@ -1661,7 +1664,7 @@ h3.title_3.left {
   margin-right: 5px; }
 
 .block_1 {
-  padding: 15px 10px;
+  padding: 15px 20px;
   margin-bottom: 30px;
   border: 1px solid #999; }
 
@@ -3436,9 +3439,6 @@ h3.title_3.left {
 .section_product_detail .btn_box_two {
   margin-bottom: 0px; }
 
-.section_product_detail .form_2 .item {
-  margin: 10px 10px 20px 0px; }
-
 /*time*/
 .section_product_detail p.time {
   margin-bottom: 10px; }
@@ -3586,7 +3586,8 @@ h3.title_3.left {
 
 /*組*/
 .gallery_3 .run .inner .piece .btn {
-  margin: 0px; }
+  margin: 0px;
+  height: 40px; }
 
 /*圖片*/
 .gallery_3 .run .inner .piece a.pic {
