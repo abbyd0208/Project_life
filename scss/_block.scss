@@ -11,7 +11,8 @@ a.btn.full { display:block; text-align:center; margin-right:0px;}
 a.btn.style_1 { background:$white; color:$black; border:1px solid $gray_light;} // 用變數定義
 a.btn.style_2 { background:$gray_light; color:$white;}
 /*fb*/
-a.btn.fb { display:inline-block; color: $white; background:$fb url(../images/Ei-sc-facebook.svg) no-repeat 10% center; background-size:auto 90%;}
+a.btn.fb { display:inline-block; width:200px; color: $white; padding:5px 5px 5px 25px; 
+background:$fb url(../images/icon_fb.svg) no-repeat 13% center; background-size:auto 65%;}
 
 
 /*btn_box_single 單顆按鈕========================*/
@@ -109,9 +110,8 @@ h3.title_3.left{  text-align: left;}
 .banner_1 a{display: block; width:100%; height: 0; padding-bottom:32.5%; overflow: hidden;  }
 .banner_1 a img{width: 100%; height: auto;}
 
-
 /*分隔線========================*/
-.line_1 { width:100%; margin:0 auto 20px auto; }
+.line_1 { width:100%; margin:0 auto 40px auto; }
 .line_1 span { display: inline-block; width: 60px; font-size:13px; vertical-align: middle; text-align: center; color:$gray_light;}
 .line_1 b { background: $gray_light; margin-top: 2px; display: inline-block; width: calc(50% - 30px); height: 1px; vertical-align: middle;}
 
@@ -172,15 +172,16 @@ h3.title_3.left{  text-align: left;}
 /*tab_2========================*/
 .tab_2 { margin-bottom:40px; }
 .tab_2 .tab_menu { } 
-.tab_2 .tab_menu a.btn { padding:5px 30px; background:$gray_light; color:$white; margin-bottom:0;}
+.tab_2 .tab_menu a.btn { font-size:16px; padding:18px 30px; background:$gray_light; color:$white; margin-bottom:0;}
+.tab_2 .tab_menu a.btn:hover { background:darken($gray_light, 10);}
 .tab_2 .tab_menu a.btn:nth-last-of-type(1) { margin-right:0;}
-.tab_2 .tab_menu a.btn.active { background: $white; color:$gray_dark; border:1px solid #999; border-bottom:none; position:relative; bottom:-1px;}
+.tab_2 .tab_menu a.btn.active { background: $white; color:$gray_dark; border:1px solid $gray_light; border-bottom:none; position:relative; bottom:-1px;}
 .tab_2 .tab_content { background:$white; min-height:100px; border:1px solid $gray_light; padding:20px;} 
 
 
 /*pad (768)*/
 @include breakpoint($pad){
-.tab_2 .tab_menu a.btn { text-align:center; width:calc(100% / 3 - 10.3px);}
+.tab_2 .tab_menu a.btn { padding:18px 5px; text-align:center; width:calc(100% / 3 - 10.3px);}
 }
 
 /*mobile (480)*/
@@ -196,20 +197,22 @@ h3.title_3.left{  text-align: left;}
 .tab_3 { margin-bottom:40px;}
 .tab_3 .tab_menu { @extend %clearfix;} 
 .tab_3 .tab_menu a { float:left; display:inline-block; width:50%; height:50px; line-height:50px; text-align:center; 
-border-radius:5px; background:$gray; color:$white; margin-right:0; }
+border-radius:8px; background:$gray; color:$white; margin-right:0; }
+.tab_3 .tab_menu a:hover { background:lighten($gray,10);}
 .tab_3 .tab_menu a:nth-of-type(1){ border-top-right-radius:0; border-bottom-right-radius:0;}
 .tab_3 .tab_menu a:nth-of-type(2){ border-top-left-radius:0; border-bottom-left-radius:0;}
 .tab_3 .tab_menu a.active { background:$white; color:$gray;; border:1px solid $gray;}
 
 /*pad (640)*/
 @include breakpoint($padM){
-.tab_3 { margin-bottom:20px;}
-.tab_3 .tab_menu a { height:40px; line-height:40px;}
+.tab_3 { margin-bottom:50px;}
+.tab_3 .tab_menu a { }
 }
 
+
 /*form========================*/
-.form { margin-bottom:30px;}
-.form label { display: inline-block;}
+.form { }
+.form label { display: inline-block; font-size:14px;}
 .form input[type="text"],
 .form input[type="submit"],
 .form input[type="number"],
@@ -220,16 +223,16 @@ border-radius:5px; background:$gray; color:$white; margin-right:0; }
 .form input[type="submit"],
 .form select,
 .form textarea
- { display: inline-block; height:45px; letter-spacing:2px; border:1px solid $gray_light; padding-left:10px; -webkit-appearance:none; border-radius:0;}
+ { display: inline-block; height:30px; letter-spacing:2px; border:1px solid $gray_light; padding-left:10px; -webkit-appearance:none; border-radius:0;}
 .form textarea { height:auto;}
-.form p { display:inline-block; height:50px; letter-spacing:2px;}
+.form p { display:inline-block; font-size:14px; letter-spacing:2px;}
 .form input:focus, .form select:focus
  { outline:none; border:1px solid $gray_dark;}
 .form select { padding-right: 33px; border-radius:0; appearance:none; -moz-appearance:none; -webkit-appearance:none;
-background:url("../images/icon_arrow.svg") no-repeat right top; background-size:30px auto; background-position-y: 12px;}
+background:url("../images/icon_arrow.svg") no-repeat right top; background-size:30px auto; background-position-y: 3px;}
 .form select::-ms-expand { display: none; }
 .form option { background-color:$white;} 
-.form input[type="submit"] { height:40px; outline:none; border:none; font-family:"微軟正黑體"; margin-left:93px; padding:10px 50px; cursor:pointer;}
+.form input[type="submit"] { width:200px; height:30px; outline:none; border:none; font-family:"微軟正黑體"; margin:0 0 20px 93px; padding:5px 50px; cursor:pointer;}
 
 .form .btn.center { display:block; margin:0 auto;}
 
@@ -245,13 +248,13 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 .form .item.address select { width:90px; margin-right:10px;}
 .form .item.address input { width:calc(100% - 290px);}
 // 手機
-.form .item.password input { width:150px; }
+.form .item.password input { width:200px; }
 // 生日
 .form .item.birth { }
 // 備註
 .form .item.remark { }
 .form .item.remark label { float:left; }
-.form .item.remark textarea { width:calc(100% -  95px);}
+.form .item.remark textarea { width:calc(100% -  100px);}
 // 勾選
 .form .item.check { text-align:center;}
 .form .item.check input { display:inline-block; width:30px;}
@@ -259,18 +262,15 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 
 /*pad (768)*/
 @include breakpoint($pad){
-// 地址
-.form .address select { margin-bottom:10px;}
-.form .address input { width:calc(100% -  95px); margin-left:93px;}
-}
-
-/*pad (640)*/
-@include breakpoint($padM){
 .form { margin-bottom:15px;}
 .form input,
-.form select { height:37px;}
+.form select { height:40px;}
 .form select {  background-position-y: 5px;}
+// 地址
+.form .address select { margin-bottom:10px;}
+.form .address input { width:calc(100% -  100px); margin-left:93px;}
 }
+
 
 /*mobileS (360)*/
 @include breakpoint($mobileS){
@@ -279,13 +279,13 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 
 
 /*form_1================*/
-.form_1 .item { margin-bottom:30px;}
+.form_1 .item { margin-bottom:20px;}
 .form_1 .item label { width:90px;}
 .form_1 .item p,
 .form_1 .item textarea,
 .form_1 .item input { width:calc(100% - 100px);}
 .form_1 .item.address select { margin-bottom:10px;}
-.form_1 .item.address input { width:calc(100% -  95px); margin-left:95px;}
+.form_1 .item.address input { width:calc(100% -  100px); margin-left:95px;}
 /*pad (768)*/
 @include breakpoint($pad){
 .form_1 .item { margin-bottom:20px;}
@@ -304,6 +304,7 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 
 
 
+
 /*form_2================AB*/
 .form_2 .item { position: relative; margin-bottom: 10px;}
 .form_2 .item label { display: block; font-size:14px;}
@@ -315,7 +316,7 @@ background:url("../images/icon_arrow.svg") no-repeat right top; background-size:
 
 
 // block_1==================
-.block_1 { padding:15px 10px; margin-bottom:30px; border:1px solid $gray_light;}
+.block_1 { padding:15px 20px; margin-bottom:30px; border:1px solid $gray_light;}
 .block_2 { margin-bottom:20px;}
 
 .block_1 .title_1,
