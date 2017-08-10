@@ -17,8 +17,16 @@ position: absolute; right:0; top:8px; transform: rotate(-90deg); margin:0 10px; 
 
 /*pad (768)*/
 @include breakpoint($pad){
-.section_cart .step { margin-bottom:40px;}  
-.section_cart .step li { padding:0px;}
+    .section_cart .step { margin-bottom:50px;}
+    .section_cart .step li { padding:5px 0px;}
+}
+/*mobile (480)*/
+@include breakpoint($mobile){
+    .section_cart .step { margin:10px auto 15px auto;}
+    .section_cart .step li { padding:0px;}
+    .section_cart .step li strong { font-size:15px;}
+    .section_cart .step li span { font-size:14px;}
+    .section_cart .step em { width:26px; height:20px; margin:0; top:-15px;}
 }
 
 
@@ -49,10 +57,17 @@ position: absolute; right:0; top:8px; transform: rotate(-90deg); margin:0 10px; 
     .discount .box_2 { padding:20px;}
 }
 
-/*mobileS (360)*/
-@include breakpoint($mobileS){
-    .discount .box_1 .item .right input[type="text"] { width:100px;}
-    .discount .box_1 .item .right input.code { width:100px;}
+/*mobile (480)*/
+@include breakpoint($mobile){
+    .discount .box_1,
+    .discount .box_2 { padding:15px;}
+    .discount .box_1 .item { margin-bottom:5px;}
+    .discount .box_1 .item p { margin-bottom:8px;}
+    .discount .box_1 .item .right,
+    .discount .box_1 .item .right.large { width:100%; margin-left:0;}
+    .discount .box_1 .item .right .btn { padding:2px 20px;}
+    .discount .box_1 .item .right input[type="text"] { width:calc(100% - 123px);}
+    .discount .box_1 .item .right input.code { width:calc(100% - 85px);}
 }
 
 
@@ -63,7 +78,7 @@ position: absolute; right:0; top:8px; transform: rotate(-90deg); margin:0 10px; 
 .amount .title_1 { padding-bottom:10px; }
 .amount p { font-size:14px; display:block; height:auto; text-align:right; margin-bottom:10px;}
 .amount p span { float:left;}
-.amount p em { font-style: normal; font-size:16px; color:lighten($red, 10);}
+.amount p em { font-style: normal; font-size:16px; color:lighten($red, 10); font-weight:bold;}
 .amount a.btn { height:42px; line-height:42px; padding:0;}
 .amount p.all { border-top: 1px dashed $gray; padding-top:20px; margin-top:20px; margin-bottom:0;}
 .amount p.end { text-align: center;}
@@ -75,13 +90,19 @@ position: absolute; right:0; top:8px; transform: rotate(-90deg); margin:0 10px; 
 background:url("../images/icon_arrow.svg") no-repeat center bottom; background-size:120% auto;
 position: relative; left:10px; top:9px; transform: rotate(-90deg);}
 .amount a.style_1.arrow em { background-position:center top; left:-10px; transform: rotate(90deg);}
+
 /*pad (768)*/
 @include breakpoint($pad){
-.amount { width:auto; max-width:400px; float:none; margin:0 auto;}
+    .amount { float:none; margin:0 auto;}
 }
 /*mobile (480)*/
 @include breakpoint($mobile){
-.amount .block_1 { border:none;}
+    .step + .center { margin:25px 0;}
+    .center .amount .block_1 { margin-bottom:25px;}
+
+    .amount { width:100%; max-width:350px;}
+    .amount .block_1 { border:none; padding:0; margin-bottom:45px;}
+    .amount p em { font-size:18px;}
 }
 
 
@@ -108,6 +129,9 @@ position: relative; left:10px; top:9px; transform: rotate(-90deg);}
 .order_block .item.remark textarea { width:450px;}
 .order_block .sub { padding:20px 0 0 100px;}
 
+.order_block .item span { margin-left:10px; color:lighten($red, 5); font-size:14px;}
+.order_block .item.address select { width:140px; margin-bottom:0;}
+.order_block .item.address input[type="text"] { width:450px; margin-left:0px;}
 
 /* 發票資料 */
 .order_block .company_show { display:none;}
@@ -116,10 +140,23 @@ position: relative; left:10px; top:9px; transform: rotate(-90deg);}
 
 /*pad (768)*/
 @include breakpoint($pad){
-.order_block .box_1 { width:100%;}
-.order_block .box_1 select { width:calc(100% - 100px);}
-.order_block .box_2 { width:100%;}
-.order_block .box_3 { width:100%;}
+    .order_block .box_1 { width:100%;}
+    .order_block .box_1 select { width:calc(100% - 100px);}
+    .order_block .box_2 { width:100%;}
+    .order_block .box_3 { width:100%;}
+
+    .order_block .item span { display: none;}
+    .order_block .item input, 
+    .order_block .item select, 
+    .order_block .item p,
+    .order_block .item.name input,
+    .order_block .item.phone input,
+    .order_block .item.branch > select { height:35px; width:calc(100% - 96px);}
+    .order_block .item.remark textarea { width:calc(100% - 90px);}
+    .order_block .item.address select { width:calc(50% - 56px); margin-bottom:15px;}
+    .order_block .item.address select:nth-of-type(2) { margin-right:0;}
+    .order_block .item.address input[type="text"] { width:calc(100% - 95px); margin-left:94px;}
+    .order_block .item select { background-position-y:5px;}
 }
 
 
@@ -164,15 +201,17 @@ position: relative; left:10px; top:9px; transform: rotate(-90deg);}
 
 /*pad (768)*/
 @include breakpoint($pad){
+    .section_cart .tab_content .note { padding:15px 10px;}
     .section_cart .title_3 { margin:5px 0; line-height:30px;} 
 	.section_cart .tab_2 .tab_content { padding:10px 20px 0 20px;}
-    .section_cart .tab_content h4 { display:block; width:100%;}
+    .section_cart .tab_2 .tab_content h4 { display:block; width:100%;}
     .section_cart .tab_2 .title_1 { display:block; padding-bottom:10px; margin-bottom:5px; border-bottom:1px solid $gray_light;} 
     .table_1 thead { display: none;}
 
+
     .table_1 td { height:100%; padding:10px 0;}
     .table_1 td.img a,
-    .table_1 td.info a{ display:flex; height:100%; justify-content:center; align-items: baseline; flex-direction: column;}
+    .table_1 td.info a { display:flex; height:100%; justify-content:center; align-items: baseline; flex-direction: column;}
     .table_1 td a.pic { width:125px;}
     .table_1 td span { display:block; text-align: left;}
     .table_1 td[data-title]:before { content: attr(data-title); display: inline-block; color: #aaa; font-size: 13px;}
@@ -188,15 +227,24 @@ position: relative; left:10px; top:9px; transform: rotate(-90deg);}
 
 /*mobile (480)*/
 @include breakpoint($mobile){
+    .section_cart .tab_content .note { padding:15px 0px;}
+    .section_cart .tab_2 .tab_content { padding:10px 0px 0 0px;}
+    .section_cart .tab_2 .tab_content form { margin-bottom:0;}
+    .section_cart .tab_2 .title_1 { margin-bottom:0; padding-bottom:5px;}
+
     .table_1 tr,
     .table_1 td + td { border-left: 0;}
     .table_1 tr { padding: 10px 0; position: relative; display:block;}
     .table_1 td { padding: 0; line-height: 2;}
-    .table_1 td.img { float:left; display: block; margin-top:10px; margin-bottom:10px;}
     .table_1 td.info { padding-top:10px;}
-    .table_1 td.right { clear:both; float:none; text-align:left;}
+    .table_1 td.info a { height:80px;}
+    .table_1 td.img { width:80px; float:left; display: block; margin-top:10px; margin-bottom:10px;}
+    .table_1 td a.pic { width:80px;}
+    .table_1 td.right { clear:both; float:none; text-align:left; padding:0;}
+    .table_1 td select { height:25px; background-size:23px auto; background-position-y:2px;}
+    .table_1 td.right.large { width:100%;}
 
-    .table_1 .btn-holder { position:absolute; right:60px; bottom:0px;}
+    .table_1 .btn-holder { position:absolute; right:40px; bottom:0px;}
     .table_1 .btn-holder a { position:absolute; right:0px; bottom:20px;}
     .table_1 .btn-holder.delete { right:0;}
     .table_1 .btn-holder.favorite { right:40px;}

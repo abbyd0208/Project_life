@@ -304,7 +304,7 @@
                 <section class="layout_col_2 section_member_center">
 					<header>
 						<div class="part_breadcrumb_1">
-							<a href="#">會員中心</a> <span class="current">訂單退換貨申請</span>
+							<a href="#">會員中心</a><span class="current">訂單查詢</span><span class="current">訂單退換貨申請</span>
 						</div>
 					</header>
                     <div class="c1">
@@ -335,7 +335,9 @@
                     </div>
 
                     <div class="c2">
-
+                        <div class="btn_box_single">
+                            <a href="member_order_detail.htm" class="btn mobile_show"><em></em>回訂單詳情</a>
+                        </div>
                         <form action="" class="form form_1">
                             <!-- 退換貨申請 -->
                             <section class="return_apply block_1">
@@ -364,27 +366,30 @@
                                         <tr>
                                             <td class="img">
                                                 <a class="pic" href="#">
-                                        <img src="images/pic_01.png" itemprop="image" alt="" title=""/>
-                                    </a>
+                                                    <img src="images/pic_01.png" itemprop="image" alt="" title=""/>
+                                                </a>
                                             </td>
                                             <td class="align_left info">
                                                 <a href="#">
-                                        <span class="pd-name">粉紅心靈浴巾<em>(預購)</em></span><br>
-                                        <span class="pd-id">顏色款式：仙女</span>
-                                    </a>
-                                                <br>
+                                                    <span class="pd-name">粉紅心靈浴巾<em>(預購)</em></span>
+                                                    <span class="pd-id">顏色款式：仙女</span>
+                                                </a>
                                             </td>
                                             <td class="right" data-title="數量：">
-                                                1
+                                                <select name="">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option> 
+                                                    <option value="3">3</option> 
+                                                </select>
                                             </td>
                                             <td class="right" data-title="單價：">NT$1350</td>
                                             <td class="right" data-title="小計：">NT$1350</td>
                                             <td class="right large" data-title="退貨原因：">
                                                 <select name="">
-													<option value="1" selected>選擇退貨原因</option>
-													<option value="2">2</option> 
-													<option value="3">3</option> 
-												</select>
+                                                    <option value="1" selected>選擇退貨原因</option>
+                                                    <option value="2">2</option> 
+                                                    <option value="3">3</option> 
+                                                </select>
                                             </td>
                                         </tr>
                                     </tbody>

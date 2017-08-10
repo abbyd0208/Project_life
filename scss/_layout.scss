@@ -8,55 +8,60 @@
 }
 
 
+/*pad (768)*/
+@include breakpoint($mobileS){
+    .wrapper{ top:40px;/*空出hearder fix住的高度*/ padding-bottom:42px;/*空出topbar fix住的高度*/}
+}
+
+
 /*top_bar============================================*/
 .top_bar_box{ background: $gray;}
 .top_bar{width:$width-desktop; margin: 0 auto; height:55px; @extend %clearfix; position: relative;background: $gray;}
 /*menu_1*/
-.top_bar .menu_1{ float: left; position: absolute; top: 15px;}
+.top_bar .menu_1{ position: absolute; left: 0px; top: 15px;}
 .top_bar .menu_1 a{ font-size: 14px; @include link($white,$gray_light)}
 .top_bar .menu_1 a:not(:nth-last-child(1))::after{ content: "|"; display: inline-block; color: $white; margin: 0 5px;}
 /*menu_2 search*/
-.top_bar>.menu_2{ width:300px; height: 30px;  float: right; position: relative; top: 14px; }
-.top_bar .menu_2 .search_box{width: 200px; left: 0px; top: 0px; }
+.top_bar>.menu_2{ width:300px; height: 30px;  position: absolute; right: 0; top: 14px; }
+.top_bar .menu_2 .search_box{width: 200px; }
 
 /*menu_2*/
 .top_bar .menu_2 ul{@extend %clearfix; position: absolute; right: 0px; top: 0px;}
-.top_bar .menu_2 li{position:relative; float: left;}
-.top_bar .menu_2 li:nth-last-of-type(1){margin-left: 2px; position: relative;}
+.top_bar .menu_2 li{position:relative; float: left; height:45px; }
+.top_bar .menu_2 li:nth-last-of-type(1){ position: relative;}
 .top_bar .menu_2 li > a{ display: block; width: 32px; height: 30px; @extend %text-hide;}
 .top_bar .menu_2 li.fb::before{  content: ''; width: 0; border: 8px solid $gray_dark;border-color: transparent transparent $gray_dark transparent; position: absolute; top: 36px; right: 5px; display: none;}
 .top_bar .menu_2 li.fb::after{  content: '粉絲團'; color: #fff; width: 60px; height: 25px; line-height: 26px; text-align: center; font-size: 12px; background: $gray_dark; position: absolute; left: -12px; top: 50px; display: none;}
 .top_bar .menu_2 li a.blog{display: none;}
 .top_bar .menu_2 li a.member{background: url(../images/icon_member.png) center center no-repeat;background-size: auto 25px;}
-// 第二層
-.top_bar .menu_2 li a.member + .sub_menu{ min-width: 100px; font-size: 12px; border: 1px solid $gray; background: $white ; padding: 5px; position: absolute; left: 0px; top: 39px;  z-index: 50; display: none;}
-.top_bar .menu_2 li a.member + .sub_menu a{display: block; padding: 5px; @include link($gray,$red)}
 .top_bar .menu_2 li a.cart{ text-align: center; color: $gray; background: url(../images/icon_cart.png) center center no-repeat;background-size: auto 25px; position: relative;}
 .top_bar .menu_2 li a.cart strong{ font-size: 12px; text-indent:0; overflow:visible;color: $gray;position: absolute; left: 13px; top: 10px;}
 .top_bar .menu_2 li a.fb{ background: url(../images/icon_fb.png) center center no-repeat; background-size: auto 25px; background-position: center 4px; position: relative;}
+// 第二層
+.top_bar .menu_2 li a.member + .sub_menu{ display:none; min-width: 100px; font-size: 12px; border: 1px solid $gray; background: $white ; padding: 5px; position: absolute; left: 0px; top: 40px;  z-index: 50; display: none;}
+.top_bar .menu_2 li a.member + .sub_menu a{display: block; padding: 5px; @include link($gray,$red)}
+
 /*hover效果*/
-// .top_bar .menu_2 li.menu_hover:hover a.member + .sub_menu{display: block;} 
 .top_bar .menu_2 li.fb.menu_hover:hover::after,.top_bar .menu_2 li.fb.menu_hover:hover::before{ display: block;}
-
-
+.top_bar .menu_2 li.menu_hover:hover .sub_menu {display:block;}
 
  /*pc (1024)*/
 @include breakpoint($pc){
-    .top_bar{ width: $pc+px; padding-left:20px; padding-right:20px;}
-    .top_bar{ padding:0 15px;}
+    .top_bar{ width: $pc+px; }
+    .top_bar .menu_1{ left: 15px;}
+    .top_bar .menu_2{ right: 15px;}
 }
 
 
 /*pad (768)*/
 @include breakpoint($pad){
-    .top_bar{  max-width: $pad+px;  background: $gray; position:fixed; bottom: 0px; z-index: 200;}
+    .top_bar{  width: 100%;  background: $gray; position:fixed; bottom: 0px; z-index: 200;}
     .top_bar .menu_1{display: none;}
-    .top_bar>.menu_2{ float: none; height: 55px; width: 430px; margin: 0 auto; text-align: center; top: 10px;}
+    .top_bar > .menu_2{ height: 55px; width: 430px; margin: 0 auto; text-align: center; position: static;}
     .top_bar .menu_2 .search_box{ display: none;}
-    .top_bar .menu_2 ul{position: static;}
+    .top_bar .menu_2 ul{position: static; padding-top: 10px;}
     .top_bar .menu_2 li{}
-    .top_bar .menu_2 li:not(:nth-last-of-type(1)){margin-right: 60px;}
-
+    .top_bar .menu_2 li{margin:0 calc((100% - 240px) / 8)!important;}
     .top_bar .menu_2 li>a{ width: 52px; height:47px; padding-top: 20px; overflow:visible; text-indent:0; font-size: 12px; color: $white;}
     .top_bar .menu_2 li a.blog{ display:block; background: url(../images/icon_blog.png) top center no-repeat; background-size: auto 20px; }
     .top_bar .menu_2 li a.member{background-size: auto 20px; background-position: top center;}
@@ -65,31 +70,27 @@
     .top_bar .menu_2 li a.fb{background-size: auto 20px;background-position: top center;}
 }
 
-
  /*pad (640)*/
 @include breakpoint($padM){
     .top_bar{ width: 100%; }
 }
 
-
-
 /*mobile (480)*/
 @include breakpoint($mobile){
-
-     .top_bar>.menu_2{ width: 100%;}
-     .top_bar .menu_2 li:not(:nth-last-of-type(1)){margin-right: 34px;}
-     .top_bar .menu_2 li>a{width: 60px; height: 40px; background-size: auto 22px; padding-top: 20px;}
-     .top_bar .menu_2 li a.blog{background-size: auto 20px;}
-     .top_bar .menu_2 li a.member{background-size: auto 20px;}
-     .top_bar .menu_2 li a.cart{background-size: auto 20px;}
-     .top_bar .menu_2 li a.cart strong{ top: 2px;}
-     .top_bar .menu_2 li a.fb{background-size: auto 20px;}
+    .top_bar{}
+    .top_bar>.menu_2{ width: 100%; height: 45px; padding-top: 3px;}
+    .top_bar .menu_2 ul{padding-top: 8px;}
+    .top_bar .menu_2 li>a{width: 60px; height: 40px; background-size: auto 22px; padding-top: 20px;}
+    .top_bar .menu_2 li a.blog{background-size: auto 20px;}
+    .top_bar .menu_2 li a.member{background-size: auto 20px;}
+    .top_bar .menu_2 li a.cart{background-size: auto 20px;}
+    .top_bar .menu_2 li a.cart strong{ top: 2px;}
+    .top_bar .menu_2 li a.fb{background-size: auto 20px;}
 }
 /*$mobileS (360)*/
 @include breakpoint($mobileS){
-    .top_bar{ padding:0 24px;}
-    .top_bar>.menu_2{}
-    .top_bar .menu_2 li:not(:nth-last-of-type(1)){margin-right: 10px;}
+    .top_bar{ padding:0 24px; height: 42px; }
+    .top_bar .menu_2 ul{padding-top: 2px;}
     .top_bar .menu_2 li>a{width: 60px; height: 40px; background-size: auto 22px;padding-top: 18px; font-size: 10px;}
     .top_bar .menu_2 li a.blog{background-size: auto 18px;}
     .top_bar .menu_2 li a.member{background-size: auto 18px;}
@@ -99,65 +100,57 @@
 }
 
 
-
-
-
 /*header================================*/
 .header_box{}
-.header{ width: 100%; max-width:$width-desktop; margin: 0 auto;  height: 100px; position: relative;}
-.header h2.logo_life{ width: 194px; height: 56px; position: absolute; left: 0px; top: 20px;}
-.header h2.logo_life a{ display:block; width: 194px; height: 56px; background:url(../images/logo_life.svg) center center no-repeat; background-size: 194px 56px; 
-@extend %text-hide;}
+.header{ width: 100%; max-width:$width-desktop; margin: 0 auto;  height: 186px; position: relative;}
+.header h2.logo_life{ width: 156px; height: 92px; position: absolute; left: 50%; margin-left: -78px; top:47px; }
+.header h2.logo_life a{ display:block; width: 156px; height: 92px;  background:url(../images/logo_life.svg) center center no-repeat; background-size: 156px 92px;@extend %text-hide;}
 
-/*pc (1024)*/
-@include breakpoint($pc){
-    .header h2.logo_life{ left: 30px;} 
-}
 
 /*pad (768)*/
 @include breakpoint($pad){
     .header{ height: 50px; background:$white; position: fixed; top: 0px; z-index: 100;box-shadow: -1px -1px 25px rgba(0,0,0,0.1); 
--webkit-box-shadow: -1px -1px 25px rgba(0,0,0,0.1)t;-moz-box-shadow: -1px -1px 25px rgba(0,0,0,0.1);}
-    .header h2.logo_life{width: 100px; height:30px; margin: 0 auto; left: 50%; margin-left: -50px; top: 10px;}
-    .header h2.logo_life a{ width: 100px; height:30px; background-size: 100px auto;}
+-webkit-box-shadow: -1px -1px 25px rgba(0,0,0,0.1)t;-moz-box-shadow: -1px -1px 25px rgba(0,0,0,0.1); }
+    .header h2.logo_life{width: 110px; height:30px; margin: 0 auto; left: 50%; margin-left: -55px; top: 10px;}
+    .header h2.logo_life a{ width: 110px; height:30px; background-image: url(../images/logo_life_m.svg); background-size: 100px 30px; }
 }
 
 
 /*mobileS (360)*/
 @include breakpoint($mobileS){
-    .header h2.logo_life{width: 120px;}
-    .header h2.logo_life a{ width: 120px; height: auto; background-size: 120px auto;}
+    .header{ height: 40px;}
+    .header h2.logo_life{width: 80px; height: 24px;margin-left: -40px; top:9px;}
+    .header h2.logo_life a{ width: 80px; height: 24px; background-size: 80px 24px;}
 }
 
 /*測選單開關==========================================*/
 .switch{ width: 35px; height: 35px; }
 .header .btn_side_open{display: none; background: url(../images/icon_switch.png) left center no-repeat; background-size: auto 18px;  position: absolute; left:20px; top: 8px; }
-#main_nav .btn_side_close{display: none; background: url(../images/icon_switch.png) right center no-repeat; background-size: auto 18px; }
-
+#main_nav .btn_side_close{display: none; background: url(../images/icon_switch.png) -23px center no-repeat; background-size: auto 18px; }
 
 /*pad (768)*/
 @include breakpoint($pad){
     /*開關*/
     .header .btn_side_open{display:block;}
-    #main_nav .btn_side_close{display: block; position: fixed; left:310px; top:5px;z-index: 9999; }
+    #main_nav .btn_side_close{display: block; position: fixed; left:334px; top:5px;z-index: 9999; }
 }
 
 /*mobile (480)*/
 @include breakpoint($mobile){
-    .header .btn_side_open{ background-size: auto 25px;  position: absolute; left:20px; top: 8px; }
-    #main_nav .btn_side_close{ background-size: auto 30px; }
-
+    .header .btn_side_open{ background-size: auto 20px;  position: absolute; left:20px; top: 8px; }
+    #main_nav .btn_side_close{ }
 }
 
 /*mobileS (360)*/
 @include breakpoint($mobileS){
-    #main_nav .btn_side_close{ left:260px; }
+    .header .btn_side_open{background-size: auto 15px;top: 2px; }
+    #main_nav .btn_side_close{ left:250px;}
 }
 
 
 
 /*nav===================================*/
-.main_nav_box{border-bottom:1px solid $gray; padding-bottom: 10px;}
+.main_nav_box{border-bottom:1px solid #989898; }
 #main_nav.pc{ display:none;}
 #main_nav.mobile{ display: block;}
 
@@ -165,32 +158,34 @@
 #main_nav .inner{} 
 /*第一層*/
 #main_nav .inner > ul{position: relative; @extend %clearfix;}
-#main_nav .inner > ul > li{ float: left;}
-#main_nav .inner > ul > li:not(:nth-last-of-type(3)){margin-right: 5.1%;}
+#main_nav .inner > ul > li{ float: left; height: 85px;}
+#main_nav .inner > ul > li:not(:nth-last-of-type(3)){margin-right: 5%;}
 #main_nav .inner > ul > li > a{ display: block; width: 66px; text-align: center; font-size: 16px; color: $gray_dark;}
 
 // icon
-#main_nav .inner > ul > li > a > span{ display: block; width: 40px; height: 40px; margin: 0 auto; overflow: hidden; position: relative;}
+#main_nav .inner > ul > li > a > span{ display: block; width: 50px; height: 50px; margin: 0 auto; overflow: hidden; position: relative;}
 #main_nav .inner > ul > li > a > span > img{ display: block; width: 100%; height: auto; position: absolute; top: 0px; }
 #main_nav .inner > ul > li > a:hover > span img{ top: auto; bottom: 0;}
+
 /*第二層選單效果寫在.menu_hover上 顯示第二層選單 手機版移除效果 */
 #main_nav .inner > ul > li.menu_hover:hover > a{color: $red;}
 #main_nav .inner > ul > li.menu_hover:hover ul.second { display: block;/*到手機版的時候要remove menu_hover*/}
 #main_nav .inner > ul > li.mobile_only{display: none;}
 
 /*第二層*/
-#main_nav .inner ul.second{ width: 100%;max-width: 1220px; background:$white;  @extend %clearfix; border: 1px solid $gray_lighter;position: absolute; left: 0px; top:66px; z-index: 50;  display: none; }
-
+#main_nav .inner ul.second{ width: 100%; max-width: 1220px; background:$white;  @extend %clearfix; border: 1px solid #989898; position: absolute; left: 0px; top:85px; z-index: 50;  display: none; }
 #main_nav .inner ul.second > li{ float:left; padding:20px; margin-left:20px;}
-#main_nav .inner ul.second > li> a{ display: block; margin-bottom: 20px; color:$gray; font-weight:bold;}
+#main_nav .inner ul.second > li> a{ display: block; margin-bottom: 20px;  font-weight:bold;}
 /*第三層*/
 #main_nav .inner ul.second .third{ border: 1px solid #fff;}
-#main_nav .inner ul.second .third > a{ display: block; color:$gray; font-size: 15px;}
+#main_nav .inner ul.second .third > a{ display: block; font-size: 15px; line-height: 2.3;}
 
 /*手機選單內搜尋*/
 #main_nav .search_box{ display: none;}
 
-
+/*hover*/
+#main_nav .inner ul.second > li> a:hover{ color: $red;}
+#main_nav .inner ul.second .third > a:hover{  color: $red; }
 
 /*pc (1024)*/
 @include breakpoint($pc){
@@ -202,37 +197,48 @@
 
 /*pad (768)*/
 @include breakpoint($pad){
+    .main_nav_box{border-bottom:0px solid $gray; padding-bottom: 0px;}
     /*第一層===============*/
-    #main_nav{ min-width: auto;/*解除*/ width: 300px; height: 100%;/*要用程式取*/ background: $gray_menu;  border-bottom:0px ; padding-bottom:0px; position: fixed; left:0px; top: 0px; z-index:500; display:none;/*測試時打開*/ }
-    #main_nav .inner{height: 100%; overflow-y: auto; }
+    #main_nav{ min-width: auto;/*解除*/ width: 335px; height: 100%;/*要用程式取*/ background: $gray_menu;  border-bottom:0px ; padding-bottom:0px; position: fixed; left:0px; top: 0px; z-index:500; display:none;/*測試時打開*/ }
+    #main_nav .inner{height: 100%; overflow-y: auto; padding-top: 13px; }
     #main_nav .inner > ul > li{ float: none; height: auto; line-height: 3; }
+     #main_nav .inner > ul > li:not(:nth-last-of-type(3)){margin-right: 0px}
     #main_nav .inner > ul > li.mobile_only{display: block; background: $gray; }
     #main_nav .inner > ul > li.mobile_only a{color: $white; background: none;}
-    #main_nav .inner > ul > li > a{ padding: 0px; width: auto; text-align: left; background: url(../images/icon_arrow_4.png) right center no-repeat; background-size:auto 25%;}
+    #main_nav .inner > ul > li > a{ width: auto; margin: 0px 30px 0px 46px; text-align: left; background: url(../images/icon_arrow_4.png) right center no-repeat; background-size:auto 25%; }
     #main_nav .inner > ul > li > a > span{display: none;}
     /*M顯示第二層選單*/
     #main_nav .inner > ul > li > a.show_second + ul.second{ display: block;}
     /*第二層=================*/
-    #main_nav .inner ul.second{ display: none;/*測試第一層選單，先藏起來*/background:$white; position:static; }
-    #main_nav .inner ul.second > li{ float: none; padding:0px; margin-left:auto; padding:0 20px;}
+    #main_nav .inner ul.second{ display: none;/*測試第一層選單，先藏起來*/background:$white; position:static; border: none; }
+    #main_nav .inner ul.second > li{ float: none; padding:0px; margin-left:auto; padding:0 20px 0 40px;}
     #main_nav .inner ul.second > li> a{ margin-bottom: 0px; padding:5px; font-weight:normal;}
-    #main_nav .inner ul.second > li> a::before{content: ""; display: inline-block; width: 9px; height: 9px; background: url(../images/icon_dot.png) center center no-repeat; background-size: 9px; margin: 0 3px;}
+    #main_nav .inner ul.second > li> a::before{content: ""; display: inline-block; width: 9px; height: 9px; background: url(../images/icon_dot.png) top center no-repeat; background-size: 9px auto; margin: 0 3px;}
+     #main_nav .inner ul.second > li> a.show_third::before{ background-position: bottom center;}
     /*M顯示第三層*/
     #main_nav .inner ul.second > li> a.show_third + .third{ display:block;}   
     /*第三層====================*/
     #main_nav .inner ul.second .third{ border-top: 2px dotted $red; padding: 5px; display: none;/*測試第二層選單，先藏起來*/}
     #main_nav .inner ul.second .third > a{ display: block; color: $red; padding-left: 20px;}
     /*搜尋*/
-    #main_nav .search_box{ width: 250px;  display: block; margin: 20px 0px 10px 25px; padding-bottom: 10px; border-bottom: 1px solid $gray;}
-    #main_nav .search_box input.keyword{ width: 250px;}
+    #main_nav .search_box{ display: block; width:88%; margin: 0 18px; border-bottom: 1px solid $gray; }
+    #main_nav .search_box form[name="form_search"]{position: relative; width: 257px; margin: 0 auto; padding-bottom: 14px;}
+    #main_nav .search_box input.keyword{ width: 257px; margin-bottom: 12px; border: 1px solid $white;}
     #main_nav .search_box label{ font-size: 14px;}
+    #main_nav .search_box label:nth-of-type(1){ margin-right: 38px;}
+    #main_nav .search_box input[type="radio"]{width: 18px; height: 18px; position: relative; top: -3px;}
 }
 
 /*mobileS (360)*/
 @include breakpoint($mobileS){
     #main_nav{ width: 250px;}
-    #main_nav .search_box{ width: 180px;}
-    #main_nav .search_box input.keyword{ width: 180px;}
+    #main_nav .inner > ul > li{ float: none; height: auto; line-height: 2.5; }
+    #main_nav .inner > ul > li > a{margin: 0px 20px 0px 24px;}
+    #main_nav .inner ul.second > li{padding:0 20px 0 28px;}
+    #main_nav .search_box{}
+    #main_nav .search_box form[name="form_search"]{width: 200px; padding-bottom: 5px;}
+    #main_nav .search_box input.keyword{width: 200px; margin-bottom: 8px;}
+    #main_nav .search_box label:nth-of-type(1){ margin-right: 20px;}
 }
 
 /*------------ side_nav 側選單 【PC only】------------*/
@@ -281,13 +287,10 @@ position: absolute; right:0; top:8px; transform: rotate(-90deg);}
 
  /*mobile (480)*/
 @include breakpoint($mobile){
-    .container{ width: 100%;}
+    .container{ padding:15px;}
 }
 
- /*mobileS (360)*/
-@include breakpoint($mobileS){
-    .container{ padding: 30px 5px;}
-}
+
 
 /*------------ 版型 2欄式 ------------*/
 .layout_col_2 { @extend %clearfix; padding:10px;}
@@ -315,13 +318,10 @@ position: absolute; right:0; top:8px; transform: rotate(-90deg);}
 @include breakpoint($pc){
     .footer{ width: $pc+px;}
 }
-
-
-
 /*pad (768)*/
 @include breakpoint($pad){
     .footer_box{height: 146px; background: $gray_lighter;}
-    .footer{max-width: $pad+px; padding-top: 22px;background: $gray_lighter;}
+    .footer{ width: 100%; max-width: $pad+px; padding-top: 22px;background: $gray_lighter;}
     .footer .menu_1 a{ height: 40px; width: 40px; }
     .footer .menu_1 a.icon_ig{ background: url(../images/icon_ig.png) center center no-repeat; background-size: 40px 40px; }
     .footer .menu_1 a.icon_line{ background: url(../images/icon_line.png) center center no-repeat; background-size: 40px 40px;}
@@ -332,8 +332,6 @@ position: absolute; right:0; top:8px; transform: rotate(-90deg);}
 @include breakpoint($padM){
     .footer{width: 100%;}
 }
-
-
 
 /*mobile (414)*/
 @include breakpoint($mobile){

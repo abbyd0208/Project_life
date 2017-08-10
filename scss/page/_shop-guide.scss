@@ -2,7 +2,7 @@
 /*------------ 【 購物指南 】 section_shop_guide ------------*/
 .section_shop_guide { margin-bottom:30px;}
 .section_shop_guide,
-.section_shop_guide p { color:lighten($gray_dark, 20);}
+.section_shop_guide p { color:$gray_dark;}
 .section_shop_guide .title_1 { font-size:18px;}
 .section_shop_guide ul.list { padding-left:20px;}
 
@@ -11,6 +11,10 @@
     .section_shop_guide .c1 { border-bottom:1px solid $gray; margin-bottom:20px;}
     .section_shop_guide .title_1 { display: none;}
     .section_shop_guide ul.list { padding-left:0px;}
+}
+/*mobileM (414)*/
+@include breakpoint($mobileM){
+    .section_shop_guide .c1 { margin-bottom:10px;}
 }
 
 /*------------ list 清單說明 ------------*/

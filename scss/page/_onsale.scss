@@ -1,3 +1,11 @@
 .section_onsale{}
 
 .section_onsale .info{border: 1px solid $gray; padding: 10px; clear: both; margin-bottom: 30px;}
+
+@include breakpoint($pad){
+    .section_onsale .info{ margin-bottom: 20px;}
+} 
+
+@include breakpoint($mobile){
+ 
+}

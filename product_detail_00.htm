@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>生活倉庫 | 商品詳情</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/style.css" rel="stylesheet">
+<!-- touch icon 開始 -->
+<link rel="apple-touch-icon" sizes="180x180" href="images/touch-icon.png"/> 
+<link rel="shortcut icon" sizes="192x192" href="images/touch-icon.png" />
+<!-- touch icon 結束 -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
+<link rel="stylesheet" href="js/jquery.bxslider/jquery.bxslider.css">
+<script src="js/gallery.js"></script>
+<script src="js/common.js"></script>
+</head>
+
+<body>
+<!--wrapper_box 開始-->
+<div class="wrapper_box">
+    <!--wrapper 開始-->
+    <div class="wrapper">
+        <!--top_bar 開始-->
+        <div class="top_bar_box">
+            <div class="top_bar">
+                <div class="menu_1">
+                    <a href="shop_guide_buy.htm"> 購物指南</a>
+                    <a href="about_us_contact.htm"> 聯絡我們</a>
+                </div>
+                <div class="menu_2">
+                    <div class="search_box">
+                        <form name="form_search">
+                            <input class="keyword" type="text" name="keywords" value="" placeholder="請輸入關鍵字">
+                            <button class="btn_search" type="button" onclick="#">搜尋</button>
+                        </form>
+                    </div>
+                    <ul class="operate">
+                        <li class="m">
+                            <a class="blog" href="blog.htm"> 生活日誌</a>
+                        </li>
+                        <li class="menu_hover pc_only">
+                            <a class="member" href="login_sign_in.htm"> 會員專區
+                            </a>
+                            <div class="sub_menu">
+                                <a href="member_manage.htm">個人帳戶</a>
+                                <a href="member_order_list.htm">訂單查詢</a>
+                                <a href="member_coupon.htm">購物金</a>
+                                <a href="member_e_coupon.htm">電子折價券</a>
+                                <a href="member_collection.htm">收藏清單</a>
+                                <a href="#">登出</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="cart" href="cart_pay.htm"><strong>1</strong>購物車</a>
+                        </li>
+                        <li class="menu_hover fb">
+                            <a class="fb" href="https://www.facebook.com/LifeWH/" target="_blank"> 粉絲團</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--top_bar 結束-->
+        
+        <header>
+        <!--header_box 開始-->
+        <div class="header_box">
+            <!--header 開始-->
+            <div class="header">
+                <!--btn_open 打開測選單-->
+                <div class="switch btn_side_open">
+                </div>
+                <h2 class="logo_life"><a href="index.htm"> 生活倉庫</a></h2>
+            </div>
+            <!--header 結束-->
+        </div>
+        <!--header_box 結束-->
+        </header>
+        
+        <nav class="main_nav_box">
+            <div id="main_nav">
+                <div class="switch btn_side_close">
+                </div>
+                <div class="inner">
+                    <div class="search_box">
+                        <form name="form_search">
+                            <input class="keyword" type="text" name="keywords" value="" placeholder="請輸入關鍵字">
+                            <button class="btn_search" type="button" onclick="#">搜尋</button>
+                            <label><input type="radio"/>商品搜尋</label>
+                            <label><input type="radio"/> 網誌搜尋</label>
+                        </form>
+                    </div>
+                    <ul>
+                        <li class="menu_hover">
+                            <a class="first" href="blog.htm"><span><img src="images/icon_1.png" alt=""></span>生活日誌</a>
+                            <ul class="second">
+                                <li><a href="product_list.htm">全部日誌</a></li>
+                                <li><a href="product_list.htm">最新日誌</a></li>
+                                <li><a href="product_list.htm">特輯</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">居家裝潢</a>
+                                        <a href="product_list.htm">涼夏戶外</a>
+                                        <a href="product_list.htm">生活小物</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu_hover">
+                            <a href="product_list.htm"><span><img src="images/icon_2.png" alt=""></span>人氣商品</a>
+                        </li>
+                        <li class="menu_hover">
+                            <a href="product_list.htm"><span><img src="images/icon_3.png" alt=""></span>最新商品</a>
+                        </li>
+                        <li class="menu_hover">
+                            <a href="onsale.htm"><span><img src="images/icon_4.png" alt=""></span>促銷活動</a>
+                        </li>
+                        <li class="menu_hover">
+                            <a class="first" href="product_list.htm"><span><img src="images/icon_5.png" alt=""></span>居家雜貨</a>
+                            <ul class="second">
+                                <li><a href="product_list.htm">裝飾品</a>
+                                	<div class="third">
+                                        <a href="product_list.htm">門簾</a>
+                                        <a href="product_list.htm">面紙盒</a>
+                                        <a href="product_list.htm">模型小物</a>
+                                        <a href="product_list.htm">時鐘</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">燈飾</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">燈串</a>
+                                        <a href="product_list.htm">桌燈</a>
+                                        <a href="product_list.htm">壁燈</a>
+                                        <a href="product_list.htm">落地燈</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">收納</a>
+                                </li>
+                                <li><a href="product_list.htm">家電</a>
+                                </li>
+                                <li><a href="product_list.htm">家庭清潔</a>
+                                </li>
+                                <li><a href="product_list.htm">衛浴用品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">盥洗用品</a>
+                                        <a href="product_list.htm">毛巾</a>
+                                        <a href="product_list.htm">浴巾</a>
+                                        <a href="product_list.htm">防水拖鞋</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">寢具</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">床包被套</a>
+                                        <a href="product_list.htm">竹蓆 / 涼蓆</a>
+                                        <a href="product_list.htm">枕頭</a>
+                                        <a href="product_list.htm">蓋毯</a>
+                                        <a href="product_list.htm">抱枕坐墊</a>
+                                        <a href="product_list.htm">地墊</a>
+                                        <a href="product_list.htm">室內拖鞋</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">生活美妝</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">Lisscode</a>
+                                        <a href="product_list.htm">Redux</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">寵物用品</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu_hover">
+                            <a class="first" href="product_list.htm">
+                                <span><img src="images/icon_6.png" alt=""></span>隨身品味
+                            </a>
+                            <ul class="second">
+                                <li><a href="product_list.htm">3C用品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">音響</a>
+                                        <a href="product_list.htm">耳機</a>
+                                        <a href="product_list.htm">行動電源</a>
+                                        <a href="product_list.htm">3C周邊</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">配件飾品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">手錶</a>
+                                        <a href="product_list.htm">背包</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">文具</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu_hover">
+                            <a class="first" href="product_list.htm">
+                                <span><img src="images/icon_7.png" alt=""></span>餐廳廚房
+                            </a>
+                            <ul class="second">
+                                <li><a href="product_list.htm">杯盤器皿</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">杯壺</a>
+                                        <a href="product_list.htm">餐具碗盤</a>
+                                        <a href="product_list.htm">隨身瓶</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">廚房用品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">圍裙</a>
+                                        <a href="product_list.htm">廚房佈置</a>
+                                        <a href="product_list.htm">廚房收納</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu_hover">
+                            <a class="first" href="product_list.htm">
+                                <span><img src="images/icon_8.png" alt=""></span>戶外休閒
+                            </a>
+                            <ul class="second">
+                                <li><a href="product_list.htm">車用品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">機車</a>
+                                        <a href="product_list.htm">汽車</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">雨具</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">雨傘</a>
+                                        <a href="product_list.htm">雨衣</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">旅行</a>
+                                	<div class="third">
+                                        <a href="product_list.htm">收納包袋</a>
+                                        <a href="product_list.htm">護照包</a>
+                                        <a href="product_list.htm">旅行小物</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">運動</a>
+                                	<div class="third">
+                                        <a href="product_list.htm">泳圈泳具</a>
+                                        <a href="product_list.htm">運動配件</a>
+                                    </div>
+                                </li>
+                                <li><a href="product_list.htm">隨身瓶</a>
+                                </li>
+                                <li><a href="product_list.htm">露營野餐</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu_hover">
+                            <a class="first" href="product_list.htm">
+                                <span><img src="images/icon_9.png" alt=""></span>娛樂用品
+                            </a>
+                            <ul class="second">
+                                <li><a href="product_list.htm">紓壓小物</a>
+                                </li>
+                                <li><a href="product_list.htm">情趣18+</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu_hover">
+                            <a class="first" href="product_list.htm">
+                                <span><img src="images/icon_10.png" alt=""></span>生活倉廚
+                            </a>
+                            <ul class="second">
+                                <li><a href="product_list.htm">嚴選牛肉</a></li>
+                                <li><a href="product_list.htm">嚴選海鮮</a></li>
+                                <li><a href="product_list.htm">嚴選紅白酒</a></li>
+                                <li><a href="product_list.htm">經典威士忌</a></li>
+                                <li><a href="product_list.htm">嚴選清酒</a></li>
+                                <li><a href="product_list.htm">嚴選食品</a>
+                                    <div class="third">
+                                        <a href="product_list.htm">Bare</a>
+                                        <a href="product_list.htm">Nature's Earthly choice</a>
+                                        <a href="product_list.htm">Nature's Path</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu_hover mobile_only">
+                            <a href="shop_guide_buy.htm">
+                                <span><img src="images/icon_5.png" alt="購物指南"></span>購物指南
+                            </a>
+                        </li>
+                        <li class="menu_hover mobile_only">
+                            <a href="about_us.htm">
+                                <span><img src="images/icon_5.png" alt="關於生活倉庫"></span>關於生活倉庫
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <content>
+<!--container_box 開始-->
+		<div class="container_box">
+		    <!--container 開始-->
+		    <div class="container">
+		        <!--section_product_detail 開始-->
+		        <section class="section_product_detail">
+		            <header>
+		                <div class="part_breadcrumb_1">
+		                    <a href="#">居家雜貨</a><a href="#">床具</a><span class="current">寢具被套</span>
+		                    </div>
+		                </header>
+		            <div class="area">
+		                <div class="area_1">
+		                    <!--圖集 開始-->
+		                    <div class="gallery_2">
+		                        <!--滾動 開始-->
+		                        <div class="run">
+		                            <div class="inner">
+		                                <div class="piece"><img src="images/pic_1.jpg" /></div>
+		                                <div class="piece"><img src="images/pic_2.jpg" /></div>
+		                                <div class="piece"><img src="images/pic_3.jpg" /></div>
+		                                <div class="piece"><img src="images/pic_4.jpg" /></div>
+		                                <div class="piece"><img src="images/pic_5.jpg" /></div>
+		                                <div class="piece"><img src="images/pic_6.jpg" /></div>
+		                                <div class="piece"><img src="images/pic_7.jpg" /></div>
+		                                <div class="piece"><img src="images/pic_8.jpg" /></div>
+		                                <div class="piece"><img src="images/pic_9.jpg" /></div>
+		                                </div>
+		                            <!--操作 開始-->
+		                            <div class="operate">
+		                                <a class="prev getImg" href="javascript:void(0)"><span><!-- --></span></a>
+		                                <a class="next getImg" href="javascript:void(0)"><span><!-- --></span></a>
+		                                </div>
+		                            <!--操作 結束-->
+		                            </div>
+		                        <!--滾動 結束-->
+		                        <div class="stage">
+		                            <img src="" alt="">
+		                            </div>
+		                        </div>
+		                    <!--圖集 結束-->
+		                    </div>
+		                
+		                <script src="js/product_detail.js"></script>
+		                <div class="area_2">
+		                    <!--商品標籤 開始-->
+		                    <div class="product_tag">
+		                        <div class="tag_1">
+		                            <span class="part_tag color_1">新品</span>
+		                            <span class="part_tag color_2">促銷</span>
+		                            <span class="part_tag color_3">免運</span>
+		                            <span class="part_tag border">現貨</span>
+		                            </div>
+		                        <div class="tag_2">
+		                            <span class="part_tag border">台灣製</span>
+		                            <span class="part_tag border">母親節推薦</span>
+		                            </div>
+		                        </div>
+		                    <!--商品標籤 結束-->
+		                    <h1>英式格紋【沙發組】</h1>
+		                    <p class="price">
+		                        <span><i>NT.</i>343</span>
+		                        <span class="item_old_price">原價NT.390</span>
+		                        </p>
+		                    <p class="time">優惠期間：<span>10.10 00:00:00~10.10 00:00:00</span></p>
+		                    <div class="info">
+		                        <p>我是假字編輯器負責<a href="#">連結</a>，我是假字編輯器負責我是假字編輯器負責</p>
+		                        <p>我是假字編輯器負責我是假字編輯器負責，我是假字編輯器負責</p>
+		                        </div>
+		                    <div class="form form_2">
+		                        <form action="" method="">
+		                            <ul>
+		                                <li class="item">
+		                                    <label for="color_pick">顏色款式</label>
+		                                    <select name="color_pic" id="color_pick">
+                                        　<option value="Taipei">藍色</option>
+                                        　<option value="Taoyuan">紅色</option>
+                                        　<option value="Hsinchu">綠色</option>
+                                        　<option value="Miaoli">黃色</option>
+		                                        </select>
+		                                    </li>
+		                                <li class="item">
+		                                    <label for="color_pick">數量</label>
+		                                    <select name="color_pic" id="color_pick">
+                                        　<option value="Taipei">藍色</option>
+                                        　<option value="Taoyuan">紅色</option>
+                                        　<option value="Hsinchu">綠色</option>
+                                        　<option value="Miaoli">黃色</option>
+		                                        </select>
+		                                    </li>
+		                                <li><a class="btn full style_1" id="scrollgo" rel="#add_product" href="#">點選這裡看更多加購商品</a></li>
+		                                <li>
+		                                    <div class="btn_box_two clearfix">
+		                                        <a class="btn style_1" href="#">收藏商品</a>
+		                                        <a class="btn" href="#">加入購物車</a>
+		                                        </div>
+		                                    </li>
+		                                <li><a class="btn sale full" href="#">床包任選兩入85折</a></li>
+		                                </ul>
+		                            </form>
+		                        </div>
+		                    </div>
+		                
+		                </div>
+		            
+		            <!--tab_1 開始-->
+		            <div class="tab_1" id="tab_switch">
+		                <div class="tab_menu">
+		                    <a class="active" href="#">圖文說明</a>
+		                    <a href="#">商品說明</a>
+		                    <a href="#">尺寸規格</a>
+		                    </div>
+		                <div class="tab_content">
+		                    <div class="piece story">
+		                        <h1>標題</h1>
+		                        <p>內容一內容一內容一內容一內容一內容一內容一<a href="#">連結</a>，我是假字編輯器負責我是假字編輯器負責</p>
+		                        <p>我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責</p>
+		                        <p><img src="images/1220x500.jpg" alt="我是圖片"></p>
+		                        </div>
+		                    <div class="piece story">
+		                        <p>內容2222內容22222內容22222內容22222內容222222<a href="#">連結</a>，我是假字編輯器負責我是假字編輯器負責</p>
+		                        <p>我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責</p>
+		                        <p><img src="images/1220x500_2.jpg" alt="我是圖片"></p>
+		                        </div>
+		                    <div class="piece story">
+		                        <p>內容3333內容3333內容3333內容3333內容3333內容3333內容3333<a href="#">連結</a>，我是假字編輯器負責我是假字編輯器負責</p>
+		                        <p>我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責我是假字編輯器負責</p>
+		                        <p><img src="images/1220x500_3.jpg" alt="我是圖片"></p>
+		                        </div>
+		                    </div>
+		                </div>
+		            <!--tab_1 結束-->
+		            
+		            
+		            <!--gallery_3 加購商品 開始-->
+		            <h3 class="title_2">加購商品</h3>
+		            <div class="gallery_3">
+		                <!--滾動 開始-->
+		                <div class="run">
+		                    <div class="inner">
+		                        <div class="piece">
+		                            <a class="pic" href="#"><img src="images/pic_1.jpg"/></a>
+		                            <div class="form form_2">
+		                                <form action="" method="">
+		                                    <ul>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li><a class="btn full" href="#">加入購物車</a></li>
+		                                        </ul>
+		                                    </form>
+		                                </div>
+		                            </div>
+		                        <div class="piece">
+		                            <a class="pic" href="#"><img src="images/pic_2.jpg"/></a>
+		                            <div class="form form_2">
+		                                <form action="" method="">
+		                                    <ul>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li><a class="btn full" href="#">加入購物車</a></li>
+		                                        </ul>
+		                                    </form>
+		                                </div>
+		                            </div>
+		                        <div class="piece">
+		                            <a class="pic" href="#"><img src="images/pic_3.jpg"/></a>
+		                            <div class="form form_2">
+		                                <form action="" method="">
+		                                    <ul>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li><a class="btn full" href="#">加入購物車</a></li>
+		                                        </ul>
+		                                    </form>
+		                                </div>
+		                            </div>
+		                        <div class="piece">
+		                            <a class="pic" href="#"><img src="images/pic_4.jpg"/></a>
+		                            <div class="form form_2">
+		                                <form action="" method="">
+		                                    <ul>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li><a class="btn full" href="#">加入購物車</a></li>
+		                                        </ul>
+		                                    </form>
+		                                </div>
+		                            </div>
+		                        <div class="piece">
+		                            <a class="pic" href="#"><img src="images/pic_5.jpg"/></a>
+		                            <div class="form form_2">
+		                                <form action="" method="">
+		                                    <ul>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li><a class="btn full" href="#">加入購物車</a></li>
+		                                        </ul>
+		                                    </form>
+		                                </div>
+		                            </div>
+		                        <div class="piece">
+		                            <a class="pic" href="#"><img src="images/pic_6.jpg"/></a>
+		                            <div class="form form_2">
+		                                <form action="" method="">
+		                                    <ul>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li class="item">
+		                                            <select name="color_pic" id="color_pick">
+                                                    　<option value="Taipei">藍色</option>
+                                                    　<option value="Taoyuan">紅色</option>
+                                                    　<option value="Hsinchu">綠色</option>
+                                                    　<option value="Miaoli">黃色</option>
+		                                                </select>
+		                                            </li>
+		                                        <li><a class="btn full" href="#">加入購物車</a></li>
+		                                        </ul>
+		                                    </form>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                <!--滾動 結束-->
+		                </div>
+		            <!--gallery_3 加購商品 開始-->
+		            
+		            <!--gallery_4 相關推薦 開始-->
+		            <h3 class="title_2">相關推薦</h3>
+		            <div class="gallery_4">
+		                <!--滾動 開始-->
+		                <div class="run">
+		                    <div class="inner">
+		                        <div class="piece"><a class="pic" href="#"><img src="images/pic_1.jpg"/></a></div>
+		                        <div class="piece"><a class="pic" href="#"><img src="images/pic_2.jpg"/></a></div>
+		                        <div class="piece"><a class="pic" href="#"><img src="images/pic_3.jpg"/></a></div>
+		                        <div class="piece"><a class="pic" href="#"><img src="images/pic_4.jpg"/></a></div>
+		                        <div class="piece"><a class="pic" href="#"><img src="images/pic_5.jpg"/></a></div>
+		                        <div class="piece"><a class="pic" href="#"><img src="images/pic_6.jpg"/></a></div>
+		                        <div class="piece"><a class="pic" href="#"><img src="images/pic_7.jpg"/></a></div>
+		                        <div class="piece"><a class="pic" href="#"><img src="images/pic_8.jpg"/></a></div>
+		                        <div class="piece"><a class="pic" href="#"><img src="images/pic_9.jpg"/></a></div>
+		                        </div>
+		                    </div>
+		                <!--滾動 結束-->
+		                </div>
+		            <!--gallery_4 相關推薦 結束-->
+		            </section>
+		        <!--section_product_detail 結束-->
+		        </div>
+		    <!--container 結束-->
+		    </div>
+		<!--container_box 結束-->
+        </content>
+        
+        <footer>
+        <!--footer_box 開始-->
+        <div class="footer_box">
+            <!--footer 開始-->
+            <div class="footer">
+                <div class="menu_1">
+                    <a class="icon_ig" href="https://www.instagram.com/lifewarehouse/" target="_blank">
+                    </a>
+                    <a class="icon_line" href="https://goo.gl/xtA521" target="_blank">
+                    </a>
+                </div>
+                <div class="menu_2">
+                    <a href="about_us.htm"> 關於生活倉庫
+                    </a>
+                    <a href="about_us_privacy.htm"> 隱私權政策
+                    </a>
+                </div>
+                <p>
+                    &copy;LifeWareHouse</p>
+            </div>
+            <!--footer 結束-->
+        </div>
+        <!--footer_box 結束-->
+        </footer>
+        <aside></aside>
+        <div class="gototop">
+        </div>
+    </div>
+    <!--wrapper 結束-->
+</div>
+<!--wrapper_box 結束-->
+
+
+
+
+</body>
+</html>

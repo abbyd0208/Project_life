@@ -2,7 +2,8 @@
 /*------------ 【 關於我們 】 section_about_us ------------*/
 .section_about_us { margin-bottom:50px;}
 .section_about_us,
-.section_about_us p { color:lighten($gray_dark, 20);}
+.section_about_us p { color:$gray_dark;}
+.section_about_us p.note { color:$gray;}
 .section_about_us .title_1 { font-size:17px; margin-bottom:30px;}
 
 
@@ -32,13 +33,19 @@
 .section_about_us .form_1 .item.address select { margin-right:0;}
 
 .section_about_us input.short { width:260px;}
+
 /*pad (768)*/
 @include breakpoint($pad){
-.section_about_us input.short { width:auto;}
-.section_about_us .form_1 { margin-bottom:0px;}
-.section_about_us .form_1 ol { margin-left:0px;}
-.section_about_us .form input { width:calc(100% - 100px);}
-.section_about_us .story .form select { width:calc(100% - 100px);}
-.section_about_us .form .address select { width:calc(50% - 55px);}
-.section_about_us .form input[type="submit"] { height:40px;}
+    .section_about_us input.short { width:auto;}
+    .section_about_us .form_1 { margin-bottom:0px;}
+    .section_about_us .form_1 ol { margin-left:0px;}
+    .section_about_us .form input { width:calc(100% - 100px);}
+    .section_about_us .story .form select { width:calc(100% - 100px);}
+    .section_about_us .form .address select { width:calc(50% - 52px);}
+    .section_about_us .form input[type="submit"] { height:40px;}
+}
+
+/*mobileM (414)*/
+@include breakpoint($mobileM){
+    .section_about_us .form input[type="submit"] { width:100%; margin:0;}
 }

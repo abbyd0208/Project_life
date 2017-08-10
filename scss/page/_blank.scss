@@ -9,7 +9,10 @@
     .section_blank { max-width:240px;}
     .section_blank .pic { max-width:200px;}
 }
-
+/*mobileM (414)*/
+@include breakpoint($mobileM){
+    .section_blank { margin:30px auto;}
+}
 
 /*------------ 流量過大頁 ------------*/
 /*------------ 錯誤頁 ------------*/

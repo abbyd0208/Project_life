@@ -70,3 +70,17 @@ ol, ul{ list-style:none;}
 	}
 }
 }
+
+
+/*pad (768)*/
+@include breakpoint($pad){
+	width:70px; 
+	height:70px;
+}
+
+
+/*mobileS (360)*/
+@include breakpoint($mobileS){
+	width:50px; 
+	height:50px;
+}

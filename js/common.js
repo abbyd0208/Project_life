@@ -223,18 +223,6 @@ $(function(){
 });
 
 
-//會員下拉選單=====================================
-$(function(){
-    var memberSub = $(".top_bar .menu_2 .operate .member");
-    memberSub.on("mouseover",function(){
-        memberSub.next().show();
-    })
-
-    memberSub.next().on("mouseleave",function(){
-        memberSub.next().hide();
-    })
-});
-
 
 
 // iscroll ===================================
@@ -255,3 +243,9 @@ $(function () {
 	}
 });
 
+// 登入頁 補足日期input 沒有 placeholder ===================================
+$(function () {
+	$("li.birth").on("click", function(){
+        $(this).find("span").hide();
+    });
+});

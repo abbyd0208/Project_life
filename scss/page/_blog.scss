@@ -4,3 +4,14 @@
 .section_blog{ }
 .blog.gallery_1{ margin-bottom: 0px;}
 
+.section_blog .part_breadcrumb_1{margin-bottom: 30px;}
+
+/*pad (768)*/
+@include breakpoint($pad){
+    .section_blog .part_breadcrumb_1{margin-bottom: 25px;}
+}
+
+/*mobile (480)*/
+@include breakpoint($mobile){
+    .section_blog .part_breadcrumb_1{margin-bottom: 15px;}
+}

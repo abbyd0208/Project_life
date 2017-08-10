@@ -7,7 +7,7 @@
 .section_product_detail .area{ margin-bottom: 60px;@extend %clearfix;}
 .section_product_detail .area_1{ width: 730px;  float:left; }
 .section_product_detail .area_2{ width: 400px; float:right; }
-.section_product_detail h1{ margin-bottom: 10px; font-size: 20px; font-weight: bold;}
+
 
 /*pc (1024)*/
 @include breakpoint($pc){
@@ -16,7 +16,8 @@
 }
 
 /*768px*/
-@media only screen and (max-width:768px) {
+@include breakpoint($pad){
+    .section_product_detail .area{ margin-bottom: 44px;}
     .section_product_detail .area_1{ width: 48%; }
     .section_product_detail .area_2{ width: 48%; }
 }
@@ -27,37 +28,72 @@
     .section_product_detail .area_2{width: 100%; float: none;}
 }
 
-
+/*麵包屑*/
+/*768px*/
+@include breakpoint($pad){
+    .section_product_detail .part_breadcrumb_1{margin-bottom: 25px;}
+}
 
 /*tag*/
 .section_product_detail .area_2 .tag_box_1{margin-bottom: 5px;}
 .section_product_detail .area_2 .tag_box_2{margin-bottom: 10px;}
 
+// 商品名稱
+.section_product_detail h1{ margin-bottom: 10px; font-size: 20px; font-weight: bold;}
+/*768px*/
+@include breakpoint($mobileS){
+    .section_product_detail h1{margin-bottom: 0px;}
+}
+
 /*price*/
 .section_product_detail .price{ line-height: 24px; margin-bottom: 10px;}
-.section_product_detail .price span{ font-size: 24px; color: $red;}
+.section_product_detail .price span{ font-size: 24px; color: $red; letter-spacing: 1px;}
 .section_product_detail .price span.discount{}
-.section_product_detail .price span.item_old_price{text-decoration: line-through; color: $gray_light;font-size: 15px}
-.section_product_detail .price span i{ font-style: normal; font-size: 14px;}
+.section_product_detail .price span.item_old_price{text-decoration: line-through; color: $gray_light;font-size: 14px; margin-left: 2px;}
+.section_product_detail .price span i{ font-style: normal; font-size: 14px; margin-right: 2px;}
 
-.section_product_detail .btn_box_two{ margin-bottom: 0px;}
-.section_product_detail .form_2 .item{ margin: 10px 10px 20px 0px}
 
-/*time*/
+/*time=======*/
 .section_product_detail p.time{ margin-bottom: 10px;}
 .section_product_detail p.time span{ color: $red;}
-/*info*/
-.section_product_detail .info{ border: 1px solid $gray_light; padding: 10px; margin-bottom: 20px;}
-/*form*/
+/*768px*/
+@include breakpoint($pad){
+    .section_product_detail p.time span{display: block;}
+}
+
+/*info==========*/
+.section_product_detail .area_2 .info{ border: 1px solid $gray_light; padding: 10px; margin-bottom: 20px;}
+/*form=============*/
+.section_product_detail .area_2 .form_2 .item{}
 .section_product_detail .area_2 .form_2 li a.btn.sale{ text-align: right; background:$red; padding: 5px 10px;}
+.section_product_detail .area_2 .form_2 .btn_box_two{ margin-bottom: 0px;}
 
-
+/*768px*/
+@include breakpoint($pad){
+    .section_product_detail .area_2 .form{ margin-bottom: 0px;}
+    .section_product_detail .area_2 .form_2 .item{ margin-bottom: 12px;}
+    .section_product_detail .area_2 .form_2 .item .btn,a.btn{margin:0px 10px 10px 0px}
+    .section_product_detail .area_2 .form_2 .btn.full.style_1{padding: 5px 30px; height: 40px;}
+    .section_product_detail .area_2 .form_2 .btn_box_two .btn{height: 40px; line-height: 40px;}
+    
+}
 
 /*tab_1 切換編輯器*/
 .section_product_detail .tab_1{}
 .section_product_detail .tab_1 .tab_content{}
 .section_product_detail .tab_1 .tab_content a{ }
 .section_product_detail .tab_1 .tab_content a:hover{ }
+
+/*768px*/
+@include breakpoint($pad){
+    .section_product_detail .tab_1{ margin-bottom: 73px;}
+}
+
+
+/*共用屬性===========================================*/
+.gallery_2 .bx-wrapper .bx-pager.bx-default-pager a,.gallery_3 .bx-wrapper .bx-pager.bx-default-pager a,.gallery_4 .bx-wrapper .bx-pager.bx-default-pager a{ width: 12px; height: 12px; background-color: $white; border: 1px solid $gray_dark;}
+.gallery_2 .bx-wrapper .bx-pager.bx-default-pager a:hover, .gallery_2 .bx-wrapper .bx-pager.bx-default-pager a.active,.gallery_3 .bx-wrapper .bx-pager.bx-default-pager a:hover, .gallery_3 .bx-wrapper .bx-pager.bx-default-pager a.active,
+.gallery_4 .bx-wrapper .bx-pager.bx-default-pager a:hover, .gallery_4 .bx-wrapper .bx-pager.bx-default-pager a.active{ background-color: $gray_dark;}
 
 
 // gallery_2 產品圖切換
@@ -76,7 +112,6 @@
 
 /*自訂義方向鍵*/
 .gallery_2 .operate { height:600px; width: 100px; position: absolute; left: 0px; top: 0px;  }
-
 .gallery_2 .operate .prev { width: 100px; height: 20px; background: url(../images/icon_arrow_2.png) center top no-repeat; background-size: auto 40px;  position: absolute;left: 0px;top: 0px;}
 .gallery_2 .operate .next { width: 100px; height: 20px;   background: url(../images/icon_arrow_2.png) center bottom no-repeat; background-size: auto 40px; position: absolute; left: 0px; bottom: 0px;}
 .gallery_2 .operate .prev a.bx-next,.operate .next a.bx-prev  {display: block;width: 100px; height: 20px}
@@ -99,10 +134,8 @@
 
 /*padM (640)*/
 @include breakpoint($padM){
-    .gallery_2{ margin-bottom: 30px;}
+    .gallery_2{ margin-bottom: 40px;}
 }
-
-
 
 
 //加購商品======================================== 
@@ -126,19 +159,30 @@
 .gallery_3 .bx-wrapper .bx-prev:hover{ background-position: left bottom;}
 .gallery_3 .bx-wrapper .bx-next:hover{ background-position: right bottom;}
 
-@include breakpoint($padM){
-   .gallery_3 .bx-wrapper .bx-pager{ bottom: -50px}
+@include breakpoint($pad){
+    .gallery_3{ margin-bottom: 50px;}
+    .gallery_3 .bx-wrapper{ margin-bottom: 0px;}
 } 
+
+@include breakpoint($padM){
+    
+    .gallery_3 .bx-wrapper { margin-bottom: 75px;}
+    .gallery_3 .bx-wrapper .bx-pager{ bottom: -50px;}
+} 
+
+@include breakpoint($mobile){
+    .gallery_3 .bx-wrapper { margin-bottom: 30px;}
+}
 
 /*組*/
 .gallery_3 .run .inner .piece{ }
-.gallery_3 .run .inner .piece .btn{ margin: 0px;}
+.gallery_3 .run .inner .piece .btn{ margin: 0px; padding: 0; height: 40px;line-height: 40px;}
 
 /*圖片*/
 .gallery_3 .run .inner .piece a.pic{ display:block; margin-bottom: 15px;}
 .gallery_3 .run .inner .piece a.pic img{}
 
-
+.gallery_3 .bx-wrapper .bx-controls-direction a { margin-top: -84px;}
 
 //相關推薦======================================== 
  .gallery_4 {position: relative;}
@@ -157,7 +201,8 @@
 .gallery_4 .bx-wrapper .bx-prev{left: -50px;background: url(../images/icon_arrow_3.png) left top no-repeat;background-size: auto 70px;}
 .gallery_4 .bx-wrapper .bx-next {right: -50px;background: url(../images/icon_arrow_3.png) right top no-repeat;background-size: auto 70px;}
 @include breakpoint($padM){
-   .gallery_4 .bx-wrapper .bx-pager{ bottom: -50px}
+    .gallery_4 .bx-wrapper { margin-bottom: 75px;}
+    .gallery_4 .bx-wrapper .bx-pager{ bottom: -60px}
 } 
 
 /*hover*/
